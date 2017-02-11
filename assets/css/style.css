@@ -19,7 +19,7 @@ body{
   margin-bottom: -20px;
 }
 .container2{
-  width:600px;
+  width:65%;
   overflow:hidden;
   color: black;
   background-color: #ffe8fe;
@@ -29,7 +29,7 @@ body{
 }
 .container3{
   margin-top: 20px;
-  width:600px;
+  width:65%;
   overflow:hidden;
   color: black;
   background-color: #e8fbff;
@@ -227,11 +227,9 @@ hr.style-two {
 }
 
 @media screen and (max-width: 480px) {
+
   hr.style-two {
-      border: 0;
-      width: auto;
-      height: 100%;
-      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+      display: none;
   }
   header #title p{
     margin-right: 100px;
@@ -244,6 +242,7 @@ hr.style-two {
   }
   header nav{
 
+
     color: #979797;
 
     padding-bottom: 5px;
@@ -251,8 +250,9 @@ hr.style-two {
   .container{ width: 480px;}
 
   header{
-    width: auto;
     margin: auto;
+    width:100%;
+
   }
   li {
 
@@ -284,7 +284,7 @@ transform: rotate(0deg);
     padding: 10px;
 width: 100%;
 text-align: center;
-font-size: 2px;
+font-size: 20px;
 -ms-transform: rotate(0deg); /* IE 9 */
 -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
 transform: rotate(0deg);
@@ -323,47 +323,40 @@ font-size: 20px;
 transform: rotate(0deg);
   }
   .container2{
-    width:480px;
+    margin: auto;
+    width:90%;
     overflow:hidden;
     color: black;
     background-color: #ffe8fe;
-    padding: 10px;
+    padding: 15px;
 
 
   }
   .container3{
-    margin-top: 10px;
-    width:480px;
+    margin: auto;
+    width:90%;
     overflow:hidden;
     color: black;
     background-color: #e8fbff;
-    padding: 5px;
+    padding: 15px;
 
 
   }
-  .container4{
-    margin-top: 100px;
-    width:4800px;
-    overflow:hidden;
-    color: black;
-    background-color: #e8fbff;
-    padding: 20px;
 
-
-  }
   .imgjuttu{
-    width:0;
+    display: none;
   }
   .containerh1{
-    font-size: 0;
+    display: none;
   }
   .sidecontainer{
     width:250px;
     float: right;
-    overflow:hidden;
+    display: block;
     color: black;
     background-color: #ffe8fe;
-
+    margin-top: auto;
+    bottom: auto;
 
 
   }
@@ -372,7 +365,7 @@ transform: rotate(0deg);
 
   }
   #boxes{
-    width:480px;
+    width:100%;
 
     padding-bottom: 500px;
   }
