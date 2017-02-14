@@ -105,7 +105,7 @@ header nav{
   padding-bottom: 25px;
 }
 
-nav ul li {display: inline-block; margin-left: 5px;}
+nav ul li {display: inline-block; }
 
 li.tab1{
   background-color: #ffcee3;
@@ -231,36 +231,30 @@ hr.style-two {
   hr.style-two {
       display: none;
   }
-  header #title p{
-    margin-right: 100px;
-    font-size: 10px;
 
+  header #title p{
+    margin-right: 50px;
+    font-size: 10px;
   }
+
   header li{
     margin: auto;
-
   }
+
   header nav{
-
-
+    width: 100vw;
     color: #979797;
 
-    padding-bottom: 5px;
   }
-  .container{ width: 480px;}
 
   header{
-    margin: auto;
-    width:100%;
-
+    width: 100vw;
   }
-  li {
 
-  }
   li.tab1{
     background-color: #ffcee3;
     padding: 10px;
-    width: 480px;
+    width: 100vw;
     text-align: center;
     font-size: 20px;
     -ms-transform: rotate(0deg); /* IE 9 */
@@ -271,102 +265,108 @@ hr.style-two {
   li.tab2{
     background-color: #ceeaff;
     padding: 10px;
-width: 100%;
-text-align: center;
-font-size: 20px;
--ms-transform: rotate(0deg); /* IE 9 */
--webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
-transform: rotate(0deg);
-  }
+    width: 100vw;
+    text-align: center;
+    font-size: 20px;
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+    }
 
   li.tab3{
     background-color: #cefff2;
     padding: 10px;
-width: 100%;
-text-align: center;
-font-size: 20px;
--ms-transform: rotate(0deg); /* IE 9 */
--webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
-transform: rotate(0deg);
-  }
+    width: 100vw;
+    text-align: center;
+    font-size: 20px;
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+    }
 
   li.tab4{
     background-color: #fff9ce;
     padding: 10px;
-width: 100%;
-text-align: center;
-font-size: 20px;
--ms-transform: rotate(0deg); /* IE 9 */
--webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
-transform: rotate(0deg);
-  }
+    width: 100vw;
+    text-align: center;
+    font-size: 20px;
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+    }
 
   li.tab5{
     background-color: #dcceff;
     padding: 10px;
-width: 100%;
-text-align: center;
-font-size: 20px;
--ms-transform: rotate(0deg); /* IE 9 */
--webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
-transform: rotate(0deg);
-  }
+    width: 100vw;
+    text-align: center;
+    font-size: 20px;
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+    }
 
   li.tab6{
     background-color: #ffdcce;
     padding: 10px;
-width: 100%;
-text-align: center;
-font-size: 20px;
--ms-transform: rotate(0deg); /* IE 9 */
--webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
-transform: rotate(0deg);
-  }
-  .container2{
-    margin: auto;
-    width:90%;
-    overflow:hidden;
-    color: black;
-    background-color: #ffe8fe;
-    padding: 15px;
+    width: 100vw;
+    text-align: center;
+    font-size: 20px;
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+    }
+
+  .container{
+    max-width: 100vw;
+   }
+
+   .container2{
+     width:100%;
+     overflow:hidden;
+     color: black;
+     background-color: #ffe8fe;
+     padding: 20px;
 
 
-  }
+   }
+
   .container3{
     margin: auto;
-    width:90%;
+    max-width: 100vw;
     overflow:hidden;
     color: black;
     background-color: #e8fbff;
     padding: 15px;
-
-
-  }
+    }
 
   .imgjuttu{
     display: none;
   }
+
   .containerh1{
     display: none;
   }
-  .sidecontainer{
-    width:250px;
-    float: right;
-    display: block;
-    color: black;
-    background-color: #ffe8fe;
-    margin-top: auto;
-    bottom: auto;
 
+  .sidecontainer{
+
+    display: none;
 
   }
+
   #showcase{
-    width:480px;
+    width: 100vw;
 
   }
   #boxes{
-    width:100%;
-
-    padding-bottom: 500px;
+    width: 100vw;
+  }
+  footer{
+    color:#ffffff;
+    background-color:#333;
+    text-align: left;
+    width: 100vw;
+    height: 100px;
+    margin: auto;
   }
 }
