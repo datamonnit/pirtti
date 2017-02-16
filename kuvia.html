@@ -7,15 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <meta name="keywords" content="päiväkoti, päiväkotiyhdistys, Päiväkotiyhdistys pirtti ry">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Päiväkoti Pirtti | Kuvia</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+      $(document).ready(function(){
+          $("button").click(function(){
+              $("nav").toggle(500);
+          });
+      });
+        document.getElementById("hide").onclick = function() {myFunction()};
+
+
+
+    </script>
   </head>
   <body>
     <header>
       <div class="container">
         <div id="title"> <p>Puh. 040 123 123<br>Jokutie 4 3405 Jokula<br>kakka.posti@gmail.com</p>
           <h1> Päiväkoti Pirtti</h1>
+          <button id="hide">&#9776</button>
         <nav>
           <ul>
             <li class="tab1"><a href="index.html" class="fa fa-home">&nbsp;Etusivu </a></li>
