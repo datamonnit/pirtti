@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Päiväkoti pirtti">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 	  <meta name="keywords" content="päiväkoti, päiväkotiyhdistys, Päiväkotiyhdistys pirtti ry">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Päiväkoti Pirtti | Etusivu</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/slider.css">
@@ -64,21 +65,21 @@
         <p></p>
       </div>
     </section>
-
     <section id="boxes">
         <div class="container2">
           <p><strong> Lorem ipsum din nev</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed enim ante, rhoncus nec urna sit amet, tincidunt tincidunt lectus. Proin vel egestas ante. Duis fermentum, mauris non ultricies dapibus, orci dui vulputate magna, nec pulvinar nisl est non felis. Ut efficitur ligula vitae ante vulputate, non auctor elit consequat. Integer in justo felis. Duis semper ante non velit maximus vulputate. Cras ac fermentum sapien. Nulla nec libero sed ligula suscipit molestie. Nulla vitae rutrum leo, lobortis porta lectus. Vivamus lorem est, porta vel tellus vel, rutrum volutpat felis. Maecenas mattis, purus in efficitur imperdiet, augue ex gravida purus, ac pulvinar mi risus a massa. Praesent metus urna, pretium at sollicitudin dapibus, semper nec sapien. Nullam elementum eros id ligula sollicitudin scelerisque. Sed viverra risus convallis felis suscipit, nec interdum lectus tempus..<br>
             Lorem ipsum dolor sit amet, consectetur</p>
         </div>
-        <div class="sidecontainer">
-          <ul id="pikalinkit"><input type="button" id="linkit" value="&#9776"/>
-            <li> <h2 class="pikalinkit" > pikalinkit </h2>
-            <li><a href="henkilokunta.html">Placeholder</a></li>
-            <li><a href="henkilokunta.html">Placeholder</a></li>
-            <li><a href="henkilokunta.html">Placeholder</a></li>
-            <li><a href="henkilokunta.html">Placeholder</a></li>
-            <li><a href="henkilokunta.html">Placeholder</a></li>
-          </ul>
+        <div id="juttu" class="sidecontainer">
+
+          <select  class="minimal" onChange="if(this.selectedIndex!=0)  self.location=this.options[this.selectedIndex].value">
+<option value="" disabled="disabled" selected="selected">Pikalinkit</option>
+              <option value="#">Henkilökunta</option>
+              <option value="#">Placeholder</option>
+              <option value="#">placeholder</option>
+              <option value="#">Placeholder</option>
+              <option value="#">Placeholder</option>
+              </select>
         </div>
         <div class="container3">
           <p><strong> Placeholder is this cool yes </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed enim ante, rhoncus nec urna sit amet, tincidunt tincidunt lectus. Proin vel egestas ante. Duis fermentum, mauris non ultricies dapibus, orci dui vulputate magna, nec pulvinar nisl est non felis. Ut efficitur ligula vitae ante vulputate, non auctor elit consequat. Integer in justo felis. Duis semper ante non velit maximus vulputate. Cras ac fermentum sapien. Nulla nec libero sed ligula suscipit molestie. Nulla vitae rutrum leo, lobortis porta lectus. Vivamus lorem est, porta vel tellus vel, rutrum volutpat felis. Maecenas mattis, purus in efficitur imperdiet, augue ex gravida purus, ac pulvinar mi risus a massa. Praesent metus urna, pretium at sollicitudin dapibus, semper nec sapien. Nullam elementum eros id ligula sollicitudin scelerisque. Sed viverra risus convallis felis suscipit, nec interdum lectus tempus..</p>

@@ -41,9 +41,10 @@ body{
   color: black;
   background-color: #e8fbff;
   padding: 20px;
-
+  display: block;
 
 }
+
 .container4{
   margin-top: 100px;
   width:960px;
@@ -88,6 +89,7 @@ body{
   text-align: center;
   margin-top: 0;
   font-size: 25px;
+
 }
 #yhteystiedot{
   width:960px;
@@ -100,7 +102,7 @@ body{
   display: block;
   }
 .yhteystiedot{
-  margin-top: 80px;
+  margin-top: 20px;
   margin-right: 50px;
   float: right;
 }
@@ -114,6 +116,66 @@ body{
   font-size: 15px;
 
   }
+
+  select {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    background-color: #e8fbff;
+    margin: auto;
+    border: 0;
+    width: 250px;
+    height: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    -webkit-appearance: none;
+      -moz-appearance: none;
+
+      text-overflow: '';
+  }
+  select.minimal {
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+select.minimal:focus {
+  background-image:
+    linear-gradient(45deg, green 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, green 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: gray;
+  outline: 0;
+}
+
+.container3 p{
+  display: block;
+}
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
 h3 {
   font-size: 20px;
   font-style: bold;
@@ -125,7 +187,9 @@ ul{
   padding:0;
 }
 
-
+.container h1 {
+  color: gray;
+}
 header{
   width:960px;
   margin:auto;
@@ -438,18 +502,26 @@ hr.style-two {
      color: black;
      background-color: #ffe8fe;
      font-size: 15px;
-
+  display: block;
 
 
    }
 
   .container3{
-    background-color: #e8fbff;
+      background-color: #e8fbff;
       width:100%;
       overflow: hidden;
       color: black;
+      display: block;
 
-
+    }
+    .container3 p {
+      margin-right: 20px;
+      float: left;
+    }
+    .container2 p {
+      margin-right: 20px;
+      float: left;
     }
 
   .imgjuttu{
