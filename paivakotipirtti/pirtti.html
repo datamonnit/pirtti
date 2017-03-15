@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Päiväkoti pirtti">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	  <meta name="keywords" content="päiväkoti, päiväkotiyhdistys, Päiväkotiyhdistys pirtti ry">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>Päiväkoti Pirtti | Etusivu</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/slider.css">
+    <script>
+      $(document).ready(function(){
+          $("myButton").click(function(){
+              $("nav").toggle(500);
+          });
+      });
+          document.getElementById("hide").onclick = function() {myFunction()};
+
+
+
+    </script>
+  </head>
+  <body>
+
+    <header>
+      <div class="container">
+        <div id="title"> <p>Puh. 040 123 123<br>Jokutie 4 3405 Jokula<br>sahko.posti@gmail.com</p></div>
+          <h1> Päiväkoti Pirtti</h1>
+          <button name="myButton" id="hide">&#9776</button>
+        <nav>
+          <ul>
+            <li class="current tab1"><a href="pirtti.html" class="fa fa-home">&nbsp;Etusivu </a></li>
+            <li  class="tab4"><a href="yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
+            <li  class="tab5 dropdown">
+             <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
+               <div class="dropdown-content">
+                 <a href="paivahoitohakemus.html">Päivähoitohakemus</a>
+                 <a href="#">placeholder</a>
+                 <a href="#">placeholder</a>
+               </div>
+            </li>
+            <li  class="tab6"><a href="kuvia.html" class="fa fa-image">&nbsp;Kuvia</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <hr class="style-two">
+    <section id="showcase">
+      <div class="container">
+        <h1 class="containerh1">päiväkotiyhdistys pirtti ry</h1>
+        <div id="slider" >
+          <figure>
+            <img src="../assets/img/kuva1.png">
+            <img src="../assets/img/kuva2.png">
+            <img src="../assets/img/kuva1.png">
+            <img src="../assets/img/kuva2.png">
+            <img src="../assets/img/kuva1.png">
+          </figure>
+        </div>
+        <p></p>
+      </div>
+    </section>
+    <section id="boxes">
+        <div class="container2">
+          <p><strong> Lorem ipsum din nev</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed enim ante, rhoncus nec urna sit amet, tincidunt tincidunt lectus. Proin vel egestas ante. Duis fermentum, mauris non ultricies dapibus, orci dui vulputate magna, nec pulvinar nisl est non felis. Ut efficitur ligula vitae ante vulputate, non auctor elit consequat. Integer in justo felis. Duis semper ante non velit maximus vulputate. Cras ac fermentum sapien. Nulla nec libero sed ligula suscipit molestie. Nulla vitae rutrum leo, lobortis porta lectus. Vivamus lorem est, porta vel tellus vel, rutrum volutpat felis. Maecenas mattis, purus in efficitur imperdiet, augue ex gravida purus, ac pulvinar mi risus a massa. Praesent metus urna, pretium at sollicitudin dapibus, semper nec sapien. Nullam elementum eros id ligula sollicitudin scelerisque. Sed viverra risus convallis felis suscipit, nec interdum lectus tempus..<br>
+            Lorem ipsum dolor sit amet, consectetur</p>
+        </div>
+        <div id="juttu" class="sidecontainer">
+
+          <select  id="linkit" class="minimal" onChange="if(this.selectedIndex!=0)  self.location=this.options[this.selectedIndex].value">
+<option value="" disabled="disabled" selected="selected">Pikalinkit</option>
+              <option value="#">Henkilökunta</option>
+              <option value="#">Placeholder</option>
+              <option value="#">placeholder</option>
+              <option value="#">Placeholder</option>
+              <option value="#">Placeholder</option>
+              </select>
+        </div>
+        <div class="container3">
+          <p><strong> Placeholder is this cool yes </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed enim ante, rhoncus nec urna sit amet, tincidunt tincidunt lectus. Proin vel egestas ante. Duis fermentum, mauris non ultricies dapibus, orci dui vulputate magna, nec pulvinar nisl est non felis. Ut efficitur ligula vitae ante vulputate, non auctor elit consequat. Integer in justo felis. Duis semper ante non velit maximus vulputate. Cras ac fermentum sapien. Nulla nec libero sed ligula suscipit molestie. Nulla vitae rutrum leo, lobortis porta lectus. Vivamus lorem est, porta vel tellus vel, rutrum volutpat felis. Maecenas mattis, purus in efficitur imperdiet, augue ex gravida purus, ac pulvinar mi risus a massa. Praesent metus urna, pretium at sollicitudin dapibus, semper nec sapien. Nullam elementum eros id ligula sollicitudin scelerisque. Sed viverra risus convallis felis suscipit, nec interdum lectus tempus..</p>
+        </div>
+    </section>
+
+    <footer>
+      <p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2017</p>
+    </footer>
+  </body>
+</html>

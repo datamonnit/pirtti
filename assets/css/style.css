@@ -117,7 +117,7 @@ body{
 
   }
 
-  select {
+  select #linkit {
     font-size: 20px;
     color: black;
     text-align: center;
@@ -134,7 +134,7 @@ body{
 
       text-overflow: '';
   }
-  select.minimal {
+  select.minimal  #linkit{
   background-image:
     linear-gradient(45deg, transparent 50%, gray 50%),
     linear-gradient(135deg, gray 50%, transparent 50%),
@@ -150,7 +150,7 @@ body{
   background-repeat: no-repeat;
 }
 
-select.minimal:focus {
+select.minimal:focus #linkit{
   background-image:
     linear-gradient(45deg, green 50%, transparent 50%),
     linear-gradient(135deg, transparent 50%, green 50%),
@@ -171,7 +171,7 @@ select.minimal:focus {
 .container3 p{
   display: block;
 }
-select:-moz-focusring {
+select:-moz-focusring #linkit{
   color: transparent;
   text-shadow: 0 0 0 #000;
 }
@@ -241,45 +241,45 @@ li.tab1{
   transform: rotate(-8deg);
 
 }
-
+/*
 li.tab2{
   background-color: #ceeaff;
+  padding: 20px;
+  -ms-transform: rotate(8deg); /* IE 9 */
+/*  -webkit-transform: rotate(8deg); /* Chrome, Safari, Opera */
+/*  transform: rotate(8deg);
+}
+/*
+li.tab3{
+  background-color: #cefff2;
+  padding: 20px;
+  -ms-transform: rotate(-6deg); /* IE 9 */
+/*  -webkit-transform: rotate(-6deg); /* Chrome, Safari, Opera */
+/*  transform: rotate(-6deg);
+} */
+
+li.tab4{
+  background-color:#ceffcc;
+  padding: 20px;
+  -ms-transform: rotate(7deg); /* IE 9 */
+  -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+  transform: rotate(7deg);
+}
+
+li.tab5{
+  background-color: #dcceff;
   padding: 20px;
   -ms-transform: rotate(-8deg); /* IE 9 */
   -webkit-transform: rotate(-8deg); /* Chrome, Safari, Opera */
   transform: rotate(-8deg);
 }
 
-li.tab3{
-  background-color: #cefff2;
-  padding: 20px;
-  -ms-transform: rotate(6deg); /* IE 9 */
-  -webkit-transform: rotate(6deg); /* Chrome, Safari, Opera */
-  transform: rotate(6deg);
-}
-
-li.tab4{
-  background-color: #fff9ce;
-  padding: 20px;
-  -ms-transform: rotate(-7deg); /* IE 9 */
-  -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
-  transform: rotate(-7deg);
-}
-
-li.tab5{
-  background-color: #dcceff;
-  padding: 20px;
-  -ms-transform: rotate(8deg); /* IE 9 */
-  -webkit-transform: rotate(8deg); /* Chrome, Safari, Opera */
-  transform: rotate(8deg);
-}
-
 li.tab6{
   background-color: #ffdcce;
   padding: 20px;
-  -ms-transform: rotate(-5deg); /* IE 9 */
-  -webkit-transform: rotate(-5deg); /* Chrome, Safari, Opera */
-  transform: rotate(-5deg);
+  -ms-transform: rotate(5deg); /* IE 9 */
+  -webkit-transform: rotate(5deg); /* Chrome, Safari, Opera */
+  transform: rotate(5deg);
 }
 
 .dropdown {
@@ -390,7 +390,7 @@ hr.style-two {
 	position:relative;
 	top:1px;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 800px) {
   #showcase {
     display: none;
   }
