@@ -136,7 +136,7 @@ textarea {
   <script>
     $(document).ready(function(){
         $("#hide").click(function(){
-            $("nav").toggle(500);
+            $("nav").slideToggle("fast");
         });
     });
         document.getElementById("hide").onclick = function() {myFunction()};
@@ -171,20 +171,20 @@ textarea {
     <hr class="style-two">
   <section class="hakemus">
     <div class="paivahoitohakemus">
-      <form>
+      <form method="get">
         <h2> Lapsen henkilötiedot </h2>
 
         <label for="enimi">Etunimet:</label><br>
-        <input required="" oninvalid="this.setCustomValidity('Etunimi pakollinen')" type="text" id="etunimet" name="etunimet" placeholder="Etunimet"><br>
+        <input type="text" id="etunimet" name="etunimet" placeholder="Etunimet"><br>
 
         <label for="snimi">Sukunimi:</label><br>
-        <input required="" oninvalid="this.setCustomValidity('Sukunimi pakollinen')" type="text" id="sukunimi" name="sukunimi" placeholder="Sukunimi"><br>
+        <input type="text" id="sukunimi" name="sukunimi" placeholder="Sukunimi"><br>
 
         <label for="htunnus">Henkilötunnus:</label><br>
-        <input required="" oninvalid="this.setCustomValidity('Anna henkilötunnus')" type="text" id="henkilotunnus" name="henkilotunnus" placeholder="Henkilötunnus"><br>
+        <input type="text" id="henkilotunnus" name="henkilotunnus" placeholder="Henkilötunnus"><br>
 
         <label for="akieli">Äidinkieli:</label><br>
-          <select required="" oninvalid="this.setCustomValidity('Äidinkieli?')" id="aidinkieli" name="aidinkieli">
+          <select id="aidinkieli" name="aidinkieli">
             <option disabled="" selected value="valitse">Valitse</option>
             <option value="suomi">Suomi</option>
             <option value="ruotsi">Ruotsi</option>
