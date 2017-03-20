@@ -172,39 +172,31 @@ textarea {
   <section class="hakemus">
     <div class="paivahoitohakemus">
       <form method="get">
+        <h2> Lapsen henkilötiedot </h2>
 
-<!-- Lapsen henkilötiedot -->
+        <label for="enimi">Etunimet:</label><br>
+        <input type="text" id="etunimet" name="etunimet" placeholder="Etunimet"><br>
 
-          <h2> Lapsen henkilötiedot </h2>
+        <label for="snimi">Sukunimi:</label><br>
+        <input type="text" id="sukunimi" name="sukunimi" placeholder="Sukunimi"><br>
 
-          <label for="enimi">Etunimet:</label><br>
-          <input type="text" id="etunimet" name="etunimet" placeholder="Etunimet"><br>
+        <label for="htunnus">Henkilötunnus:</label><br>
+        <input type="text" id="henkilotunnus" name="henkilotunnus" placeholder="Henkilötunnus"><br>
 
-          <label for="snimi">Sukunimi:</label><br>
-          <input type="text" id="sukunimi" name="sukunimi" placeholder="Sukunimi"><br>
-
-          <label for="htunnus">Henkilötunnus:</label><br>
-          <input type="text" id="henkilotunnus" name="henkilotunnus" placeholder="Henkilötunnus"><br>
-
-          <label for="akieli">Äidinkieli:</label><br>
-            <select id="aidinkieli" name="aidinkieli">
-              <option disabled="" selected value="valitse">Valitse</option>
-              <option value="suomi">Suomi</option>
-              <option value="ruotsi">Ruotsi</option>
-              <option value="muu">Muu, mikä?</option>
-            </select><br>
-
-          <label for="lemmikkeja">Onko kotonasi lemmikkieläimiä:</label><br>
-            <select id="lemmikkeja" name="lemmikkeja">
-              <option disabled="" selected value="valitse">Valitse</option>
-              <option value="ei">Ei</option>
-              <option value="on">On, mikä?</option>
-            </select><br>
-
-    <hr class="style-two">
-
-<!-- Huoltajien henkilötiedot -->
-
+        <label for="akieli">Äidinkieli:</label><br>
+          <select id="aidinkieli" name="aidinkieli">
+            <option disabled="" selected value="valitse">Valitse</option>
+            <option value="suomi">Suomi</option>
+            <option value="ruotsi">Ruotsi</option>
+            <option value="muu">Muu, mikä?</option>
+          </select><br>
+        <label for="lemmikkeja">Onko kotonasi lemmikkieläimiä:</label><br>
+          <select id="lemmikkeja" name="lemmikkeja">
+            <option disabled="" selected value="valitse">Valitse</option>
+            <option value="ei">Ei</option>
+            <option value="on">On, mikä?</option>
+          </select><br>
+  <hr class="style-two">
           <h2> Huoltajien henkilötiedot </h2>
 
           <label for="enimi">Etunimi:</label><br>
@@ -231,9 +223,6 @@ textarea {
           <label for="sposti">Sähköposti:</label><br>
           <input type="text" id="sahkoposti" name="sahkoposti" placeholder="Sähköposti"><br>
   <hr class="style-two">
-
-  <!-- Puolison/avopuolison henkilötiedot -->
-
           <h3> Puoliso/avopuoliso </h3>
 
           <label for="enimi">Etunimi:</label><br>
@@ -271,29 +260,27 @@ textarea {
             <option value="eronnut">Eronnut</option>
             <option value="muuhuoltaja">Muu huoltaja</option>
           </select><br>
+  <hr class="style-two">
+          <h2> Toivottu päivähoitomuoto </h2>
 
-    <hr class="style-two">
-    
-            <h2> Toivottu päivähoitomuoto </h2>
+          <select id="paivahoitomuoto" name="paivahoitomuoto">
+            <option disabled="" selected value="valitse">Valitse</option>
+            <option value="kokopv">Kokopäivähoito</option>
+            <option value="15pv">Max 15pv/kk</option>
+            <option value="10pv">Max 10pv/kk</option>
+          </select><br>
+          <hr class="style-two">
 
-            <select id="paivahoitomuoto" name="paivahoitomuoto">
-              <option disabled="" selected value="valitse">Valitse</option>
-              <option value="kokopv">Kokopäivähoito</option>
-              <option value="15pv">Max 15pv/kk</option>
-              <option value="10pv">Max 10pv/kk</option>
-            </select><br>
-            <hr class="style-two">
+          <h2> Toivottu hoitoaika </h2>
 
-            <h2> Toivottu hoitoaika </h2>
+          <label for="alkpv">Hoidon tarpeen alkamispäivä:</label><br>
+          <input type="text" id="alkamispaiva" name="alkamispaiva" placeholder="Alkamispäivä"><br>
 
-            <label for="alkpv">Hoidon tarpeen alkamispäivä:</label><br>
-            <input type="text" id="alkamispaiva" name="alkamispaiva" placeholder="Alkamispäivä"><br>
+          <label for="hoitopvlukum">Hoitopäivien lukumäärä/kk:</label><br>
+          <input type="text" id="hoitopvlukum" name="hoitopvlukum" placeholder="Hoitopäivät"><br>
 
-            <label for="hoitopvlukum">Hoitopäivien lukumäärä/kk:</label><br>
-            <input type="text" id="hoitopvlukum" name="hoitopvlukum" placeholder="Hoitopäivät"><br>
-
-            <label for="hoitoaika">Päivittäinen hoitoaika:</label><br>
-            <input type="text" id="hoitoaika" name="hoitoaika" placeholder="Päivittäinen hoitoaika"><br>
+          <label for="hoitoaika">Päivittäinen hoitoaika:</label><br>
+          <input type="text" id="hoitoaika" name="hoitoaika" placeholder="Päivittäinen hoitoaika"><br>
             <hr class="style-two">
 
             <h2> Perheen muut lapset </h2>
