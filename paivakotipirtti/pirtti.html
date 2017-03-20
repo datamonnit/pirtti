@@ -23,14 +23,62 @@
 
 
     </script>
+    <style>
+    #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  content: ▲;
+}
+
+#myBtn:hover {
+  background-color: gray;
+}
+.juttu {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+</style>
   </head>
   <body>
 
     <header>
+      <button onclick="topFunction()" id="myBtn">Ylös</button>
       <div class="container">
         <div id="title"> <p>Puh. 040 123 123<br>Jokutie 4 3405 Jokula<br>sahko.posti@gmail.com</p></div>
           <h1> Päiväkoti Pirtti</h1>
-<button name="myButton" id="hide">&#9776</button>
+<button name="myButton" id="hide">      <div class="juttu" onclick="myFunction(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div></button>
         <nav>
           <ul>
             <li class="current tab1"><a href="pirtti.html" class="fa fa-home">&nbsp;Etusivu </a></li>
@@ -51,7 +99,7 @@
     <hr class="style-two">
     <section id="showcase">
       <div class="container">
-        <h1 class="containerh1">päiväkotiyhdistys pirtti ry</h1>
+        <h1 class="containerh1" style=" font-size:30px;text-align:left;">TERVETULOA PÄIVÄKOTI PIRTTIIN</h1>
         <div id="slider" >
           <figure>
             <img src="../assets/img/kuva1.png">
@@ -66,17 +114,25 @@
     </section>
     <section id="boxes">
         <div class="container2">
-          <p><strong> Lorem ipsum din nev</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed enim ante, rhoncus nec urna sit amet, tincidunt tincidunt lectus. Proin vel egestas ante. Duis fermentum, mauris non ultricies dapibus, orci dui vulputate magna, nec pulvinar nisl est non felis. Ut efficitur ligula vitae ante vulputate, non auctor elit consequat. Integer in justo felis. Duis semper ante non velit maximus vulputate. Cras ac fermentum sapien. Nulla nec libero sed ligula suscipit molestie. Nulla vitae rutrum leo, lobortis porta lectus. Vivamus lorem est, porta vel tellus vel, rutrum volutpat felis. Maecenas mattis, purus in efficitur imperdiet, augue ex gravida purus, ac pulvinar mi risus a massa. Praesent metus urna, pretium at sollicitudin dapibus, semper nec sapien. Nullam elementum eros id ligula sollicitudin scelerisque. Sed viverra risus convallis felis suscipit, nec interdum lectus tempus..<br>
-            Lorem ipsum dolor sit amet, consectetur</p>
+          <p><strong>Päiväkoti Pirtti on Päiväkotyhdistys Pirtti ry</strong>:n ylläpitämä yksityinen päiväkoti Mikkelissä. Päiväkoti on aloittanut toimintansa vuonna 1977. Päiväkoti Pirtti sijaitsee Tikanpellon alueella Tuppuralan kaupunginosassa.
+Mikkelin kaupunki valvoo päiväkodin toimintaa ja sen toimintaa ohjaavat samat lait ja asetukset kuin kunnallista varhaiskasvatusta. Päiväkodissamme on käytössä yksityisen päiväkotihoidon palveluseteli. Perhe hakee palveluseteliä Mikkelin kaupungilta saatuaan päivähoitopaikan päiväkodista. Varhaiskasvatuksen asiakasmaksut määräytyvät kunnallisten maksumääritysperusteiden mukaan. Kunnalliseen asiakasmaksuun lisätään yksityisen päivähoidon omavastuulisä, joka on kokopäivähoidossa olevilta 30 euroa kuukaudessa.
+Päiväkoti Pirtissä toimii neljä lapsiryhmää 1-6 – vuotiaille lapsille.
+</p>
         </div>
         <div id="juttu" class="sidecontainer">
-    <div id="flip" style="font-size:25px; text-align:center;">Pikalinkit</div>
-        <div id="panel">
+    <div id="flip" style="font-size:25px; text-align:center;">Pikalinkit
+</div>
+<script>
+function myFunction(x) {
+    x.classList.toggle("change");
+}
+</script>
+        <div id="panel">  <button name="myButton" id="hide">&#9776</button>
           <ul id="pikalinkit">
-            <li><a href="#">Something1</a></li>
-            <li><a href="#">Something2</a></li>
-            <li><a href="#">Something3</a></li>
-            <li><a href="#">Something4</a></li>
+            <li><a href="../assets/VarhaiskasvatussuunnitelmaPäiväkotiPirtti.pdf">•	Varhaiskasvatussuunnitelma</a></li>
+            <li><a href="http://www.mikkeli.fi/palvelut/yksityisen-paivakotihoidon-palveluseteli/">•	Palvelusetelihakemus</a></li>
+            <li><a href="http://www.mikkeli.fi/palvelut/varhaiskasvatuksen-asiakasmaksut">•	Varhaiskasvatuksen asiakasmaksut</a></li>
+            <li><a href="#">Something12</a></li>
             <li><a href="#">Something1</a></li>
             <li><a href="#">Something2</a></li>
             <li><a href="#">Something3</a></li>
@@ -88,8 +144,29 @@
           </ul>
          </div>
         </div>
+
         <div class="container3">
-          <p><strong> Placeholder is this cool yes </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed enim ante, rhoncus nec urna sit amet, tincidunt tincidunt lectus. Proin vel egestas ante. Duis fermentum, mauris non ultricies dapibus, orci dui vulputate magna, nec pulvinar nisl est non felis. Ut efficitur ligula vitae ante vulputate, non auctor elit consequat. Integer in justo felis. Duis semper ante non velit maximus vulputate. Cras ac fermentum sapien. Nulla nec libero sed ligula suscipit molestie. Nulla vitae rutrum leo, lobortis porta lectus. Vivamus lorem est, porta vel tellus vel, rutrum volutpat felis. Maecenas mattis, purus in efficitur imperdiet, augue ex gravida purus, ac pulvinar mi risus a massa. Praesent metus urna, pretium at sollicitudin dapibus, semper nec sapien. Nullam elementum eros id ligula sollicitudin scelerisque. Sed viverra risus convallis felis suscipit, nec interdum lectus tempus..</p>
+          <p> •	Nuput, 1-3 -vuotiaat (8 päivähoitopaikkaa)<br>
+              •	Metsätähdet, 3-4 -vuotiaat (8 päivähoitopaikkaa)<br>
+              •	Sinikellot , 4-5 -vuotiaat (14-16 päivähoitopaikkaa)<br>
+              •	Esikot, esikoulu (8-10 esiopetuspaikkaa)<br><br>
+          </p>
+        </div>
+        <div class="container4">
+          <p> Henkilökuntaan kuuluu kolme lastentarhanopettajaa, kolme lastenhoitajaa sekä avustaja.
+              Toiminnassamme painotamme lapsikeskeisyyttä, turvallisuutta sekä luonto- ja ympäristökasvatusta.<br>
+              Päiväkodin aukioloaika on ma-pe 6.30 – 17 .
+        </p>
+        </div>
+        <div class="container5">
+          <p> <h1>Henkilökunta:</h1><br>
+              Heli Joensuu, päiväkodin johtaja / lastentarhanopettaja<br>
+              Sari Pekkanen, varajohtaja, sosionomi (amk)<br>
+              Eija Laamanen, lastentarhanopettaja<br>
+              Riitta Ruuska , lastenhoitaja<br>
+              Arja Hurri , päivähoitaja<br>
+              Taija Virtanen, lähihoitaja<br>
+          </p>
         </div>
     </section>
 
@@ -118,5 +195,23 @@ $(document).ready(function(){
         $("#panel").slideToggle("fast");
     });
 });
+</script>
+<script>
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 </script>
 </html>

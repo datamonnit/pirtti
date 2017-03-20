@@ -7,6 +7,30 @@ html {
 #show {
   display: none;
 }
+.juttu {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
 body{
   font: 15px/1.5 Arial, Helvetica,sans-serif;
   padding:0;
@@ -18,12 +42,16 @@ body{
 .container{
   width:960px;
   margin:auto;
+  
 }
 .containerh1 {
-  font-size: 70px;
+  font-size: 50px;
+  padding-bottom: 20px;
   font-variant: small-caps;
   text-align: center;
   margin-bottom: -20px;
+  font-family:  "Comic Sans MS",  sans-serif;
+
 }
 .container2{
   width:65%;
@@ -46,11 +74,22 @@ body{
 }
 
 .container4{
-  margin-top: 100px;
-  width:960px;
+  margin-top: 20px;
+  width:65%;
   overflow:hidden;
   color: black;
-  background-color: #e8fbff;
+  background-color: #e9ffe8;
+  padding: 20px;
+
+
+}
+
+.container5{
+  margin-top: 20px;
+  width:65%;
+  overflow:hidden;
+  color: black;
+  background-color: #ffe8e8;
   padding: 20px;
 
 
@@ -62,13 +101,13 @@ body{
     color: black;
     background-color:  #e8fbff;
     padding: 20px, 20px;
-    margin-top: -310px;
+    margin-top: -270px;
 
 }
 .sidecontainer li {
     text-decoration: none;
     color: black;
-    text-align: center;
+    text-align: left;
     font-size: 15px;
     margin: auto;
     padding-left: 20px;
@@ -111,6 +150,7 @@ body{
   font-size: 15px;
 
   }
+
 .yhteystiedotmoisio{
   display: block;
   font-size: 15px;
@@ -500,6 +540,7 @@ display: none;
   }
 
   li.tab2{
+
     background-color: #ceeaff;
     padding: 10px;
     float: left;
@@ -574,12 +615,40 @@ display: none;
 
    }
 
-  .container3{
+   .container3{
       background-color: #e8fbff;
       width:91vw;
       overflow: hidden;
       color: black;
       display: block;
+
+    }
+
+    .container4{
+      width:91vw;
+      overflow:hidden;
+      color: black;
+      background-color: #e9ffe8;
+      padding: 20px;
+
+
+    }
+
+    .container5{
+      width:91vw;
+      overflow:hidden;
+      color: black;
+      background-color: #ffe8e8;
+      padding: 20px;
+
+
+    }
+    .sidecontainer{
+      width:91vw;
+      overflow:hidden;
+      color: black;
+      background-color: #ffe8e8;
+      padding: 20px;
 
     }
     .container3 p {
@@ -599,11 +668,7 @@ display: none;
     display: none;
   }
 
-  .sidecontainer{
 
-    display: none;
-
-  }
 
   #showcase{
     width: 100vw;
