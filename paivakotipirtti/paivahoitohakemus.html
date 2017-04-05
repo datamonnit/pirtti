@@ -171,20 +171,20 @@ textarea {
     <hr class="style-two">
   <section class="hakemus">
     <div class="paivahoitohakemus">
-      <form method="get">
+      <form action="send.php" method="POST">
 
 <!-- Lapsen henkilötiedot -->
 
           <h2> Lapsen henkilötiedot </h2>
 
           <label for="enimi">Etunimet:</label><br>
-          <input type="text" id="etunimet" name="etunimet" placeholder="Etunimet"><br>
+          <input type="text" id="lapsietunimet" name="lapsietunimi" placeholder="Etunimet"><br>
 
           <label for="snimi">Sukunimi:</label><br>
-          <input type="text" id="sukunimi" name="sukunimi" placeholder="Sukunimi"><br>
+          <input type="text" id="lapsisukunimi" name="lapsisukunimi" placeholder="Sukunimi"><br>
 
           <label for="htunnus">Henkilötunnus:</label><br>
-          <input type="text" id="henkilotunnus" name="henkilotunnus" placeholder="Henkilötunnus"><br>
+          <input type="text" id="lapsihenkilotunnus" name="lapsihenkilotunnus" placeholder="Henkilötunnus"><br>
 
           <label for="akieli">Äidinkieli:</label><br>
             <select id="aidinkieli" name="aidinkieli">
@@ -203,7 +203,7 @@ textarea {
 
     <hr class="style-two">
 
-<!-- Huoltajien henkilötiedot -->
+<!-- Huoltajien henkilötiedot
 
           <h2> Huoltajien henkilötiedot </h2>
 
@@ -232,7 +232,7 @@ textarea {
           <input type="text" id="sahkoposti" name="sahkoposti" placeholder="Sähköposti"><br>
   <hr class="style-two">
 
-  <!-- Puolison/avopuolison henkilötiedot -->
+
 
           <h3> Puoliso/avopuoliso </h3>
 
@@ -273,7 +273,7 @@ textarea {
           </select><br>
 
     <hr class="style-two">
-    
+
             <h2> Toivottu päivähoitomuoto </h2>
 
             <select id="paivahoitomuoto" name="paivahoitomuoto">
@@ -308,7 +308,7 @@ textarea {
             <label>  <input type="radio" id="ei" name="neuvolayhteys" value="Ei" />Ei</label><br>
 
             <label for="neuvola">Mitä lastenneuvolaa olette viimeksi käyttänyt, osoite:</label><br>
-            <input type="text" id="neuvola" name="neuvola" required="" oninvalid="this.setCustomValidity('Täytä tämä kohta')"><br>
+            <input type="text" id="neuvola" name="neuvola" oninvalid="this.setCustomValidity('Täytä tämä kohta')"><br>
 
             <label for="sairaudet">Sairaudet, allergiat, ruokavalio ym</label><br>
             <textarea rows="8" cols="100"></textarea><br>
@@ -318,9 +318,9 @@ textarea {
 
 
             <label for="lisatiedot">Lisätiedot hakemuksen perusteeksi:</label><br>
-            <textarea rows="8" cols="100"></textarea><br>
+            <textarea rows="8" cols="100"></textarea><br> -->
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="lähetä!">
 
 
 
