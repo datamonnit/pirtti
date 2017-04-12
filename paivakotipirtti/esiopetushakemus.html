@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Päiväkoti pirtti">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	  <meta name="keywords" content="päiväkoti, päiväkotiyhdistys, Päiväkotiyhdistys pirtti ry">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>Päiväkoti Pirtti | Päivähoitohakemus</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/slider.css">
+
+    <style>
+    #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  content: ▲;
+}
+
+#myBtn:hover {
+  background-color: gray;
+}
+    input[type=text], select  {
+        width: 40%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+      background-color: darkgray;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 60%;
+    transition: all 0.5s ease 0s;
+    font-size: 20px;
+    }
+    input[type=submit]:hover {
+        background-color:#54ff62;
+    }
+textarea {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize:vertical ;
+}
+
+    .paivahoitohakemus {
+      margin: auto;
+      max-width: 50vw;
+        border-radius: 2px;
+        background-color: #f2f2f2;
+        padding: 15px;
+        margin-bottom: 500px;
+    }
+
+    label {
+      color: #494949;
+      font-weight: bold;
+    }
+    @media screen and (max-width: 800px) {
+      input[type=text], select  {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+      }
+
+      input[type=submit] {
+        background-color: darkgray;
+      color: black;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.5s ease 0s;
+      font-size: 20px;
+      }
+      input[type=submit]:hover {
+          background-color:#54ff62;
+      }
+  textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize:vertical ;
+  }
+  .paivahoitohakemus {
+    margin: auto;
+    max-width: 100%;
+      border-radius: 2px;
+      background-color: #f2f2f2;
+      padding: 15px;
+      padding-top: 20px;
+      margin-bottom: 500px;
+
+  }
+
+
+     }
+
+
+    </style>
+  </head>
+  <script>
+    $(document).ready(function(){
+        $("#hide").click(function(){
+            $("nav").slideToggle("fast");
+        });
+    });
+        document.getElementById("hide").onclick = function() {myFunction()};
+
+
+
+  </script>
+  <body>
+  <button onclick="topFunction()" id="myBtn">Ylös</button>
+    <header>
+      <div class="container">
+        <div id="title"> <p>Puh. 040 123 123<br>Jokutie 4 3405 Jokula<br>sahko.posti@gmail.com</p></div>
+          <h1> Päiväkoti Pirtti</h1>
+          <button   id="hide">&#9776</button>
+        <nav>
+          <ul>
+            <li class="current tab1"><a href="pirtti.html" class="fa fa-home">&nbsp;Etusivu </a></li>
+            <li  class="tab4"><a href="yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
+            <li  class="tab5 dropdown">
+             <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
+               <div class="dropdown-content">
+                 <a href="paivahoitohakemus.html">Päivähoitohakemus</a>
+                 <a href="#">placeholder</a>
+                 <a href="#">placeholder</a>
+               </div>
+            </li>
+            <li  class="tab6"><a href="kuvia.html" class="fa fa-image">&nbsp;Kuvia</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <hr class="style-two">
+  <section class="hakemus">
+    <div class="paivahoitohakemus">
+      <form action="esiopetushakemussend.php" method="POST">
+
+        <h2> Lapsen henkilötiedot </h2>
+
+        <label for="enimi">Etunimet:</label><br>
+        <input type="text" id="lapsietunimet" name="lapsietunimi" placeholder="Etunimet"><br>
+
+        <label for="snimi">Sukunimi:</label><br>
+        <input type="text" id="lapsisukunimi" name="lapsisukunimi" placeholder="Sukunimi"><br>
+
+        <label for="htunnus">Henkilötunnus:</label><br>
+        <input type="text" id="lapsihenkilotunnus" name="lapsihenkilotunnus" placeholder="Henkilötunnus"><br>
+
+
+        <label for="osoite">Lähiosoite, postinumero ja postitoimipaikka:</label><br>
+        <input type="text" id="lapsiosoite" name="lapsiosoite" placeholder="Lähiosoite, postinumero ja postitoimipaikka"><br>
+
+        <label for="kotikunta">Kotikunta:</label><br>
+        <input type="text" id="lapsikotikuntas" name="lapsikotikunta" placeholder="kotikunta"><br>
+
+        <label for="puhkoti">Puhelin kotiin:</label><br>
+        <input type="text" id="puhkoti" name="puhkoti" placeholder="Puh."><br>
+
+        <label for="akieli">Äidinkieli:</label><br>
+          <select id="lapsiaidinkieli" name="lapsiaidinkieli">
+            <option disabled="" selected value="valitse">Valitse</option>
+            <option value="suomi">Suomi</option>
+            <option value="ruotsi">Ruotsi</option>
+            <option value="muu">Muu, mikä?</option>
+          </select><br>
+
+        <label for="lemmikkeja">Onko kotonasi lemmikkieläimiä:</label><br>
+          <select id="lemmikkeja" name="lemmikkeja">
+            <option disabled="" selected value="valitse">Valitse</option>
+            <option value="ei">Ei</option>
+            <option value="on">On, mikä?</option>
+          </select><br>
+
+  <hr class="style-two">
+      </form>
+
+    </div>
+  </section>
+
+  <script>
+
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+          document.getElementById("myBtn").style.display = "block";
+      } else {
+          document.getElementById("myBtn").style.display = "none";
+      }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+  }
+  </script>
+
+    <footer>
+      <p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2017</p>
+    </footer>
+  </body>
+</html>
