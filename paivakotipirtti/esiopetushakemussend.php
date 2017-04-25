@@ -3,6 +3,9 @@
 	$lapsietunimi = $_POST['lapsietunimi'];
 	$lapsisukunimi = $_POST['lapsisukunimi'];
 	$lapsihenkilotunnus = $_POST['lapsihenkilotunnus'];
+  $lapsiosoite = $_POST['lapsiosoite'];
+  $lapsikotikunta = $_POST['lapsikotikunta'];
+  $puhkoti = $_POST['puhkoti'];
 	$lapsiaidinkieli = $_POST['lapsiaidinkieli'];
 	$lemmikkeja = $_POST['lemmikkeja'];
 	$huoltajaetunimi = $_POST['huoltajaetunimi'];
@@ -14,7 +17,6 @@
 	$huoltajatyoosoite = $_POST['huoltajantyoosoite'];
 	$huoltajasahkoposti = $_POST['huoltajasahkoposti'];
 	$puolisoetunimi = $_POST['puolisoetunimi'];
-	$puolisosukunimi = $_POST['puolisosukunimi'];
 	$puolisohenkilotunnus = $_POST['puolisohenkilotunnus'];
 	$puolisoammatti = $_POST['puolisoammatti'];
 	$puolisotyo = $_POST['puolisotyo'];
@@ -22,10 +24,11 @@
 	$puolisotyoosoite = $_POST['puolisotyoosoite'];
 	$puolisosähköposti = $_POST['puolisosähköposti'];
 	$perhesuhde = $_POST['perhesuhde'];
-	$paivahoitomuoto = $_POST['paivahoitomuoto'];
+  $paivahoidontarve = $_POST['paivahoidontarve'];
 	$alkamispaiva = $_POST['alkamispaiva'];
 	$hoitopvlukum = $_POST['hoitopvlukum'];
 	$hoitoaika = $_POST['hoitoaika'];
+  $kuljetustarve = $_POST['kuljetustarve'];
 	$muutlapset = $_POST['muutlapset'];
 	$neuvolayhteys = $_POST['neuvolayhteys'];
 	$neuvola = $_POST['neuvola'];
@@ -37,6 +40,9 @@
  "Lapsen etunimet: $lapsietunimi "
 	.PHP_EOL.	"Lapsen sukunimi:   $lapsisukunimi"
 	.PHP_EOL. "Lapsen henkilötunnus:   $lapsihenkilotunnus"
+  .PHP_EOL. "Lähiosoite, postinumero ja postitoimipaikka: $lapsiosoite"
+  .PHP_EOL. "Kotikunta: $lapsikotikunta"
+  .PHP_EOL. "Puhelin kotiin: $puhkoti"
 	.PHP_EOL. "Lapsen äidinkieli:   $lapsiaidinkieli"
 	.PHP_EOL. "Onko kotona lemmikkieläimiä:   $lemmikkeja"
 	.PHP_EOL. PHP_EOL. PHP_EOL.
@@ -58,12 +64,14 @@
 	.PHP_EOL. "Puolison sähköposti:   $puolisosähköposti"
 	.PHP_EOL. "Perhesuhde:   $perhesuhde"
 	.PHP_EOL. PHP_EOL. PHP_EOL.
-	PHP_EOL. "Toivottu päivähoitomuoto:   $paivahoitomuoto"
-	.PHP_EOL. PHP_EOL. PHP_EOL.
+  PHP_EOL. "Päivähoidon tarve: $paivahoidontarve"
+  .PHP_EOL. PHP_EOL. PHP_EOL.
 	PHP_EOL. "Toivottu alkamispäivä:   $alkamispaiva"
 	.PHP_EOL. "Hoitopäivien lukumäärä/kk:   $hoitopvlukum"
 	.PHP_EOL. "Päivittäinen hoitoaika:   $hoitoaika"
 	.PHP_EOL. PHP_EOL. PHP_EOL.
+  PHP_EOL. "Kuljetuksen tarve: $kuljetustarve"
+  .PHP_EOL. PHP_EOL. PHP_EOL.
 	PHP_EOL. "Kotona asuvien alle 18-vuotiaiden lasten nimet, syntymäajat sekä alle kouluikäisten päivähoitopaikat:   $muutlapset"
 	.PHP_EOL. PHP_EOL. PHP_EOL.
 	PHP_EOL. "Saako tarvittaessa olla yhteydessä päivähoidon eri yhteistyötahojen (kuten neuvolan) kanssa lapsen kehitystä ja terveyttä koskevissa asioissa::   $neuvolayhteys"
@@ -81,12 +89,12 @@
 		$headers = 'From: noreply@pirtti.com' . "\r\n" .
 						    'Reply-To: oreply@pirtti.com' . "\r\n" .
 						    'X-Mailer: PHP/' . phpversion();
-	mail('juho.pirila@outlook.com', 'Paivahoitohakemus | Pirtti',$message, $headers);
+	mail('juho.pirila@outlook.com', 'Esiopetushakemus | Pirtti',$message, $headers);
 
 
 
-	echo "Päivähoitohakemus lähetetty!";
-	    header( "Refresh:1; url=Paivahoitohakemus.html", true, 1);
+	echo "Esiopetushakemus lähetetty!";
+	    header( "Refresh:1; url=esiopetushakemus.html", true, 1);
 
 
 
