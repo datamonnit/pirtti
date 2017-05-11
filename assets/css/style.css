@@ -73,17 +73,15 @@ body{
 
 }
 .sidecontainer{
-    width:250px;
     float: right;
-    overflow:hidden;
     color: black;
     background-color:  #e8fbff;
     padding: 20px, 20px;
     margin-top: -270px;
+    list-style-type: square;
 
 }
 .sidecontainer li {
-    text-decoration: none;
     color: black;
     text-align: left;
     font-size: 15px;
@@ -93,26 +91,19 @@ body{
     padding-bottom: 10px;
 }
   .sidecontainer a {
-    text-decoration: none;
     color: black;
     font-size: 15px;
 
   }
+ul.d {list-style-type: square;}
+li.f {list-style-type: square;}
 
   .sidecontainer a:hover{
-
         text-decoration: underline;
 
   }
-.pikalinkit {
-  color: darkgray;
-  background-color: #cefff2;
-  font-variant: small-caps;
-  margin-left: auto;
-  text-align: center;
-  margin-top: 0;
-  font-size: 25px;
-
+  ul{
+  list-style-type: square;
 }
 
 #flip {
@@ -670,10 +661,11 @@ display: none;
     }
     .sidecontainer{
       width:91vw;
-      overflow:hidden;
       color: black;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin: auto;
       background-color: #ffe8e8;
-      padding: 20px;
 
     }
     .container3 p {
