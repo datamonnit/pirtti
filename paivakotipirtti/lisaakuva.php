@@ -1,7 +1,5 @@
 <?php
-
-
-$target_dir = "./assets/img/";
+$target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -17,27 +15,38 @@ if(isset($_POST["submit"])) {
 }
 
 if (file_exists($target_file)) {
-    echo "Tämä kuva on jo ladattuna sivuille!";
+    echo "";
     $uploadOk = 0;
 }
 if ($_FILES["fileToUpload"]["size"] > 500000000000000) {
     echo "Kuvan tiedostokoko on liian suuri";
    $uploadOk = 0;
 }
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
+
+if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
     echo "Vain JPG, JPEG, PNG & GIF tiedostomuodot ovat sallittuja";
     $uploadOk = 0;
 }
+
 if ($uploadOk == 0) {
-    echo "Kuvaasi ei ladattu";
+    echo "";
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " on ladattu.";
+      echo "Tiedosto ". basename( $_FILES["fileToUpload"]["name"]). " on ladattu.";
+             echo '<div style="float:left;margin-right:10px"><p>Tässä lataamasi kuva</p>
+       <img height=150px; width=150px; src="'.$target_file.'" alt="kuvaa ei löydy" /></br>
+       </div>';
     } else {
         echo "Kuvan lataamisessa tapahtui virhe!";
     }
 }
+
+  //  $kolme = mysqli_real_escape_string($link, $target_file2);
+  //  $sql = "INSERT INTO kuva_vastaus (kuvatiedosto, aanestys_id)
+  //  VALUES ('$kolme', '$last_id')";
+  //  if(mysqli_query($link, $sql)){
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -90,19 +99,20 @@ if ($uploadOk == 0) {
                  <a href="palvelusetelihakemus.html">Palvelusetelihakemus</a>
                </div>
             </li>
-            <li  class="tab6"><a href="kuvia.html" class="fa fa-image">&nbsp;Kuvia</a></li>
+            <li  class="tab6"><a href="kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
           </ul>
         </nav>
       </div>
     </header>
     <hr class="style-two">
+    <center>
     <form action="lisaakuva.php" method="post" enctype="multipart/form-data"><br>
         <label for="enimi">Valitse ladattava kuva:</label><br>
         <input type="file" name="fileToUpload" id="fileToUpload"><br>
         <label for="enimi">Kuvan nimi/otsikko</label><br>
         <input type="text" name="otsikko" id="otsikko" placeholder="Anna kuvalle otsikko/nimi"><br>
         <input type="submit" value="Upload Image" name="submit"><br>
-    </form>
+    </form></center>
 <section><div class="gallery">
 </div></section>
 <script>

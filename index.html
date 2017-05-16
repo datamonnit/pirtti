@@ -9,44 +9,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <title>Päiväkoti Pirtti | Etusivu</title>
+    <title>Päiväkoti Pirtti</title>
     <style>
-    html {
+    html{
       margin: 0;
-    }
-    body {
-      margin: 0;
-    }
-    .moisio {
-      height: 100vw;
-      width: 50%;
-      background-color: #ffdcce;
-      display: block;
-      float: left;
-    }
-    .pirtti {
-      height: 100vw;
-      width: 50%;
-      background-color: #dcceff;
-      display: block;
-      float: right;
-    }
-    h1 #moisio {
-      margin:
-    }
 
+    }
+    body{
+      margin: 0;
+      margin-top: -50px;
+      padding:0;
+    }
+    .moisio{
+      max-width: 950px;
+      float: left;
+      margin-left: 0;
+    }
+    .moisio{ transition: all .5s ease-in-out; }
+    .moisio:hover { transform: scale(1.1); }
+    .pirtti{
+      max-width: 950px;
+      float: right;
+      margin-right: 0;
+}
+    .pirtti{ transition: all .5s ease-in-out; }
+    .pirtti:hover { transform: scale(1.1); }
     </style>
   </head>
   <body>
-    <div class="moisio">
-    <a href="moisionpaivakoti/moisionpaivakoti.html" class="fa fa-home">  <h1 id="moisio"> Moision Päiväkoti </h1>
-      </a>
+  <div class="moisio"><a href="moisionpaivakoti/moisionpaivakoti.html"><img src="assets/img/Moisionpaivakoticover.png" alt="Moision päiväkoti"></a></div>
+    <div class="pirtti"> <a href="paivakotipirtti/pirtti.html"><img src="assets/img/Paivakotipirtticover.png" alt="Päiväkoti Pirtti"></a></div>
 
-    </div>
-    <div class="pirtti">
-      <a href="paivakotipirtti/pirtti.html" class="fa fa-home">  <h1 id="pirtti">Päiväkoti Pirtti</h1></a>
-
-    </div>
 
   </body>
 </html>

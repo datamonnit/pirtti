@@ -65,7 +65,7 @@ Password<input type="password" name="pswrd"/>
 function check(form)/*function to check userid & password*/
 {
  /*the following code checkes whether the entered userid and password are matching*/
- if(form.userid.value == "pirttipk" && form.pswrd.value == "pkpirtti")
+ if(form.userid.value == "asd" && form.pswrd.value == "asd")
   {
     window.open('lisaakuva.php')/*opens the target page while Id & password matches*/
   }
