@@ -35,6 +35,7 @@ if ($uploadOk == 0) {
       echo "Tiedosto ". basename( $_FILES["fileToUpload"]["name"]). " on ladattu.";
              echo '<div style="float:left;margin-right:10px"><p>Tässä lataamasi kuva</p>
        <img height=150px; width=150px; src="'.$target_file.'" alt="kuvaa ei löydy" /></br>
+       <p>
        </div>';
     } else {
         echo "Kuvan lataamisessa tapahtui virhe!";

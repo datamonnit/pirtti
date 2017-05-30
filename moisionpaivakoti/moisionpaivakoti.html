@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <title>Päiväkoti Pirtti | Etusivu</title>
+    <title>Etusivu - Moision päiväkoti</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/slider.css">
     <script>
@@ -19,31 +19,37 @@
           });
       });
           document.getElementById("hide").onclick = function() {myFunction()};
-
-
-
     </script>
+    <style>
+
+</style>
+
   </head>
   <body>
 
     <header>
+      <button onclick="topFunction()" id="myBtn">Ylös</button>
       <div class="container">
-        <div id="title"> <p>Puh. 040 123 123<br>Jokutie 4 3405 Jokula<br>sahko.posti@gmail.com</p></div>
-          <h1> Päiväkoti Pirtti</h1>
-<button name="myButton" id="hide">&#9776</button>
+          <div id="title"> <p>puh. 0445 336 555<br>Moisiontie 5 50520 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
+          <h1> Moision päiväkoti</h1>
+<button name="myButton" id="hide">      <div class="juttu" onclick="myFunction(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div></button>
         <nav>
           <ul>
-            <li class="current tab1"><a href="pirtti.html" class="fa fa-home">&nbsp;Etusivu </a></li>
+            <li class="current tab1"><a href="moisionpaivakoti.html" class="fa fa-home">&nbsp;Etusivu </a></li>
             <li  class="tab4"><a href="yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
             <li  class="tab5 dropdown">
              <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
                <div class="dropdown-content">
                  <a href="paivahoitohakemus.html">Päivähoitohakemus</a>
-                 <a href="#">placeholder</a>
-                 <a href="#">placeholder</a>
+                 <a href="esiopetushakemus.html">Esiopetushakemus</a>
+                 <a href="palvelusetelihakemus.html">Palvelusetelihakemus</a>
                </div>
             </li>
-            <li  class="tab6"><a href="kuvia.html" class="fa fa-image">&nbsp;Kuvia</a></li>
+            <li  class="tab6"><a href="kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
           </ul>
         </nav>
       </div>
@@ -51,7 +57,7 @@
     <hr class="style-two">
     <section id="showcase">
       <div class="container">
-        <h1 class="containerh1">päiväkotiyhdistys pirtti ry</h1>
+<br><br><br>
         <div id="slider" >
           <figure>
             <img src="../assets/img/kuva1.png">
@@ -66,57 +72,72 @@
     </section>
     <section id="boxes">
         <div class="container2">
-          <p><strong> Lorem ipsum din nev</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed enim ante, rhoncus nec urna sit amet, tincidunt tincidunt lectus. Proin vel egestas ante. Duis fermentum, mauris non ultricies dapibus, orci dui vulputate magna, nec pulvinar nisl est non felis. Ut efficitur ligula vitae ante vulputate, non auctor elit consequat. Integer in justo felis. Duis semper ante non velit maximus vulputate. Cras ac fermentum sapien. Nulla nec libero sed ligula suscipit molestie. Nulla vitae rutrum leo, lobortis porta lectus. Vivamus lorem est, porta vel tellus vel, rutrum volutpat felis. Maecenas mattis, purus in efficitur imperdiet, augue ex gravida purus, ac pulvinar mi risus a massa. Praesent metus urna, pretium at sollicitudin dapibus, semper nec sapien. Nullam elementum eros id ligula sollicitudin scelerisque. Sed viverra risus convallis felis suscipit, nec interdum lectus tempus..<br>
-            Lorem ipsum dolor sit amet, consectetur</p>
+          <p>
+          </p>
         </div>
         <div id="juttu" class="sidecontainer">
-    <div id="flip">Pikalinkit</div>
+    <div id="flip" style="font-size:25px; text-align:center;">Pikalinkit
+</div>
+<script>
+function myFunction(x) {
+    x.classList.toggle("change");
+}
+</script>
         <div id="panel">
-          <ul id="pikalinkit">
-            <li><a href="#">Something1</a></li>
-            <li><a href="#">Something2</a></li>
-            <li><a href="#">Something3</a></li>
-            <li><a href="#">Something4</a></li>
-            <li><a href="#">Something1</a></li>
-            <li><a href="#">Something2</a></li>
-            <li><a href="#">Something3</a></li>
-            <li><a href="#">Something4</a></li>
-            <li><a href="#">Something1</a></li>
-            <li><a href="#">Something2</a></li>
-            <li><a href="#">Something3</a></li>
-            <li><a href="#">Something4</a></li>
+          <ul id="pikalinkit" class="d" >
+            <hr class="style-two" style="
+              border: 2;
+              height: 6px;
+              background: #dcceff;">
+            <li class="f"><a href="../assets/VarhaiskasvatussuunnitelmaPäiväkotiPirtti.pdf">Varhaiskasvatussuunnitelma</a></li>
+            <li class="f"><a href="http://www.mikkeli.fi/palvelut/yksityisen-paivakotihoidon-palveluseteli/">Palvelusetelihakemus</a></li>
+            <li class="f"><a href="http://www.mikkeli.fi/palvelut/varhaiskasvatuksen-asiakasmaksut">Varhaiskasvatuksen asiakasmaksut</a></li>
+
           </ul>
          </div>
         </div>
+
         <div class="container3">
-          <p><strong> Placeholder is this cool yes </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed enim ante, rhoncus nec urna sit amet, tincidunt tincidunt lectus. Proin vel egestas ante. Duis fermentum, mauris non ultricies dapibus, orci dui vulputate magna, nec pulvinar nisl est non felis. Ut efficitur ligula vitae ante vulputate, non auctor elit consequat. Integer in justo felis. Duis semper ante non velit maximus vulputate. Cras ac fermentum sapien. Nulla nec libero sed ligula suscipit molestie. Nulla vitae rutrum leo, lobortis porta lectus. Vivamus lorem est, porta vel tellus vel, rutrum volutpat felis. Maecenas mattis, purus in efficitur imperdiet, augue ex gravida purus, ac pulvinar mi risus a massa. Praesent metus urna, pretium at sollicitudin dapibus, semper nec sapien. Nullam elementum eros id ligula sollicitudin scelerisque. Sed viverra risus convallis felis suscipit, nec interdum lectus tempus..</p>
+          <p>
+          </p>
+        </div>
+        <div class="container4">
+          <p>
+        </p>
+        </div>
+        <div class="container5">
+          <p>
+          </p>
         </div>
     </section>
-
-    <footer>
+  <footer>
       <p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2017</p>
-      <nav>
-        <ul>
-          <li><a href="pirtti.html" class="fa fa-home">&nbsp;Etusivu </a></li>
-          <li><a href="yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
-          <li>
-           <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
-             <div class="dropdown-content">
-               <a href="paivahoitohakemus.html">Päivähoitohakemus</a>
-               <a href="#">placeholder</a>
-               <a href="#">placeholder</a>
-             </div>
-          </li>
-          <li><a href="kuvia.html" class="fa fa-image">&nbsp;Kuvia</a></li>
-        </ul>
-      </nav>
-    </footer>
+  </footer>
   </body>
+
   <script>
 $(document).ready(function(){
     $("#flip").click(function(){
         $("#panel").slideToggle("fast");
     });
 });
+</script>
+<script>
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 </script>
 </html>
