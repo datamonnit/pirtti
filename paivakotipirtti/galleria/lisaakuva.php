@@ -1,5 +1,5 @@
 <?php
-$target_dir = "uploads/";
+$target_dir = "galleria/uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -18,7 +18,7 @@ if (file_exists($target_file)) {
     echo "";
     $uploadOk = 0;
 }
-if ($_FILES["fileToUpload"]["size"] > 500000000000000) {
+if ($_FILES["fileToUpload"]["size"] > 500000) {
     echo "Kuvan tiedostokoko on liian suuri";
    $uploadOk = 0;
 }
@@ -61,8 +61,8 @@ if ($uploadOk == 0) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Päiväkoti Pirtti - Lisää kuva</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/slider.css">
+    <link rel="stylesheet" href="..../assets/css/style.css">
+    <link rel="stylesheet" href="..../assets/css/slider.css">
     <script>
       $(document).ready(function(){
           $("#hide").click(function(){

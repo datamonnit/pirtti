@@ -249,6 +249,10 @@ function yesnoCheck2(that) {
           <label for="tyo">Nykyinen työ-/opiskelupaikka:</label><br>
           <input type="text" id="huoltajatyo" name="huoltajatyo" placeholder="Nykyinen työ-/opiskelupaikka"><br>
 
+
+          <label for="tyo">puhelinnumero:</label><br>
+          <input type="text" id="huoltajapuhelin" name="huoltajapuhelin" placeholder="puhelinnumero"><br>
+
           <label for="taika">Työaika esim(7:00-15:00):</label><br>
           <input type="text" id="huoltajatyoaika" name="huoltajatyoaika" placeholder="Työaika"><br>
 
@@ -287,9 +291,9 @@ function yesnoCheck2(that) {
           <label for="sposti">Sähköposti:</label><br>
           <input type="text" id="puolisosähköposti" name="puolisosähköposti" placeholder="Sähköposti"><br>
 
-          <label for="perhesuhde">Perhesuhde:</label><br>
+          <label for="perhesuhde">Perhesuhde</label><br>
           <select id="perhesuhde" name="perhesuhde">
-            <option disabled="" selected value="valitse">Valitse</option>
+            <option disabled selected value="valitse">Valitse</option>
             <option value="naimaton">Naimaton</option>
             <option value="avioliitossa">Avioliitossa</option>
             <option value="avoliitossa">Avoliitossa</option>
@@ -304,7 +308,7 @@ function yesnoCheck2(that) {
             <h2> Toivottu päivähoitomuoto </h2>
 
             <select id="paivahoitomuoto" name="paivahoitomuoto">
-              <option disabled="" selected value="valitse">Valitse</option>
+              <option selected value="valitse">Valitse</option>
               <option value="kokopv">Kokopäivähoito</option>
               <option value="15pv">Max 15pv/kk</option>
               <option value="10pv">Max 10pv/kk</option>
@@ -338,14 +342,17 @@ function yesnoCheck2(that) {
             <input type="text" id="neuvola" name="neuvola" oninvalid="this.setCustomValidity('Täytä tämä kohta')"><br>
 
             <label for="sairaudet">Sairaudet, allergiat, ruokavalio ym</label><br>
-            <textarea name="sairaudet" rows="8" cols="100"></textarea><br>
+            <textarea id="sairaudut" name="sairaudet" rows="8" cols="100"></textarea><br>
 
             <label for="sairaalahoidot">Onko lapsi ollut sairaalahoidossa tai jatkuvassa lääkärinhoidossa, milloin ja miksi?</label><br>
             <textarea name"sairaalahoidot" rows="8" cols="100"></textarea><br>
 
 
             <label for="lisatiedot">Lisätiedot hakemuksen perusteeksi:</label><br>
-            <textarea name"lisatiedot" rows="8" cols="100"></textarea><br>
+            <textarea id="lisatiedot" name"lisatiedot" rows="8" cols="100"></textarea><br>
+
+
+
 
             <input type="submit" value="submit">
 

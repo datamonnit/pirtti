@@ -1,5 +1,5 @@
 <?php
-$dirname = "uploads/";
+$dirname = "galleria/uploads/";
 $images = scandir($dirname);
 $ignore = Array(".", "..");
 $kuvat_html = "";
@@ -62,6 +62,7 @@ foreach($images as $curimg){
 
       <div class="container">
         <?php echo $kuvat_html;
+
         ?>
       </div><br><br><br><br>
     </section>
