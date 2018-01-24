@@ -1,51 +1,55 @@
 <?php
-$target_dir = "galleria/uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+//pääsysivulle
+
+
+//tarkistus
 if(isset($_POST["submit"])) {
+  //kuvanpaikka
+  $target_dir = "uploads/";
+  $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+  $uploadOk = 1;
+  $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
+
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
-        echo "File is not an image.";
+        echo "Tiedostomuoto ei sallittu!";
         $uploadOk = 0;
     }
+
+  if (file_exists($target_file)) {
+      echo "Sama kuva on jo ladattu!";
+      $uploadOk = 0;
+  }
+  if ($_FILES["fileToUpload"]["size"] > 500000) {
+      echo "Kuvan tiedostokoko on liian suuri";
+     $uploadOk = 0;
+  }
+  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+  && $imageFileType != "gif" ) {
+      echo "Vain JPG, JPEG, PNG & GIF tiedostomuodot ovat sallittuja.";
+      $uploadOk = 0;
+  }
+  //kuvan lataaminen
+  if ($uploadOk == 0) {
+      echo "Kuvan lataamisessa tapahtui virhe!";
+  } else {
+      if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        echo "Tiedosto ". basename( $_FILES["fileToUpload"]["name"]). " on ladattu.";
+               echo '<div style="float:left;margin-right:10px"><p>Tässä lataamasi kuva</p>
+         <img height=150px; width=150px; src="'.$target_file.'" alt="kuvaa ei löydy" /></br>
+         <p>
+         </div>';
+      } else {
+          echo "Kuvan lataamisessa tapahtui virhe!";
+      }
+  }
 }
 
-if (file_exists($target_file)) {
-    echo "";
-    $uploadOk = 0;
-}
-if ($_FILES["fileToUpload"]["size"] > 500000) {
-    echo "Kuvan tiedostokoko on liian suuri";
-   $uploadOk = 0;
-}
 
-if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
-    echo "Vain JPG, JPEG, PNG & GIF tiedostomuodot ovat sallittuja";
-    $uploadOk = 0;
-}
-
-if ($uploadOk == 0) {
-    echo "";
-} else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-      echo "Tiedosto ". basename( $_FILES["fileToUpload"]["name"]). " on ladattu.";
-             echo '<div style="float:left;margin-right:10px"><p>Tässä lataamasi kuva</p>
-       <img height=150px; width=150px; src="'.$target_file.'" alt="kuvaa ei löydy" /></br>
-       <p>
-       </div>';
-    } else {
-        echo "Kuvan lataamisessa tapahtui virhe!";
-    }
-}
-
-  //  $kolme = mysqli_real_escape_string($link, $target_file2);
-  //  $sql = "INSERT INTO kuva_vastaus (kuvatiedosto, aanestys_id)
-  //  VALUES ('$kolme', '$last_id')";
-  //  if(mysqli_query($link, $sql)){
 
 
 ?>
@@ -63,70 +67,60 @@ if ($uploadOk == 0) {
     <title>Päiväkoti Pirtti - Lisää kuva</title>
     <link rel="stylesheet" href="..../assets/css/style.css">
     <link rel="stylesheet" href="..../assets/css/slider.css">
-    <script>
+    <script> //Valikonpiilotus
       $(document).ready(function(){
           $("#hide").click(function(){
               $("nav").slideToggle("fast");
           });
       });
-          document.getElementById("hide").onclick = function() {myFunction()};
     </script>
-    <style>
-
-</style>
-
   </head>
   <body>
-
     <header>
       <button onclick="topFunction()" id="myBtn">Ylös</button>
       <div class="container">
           <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
           <h1> Päiväkoti Pirtti</h1>
-<button name="myButton" id="hide">      <div class="juttu" onclick="myFunction(this)">
-  <div class="bar1"></div>
-  <div class="bar2"></div>
-  <div class="bar3"></div>
-</div></button>
+          <button name="myButton" id="hide">
+            <div class="juttu" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            </div></button>
         <nav>
           <ul>
             <li class="current tab1"><a href="pirtti.html" class="fa fa-home">&nbsp;Etusivu </a></li>
             <li  class="tab4"><a href="yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
             <li  class="tab5 dropdown">
-             <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
-               <div class="dropdown-content">
-                 <a href="paivahoitohakemus.html">Päivähoitohakemus</a>
-                 <a href="esiopetushakemus.html">Esiopetushakemus</a>
-                 <a href="palvelusetelihakemus.html">Palvelusetelihakemus</a>
-               </div>
-            </li>
+              <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
+              <div class="dropdown-content">
+              <a href="paivahoitohakemus.html">Päivähoitohakemus</a>
+              <a href="esiopetushakemus.html">Esiopetushakemus</a>
+              <a href="palvelusetelihakemus.html">Palvelusetelihakemus</a>
+              </div>
+              </li>
             <li  class="tab6"><a href="kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
-          </ul>
-        </nav>
+            </ul>
+          </nav>
       </div>
     </header>
-    <hr class="style-two">
-    <center>
+  <hr class="style-two">
+  <center>
+
     <form action="lisaakuva.php" method="post" enctype="multipart/form-data"><br>
-        <label for="enimi">Valitse ladattava kuva:</label><br>
-        <input type="file" name="fileToUpload" id="fileToUpload"><br>
-        <label for="enimi">Kuvan nimi/otsikko</label><br>
-        <input type="text" name="otsikko" id="otsikko" placeholder="Anna kuvalle otsikko/nimi"><br>
-        <input type="submit" value="Upload Image" name="submit"><br>
+      <label for="enimi">Valitse ladattava kuva:</label><br>
+      <input type="file" name="fileToUpload" id="fileToUpload"><br>
+      <label for="enimi">Otsikko:</label><br>
+      <input type="text" name="otsikko" id="otsikko" placeholder="Anna kuvalle otsikko"><br>
+      <input type="submit" value="Upload Image" name="submit"><br>
     </form></center>
-<section><div class="gallery">
-</div></section>
+
 <script>
 function myFunction(x) {
     x.classList.toggle("change");
 }
 </script>
-
-  <footer>
-      <p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2017</p>
-  </footer>
   </body>
-
   <script>
 $(document).ready(function(){
     $("#flip").click(function(){
@@ -135,7 +129,7 @@ $(document).ready(function(){
 });
 </script>
 <script>
-
+// When the user clicks on the button, scroll to the top of the document
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -145,8 +139,6 @@ function scrollFunction() {
         document.getElementById("myBtn").style.display = "none";
     }
 }
-
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;

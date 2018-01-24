@@ -55,25 +55,16 @@
       </div>
     </header>
     <hr class="style-two">
-    <form name="login">
-Username<input type="text" name="userid"/>
+    <div class="kirjaudu">
+    <form name="login" action="login.php" method="post">
+Username<input type="text" name="username"/>
 Password<input type="password" name="pswrd"/>
-<input type="button" onclick="check(this.form)" value="Login"/>
+<input type="submit" onclick="check(this.form)" value="Login"/>
 <input type="reset" value="Cancel"/>
 </form>
+</div>
 <script language="javascript">
-function check(form)/*function to check userid & password*/
-{
- /*the following code checkes whether the entered userid and password are matching*/
- if(form.userid.value == "asd" && form.pswrd.value == "asd")
-  {
-    window.open('lisaakuva.php')/*opens the target page while Id & password matches*/
-  }
- else
- {
-   alert("Salasana tai käyttäjätunnus väärin!")/*displays error message*/
-  }
-}
+
 </script>
 
 

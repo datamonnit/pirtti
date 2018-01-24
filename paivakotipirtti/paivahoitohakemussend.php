@@ -86,25 +86,25 @@
 
 
 	if (true === false){
-		echo "<script>alert('true on false hmm...')</script>";
+		echo "<script>alert('Tapahtui virhe hakemusta lähettäessä! Yritä uudelleen!')</script>";
 		exit();
 	} else {
 		// kantaan
 		require('db.php');
 	// INSERT paivahoitohakemus (huoltajasahkoposti, huoltajapuhelin, hakumuspvm)
-	$sql = "INSERT INTO paivahoitohakemus (huoltajasahkoposti, huoltajapuhelin) VALUES ('$huoltajasahkoposti', '$huoltajapuhelin') CURRENT_TIMESTAMP()" ;
+	$sql = "INSERT INTO paivahoitohakemus (huoltajasahkoposti, huoltajapuhelin, pvm) VALUES ('$huoltajasahkoposti', '$huoltajapuhelin',  DATE(NOW()))" ;
 	if ($conn->query($sql) === TRUE) {
     echo "";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 // sähköpostiin
-		$headers = 'From: noreply@pirtti.com' . "\r\n" .
+		$headers = 'From: paivahoitohakemus@pirtti.com' . "\r\n" .
 						    'Reply-To: noreply@pirtti.com' . "\r\n" .
 						    'X-Mailer: PHP/' . phpversion();
 	mail('juho.pirila@esedulainen.fi', 'Paivahoitohakemus | Pirtti',$message, $headers);
 	echo "Päivähoitohakemus lähetetty!";
-	    header( "Refresh:1; url=Paivahoitohakemus.html", true, 1);
+	    // header( "Refresh:1; url=Paivahoitohakemus.html", true, 1);
 
 
 
