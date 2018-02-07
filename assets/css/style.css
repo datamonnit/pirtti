@@ -13,7 +13,8 @@ body{
   font: 15px/1.5 Arial, Helvetica,sans-serif;
   padding:0;
   margin:0;
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
+  background-image: url("../img/tausta.png");
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
@@ -32,7 +33,8 @@ body{
 
 }
 .container2{
-  width:65%;
+  max-width: 960px;
+  height: auto;
   overflow:hidden;
   color: black;
   background-color: #ffe8fe;
@@ -40,30 +42,52 @@ body{
 
 
 }
+
+.paivahoitohakemus {
+  margin: auto;
+  max-width: 960px;
+  border-radius: 2px;
+  background-color:rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  margin-bottom: 500px;
+}
+
+.sidecontainer {
+  border-radius: 0px 70px 30px 0px;
+  color: #000000;
+  list-style: none;
+  text-align: left;
+  text-decoration: none;
+  background-color:rgba(0, 0, 0, 0.2);
+  margin-left: auto;
+  float: left;
+  max-width: 250px;
+  position: fixed;
+  height: auto;
+  max-height: 700px;
+  padding-bottom: 25px;
+
+}
+.sidecontainer a:hover {
+  color: #303030;
+  text-decoration: underline;
+}
+
 .container3{
   margin-top: 20px;
-  width:65%;
+  max-width: 960px;
+  height: auto;
   overflow:hidden;
   color: black;
   background-color: #e8fbff;
   padding: 20px;
   display: block;
-
 }
 
 .container4{
   margin-top: 20px;
-  width:65%;
-  overflow:hidden;
-  color: black;
-  background-color: #e9ffe8;
-  padding: 20px;
-
-
-}
-.container9{
-  margin:auto;
-  width:160px;
+  max-width: 960px;
+  height: auto;
   overflow:hidden;
   color: black;
   background-color: #e9ffe8;
@@ -74,7 +98,8 @@ body{
 
 .container5{
   margin-top: 20px;
-  width:65%;
+  max-width: 960px;
+  height: auto;
   overflow:hidden;
   color: black;
   background-color: #ffe8e8;
@@ -82,39 +107,33 @@ body{
 
 
 }
-.sidecontainer{
-    float: right;
-    color: black;
-    background-color:  #e8fbff;
-    padding: 20px, 20px;
-    margin-top: -270px;
-    list-style-type: square;
-    overflow-x: hidden;
-    overflow-y: scroll;
+.container9{
 
 
-}
-.sidecontainer li {
-    color: black;
-    text-align: left;
-    font-size: 15px;
-    margin: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 10px;
-}
-  .sidecontainer a {
-    color: black;
-    font-size: 15px;
-
+  overflow:hidden;
+  color: black;
+  background-color: #f2f2f2;
+  padding-top: 30px;
+  float: left;
+  width:350px; /* you can use % */
+  height: auto;
   }
+
+
+
+
+
+.kuvat {
+  margin-left: auto;
+  padding: 20px;
+
+}
+
+
 ul.d {list-style-type: square;}
 li.f {list-style-type: square;}
 
-  .sidecontainer a:hover{
-        text-decoration: underline;
 
-  }
   ul{
   list-style-type: square;
 }
@@ -122,11 +141,30 @@ li.f {list-style-type: square;}
 #flip {
   cursor: pointer;
 }
+.lataakuva {
+max-width: 300px;
+max-height: 500px;
 
+}
+.css-input {
+     padding: 6px;
+     font-size: 23px;
+     border-width: 0px;
+     border-color: #DADADA;
+     background-color: #f9f9f9;
+     color: #000000;
+     border-style: solid;
+     border-radius: 0px;
+     box-shadow: 0px 0px 3px rgba(66,66,66,.75);
+     text-shadow: undefined 0px 0px 5px px rgba(66,66,66,.75);
+}
+ .css-input:focus {
+     outline:none;
+}
 #myBtn {
 display: none;
 position: fixed;
-bottom: 20px;
+/*bottom: 20px */
 right: 30px;
 z-index: 99;
 border: none;
@@ -139,10 +177,7 @@ content: ▲;
 #myBtn:hover {
 background-color: gray;
 }
-.juttu {
-display: inline-block;
-cursor: pointer;
-}
+
 .bar1, .bar2, .bar3 {
 width: 35px;
 height: 5px;
@@ -253,7 +288,7 @@ h3 {
 
 ul{
   margin:0;
-  padding:0;
+  padding: 1;
 }
 
 .container h1 {
@@ -436,10 +471,10 @@ nav ul li {display: inline-block; }
 
 footer{
   color:#333;
-  background-color:#fff;
+  background-color:#f9f9f9;
   text-align: left;
-  width:960px;
-  height: 100px;
+  width: 100%;
+  height: auto;
   margin: auto;
 }
 footer p {
@@ -672,15 +707,7 @@ display: none;
 
 
     }
-    .sidecontainer{
-      width:91vw;
-      color: black;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      margin: auto;
-      background-color: #ffe8e8;
 
-    }
     .container3 p {
       margin-right: 20px;
       float: left;

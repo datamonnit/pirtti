@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <title>Päiväkoti Pirtti</title>
+    <title>Päiväkotiyhdistys Pirtti ry</title>
     <style>
     html{
       margin: 0;
@@ -25,17 +25,20 @@
       float: left;
       margin-left: 0;
       display: block;
+      overflow: hidden;
     }
-    .moisio{ transition: all .5s ease-in-out; }
-    .moisio:hover { transform: scale(1.1); }
+    .moisio{ transition: all .2s ease-in; }
+    .moisio:hover { transform: scale(1.02); }
     .pirtti{
       max-width: 950px;
       float: right;
       margin-right: 0;
       display: block;
+      overflow: hidden;
 }
-    .pirtti{ transition: all .5s ease-in-out; }
-    .pirtti:hover { transform: scale(1.1); }
+    .pirtti{ transition: all .2s ease-in; }
+    .pirtti:hover { transform: scale(1.02); }
+
     .moisiomobiili{
       display: hidden;
     }
@@ -44,18 +47,24 @@
     }
     @media screen and (max-width: 800px) {
         .moisio{
-          display: hidden;
+          display: none;
         }
         .pirtti{
-          display: hidden;
+          display: none;
         }
         .moisiomobiili{
           display: block;
-          max-width: 260px;
+          width: 100%;
+        }
+        .moisiomobiili img {
+          width: 100%;
         }
         .pirttimobiili{
           display: block;
-          max-width: 260px;
+          width: 100%;
+        }
+        .pirttimobiili img {
+          width: 100%;
         }
 
     }
@@ -65,8 +74,8 @@
   <div class="moisio"><a href="moisionpaivakoti/moisionpaivakoti.html"><img src="assets/img/Moisionpaivakoticover.png" alt="Moision päiväkoti"></a></div>
   <div class="pirtti"> <a href="paivakotipirtti/pirtti.html"><img src="assets/img/Paivakotipirtticover.png" alt="Päiväkoti Pirtti"></a></div>
 
-    <div class="moisiomobiili"><a href="moisionpaivakoti/moisionpaivakoti.html"><img src="assets/img/Moisionpaivakoticovermobiili.png" alt="Moision päiväkoti"></a></div>
-    <div class="pirttimobiili"> <a href="paivakotipirtti/pirtti.html"><img src="assets/img/Paivakotipirtticovermobiili.png" alt="Päiväkoti Pirtti"></a></div>
+  <div class="moisiomobiili"><a href="moisionpaivakoti/moisionpaivakoti.html"><img src="assets/img/Moisionpaivakoticovermobiili.png" alt="Moision päiväkoti"></a></div>
+  <div class="pirttimobiili"> <a href="paivakotipirtti/pirtti.html"><img src="assets/img/Paivakotipirtticovermobiili.png" alt="Päiväkoti Pirtti"></a></div>
 
 
   </body>

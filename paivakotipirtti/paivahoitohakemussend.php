@@ -73,26 +73,29 @@
 	.PHP_EOL. PHP_EOL. PHP_EOL.
 	PHP_EOL. "Kotona asuvien alle 18-vuotiaiden lasten nimet, syntymäajat sekä alle kouluikäisten päivähoitopaikat:   $muutlapset"
 	.PHP_EOL. PHP_EOL. PHP_EOL.
-	PHP_EOL. "Saako tarvittaessa olla yhteydessä päivähoidon eri yhteistyötahojen (kuten neuvolan) kanssa lapsen kehitystä ja terveyttä koskevissa asioissa::   $neuvolayhteys"
+		PHP_EOL. "Saako tarvittaessa olla yhteydessä päivähoidon eri yhteistyötahojen (kuten neuvolan) kanssa lapsen kehitystä ja terveyttä koskevissa asioissa::   $neuvolayhteys"
 	.PHP_EOL. "Mitä lastenneuvolaa olette viimeksi käyttänyt, osoite:   $neuvola"
 	.PHP_EOL. "Sairaudet, allergiat, ruokavalio ym:   $sairaudet"
 	.PHP_EOL. "Onko lapsi ollut sairaalahoidossa tai jatkuvassa lääkärinhoidossa, milloin ja miksi?:   $sairaalahoidot"
 	.PHP_EOL. "Lisätiedot hakemuksen perusteeksi:   $lisatiedot"
-	.PHP_EOL. PHP_EOL. PHP_EOL.
+	.PHP_EOL. PHP_EOL. PHP_EOL;
+
+	$hash = md5($huoltajasahkoposti.$huoltajapuhelin.$pvm);
+
 	$message .=
-	PHP_EOL. "Älä vastaa tähän viestiin!";
 
-
+	PHP_EOL. "Kuittaa hakemus luetuksi: https://paja.esedu.fi/data14/juho.pirila/pirtti/paivakotipirtti/verify.php?email=$email&hash=$hash";
 
 
 	if (true === false){
-		echo "<script>alert('Tapahtui virhe hakemusta lähettäessä! Yritä uudelleen!')</script>";
+		echo "<script>alert('Hakemuksen lähettämisessä tapahtui virhe! Yritä uudelleen!')</script>";
 		exit();
 	} else {
 		// kantaan
 		require('db.php');
 	// INSERT paivahoitohakemus (huoltajasahkoposti, huoltajapuhelin, hakumuspvm)
-	$sql = "INSERT INTO paivahoitohakemus (huoltajasahkoposti, huoltajapuhelin, pvm) VALUES ('$huoltajasahkoposti', '$huoltajapuhelin',  DATE(NOW()))" ;
+
+	$sql = "INSERT INTO paivahoitohakemus (huoltajasahkoposti, huoltajapuhelin, pvm, hash) VALUES ('$huoltajasahkoposti', '$huoltajapuhelin',  DATE(NOW()), '$hash')" ;
 	if ($conn->query($sql) === TRUE) {
     echo "";
 } else {
@@ -104,7 +107,7 @@
 						    'X-Mailer: PHP/' . phpversion();
 	mail('juho.pirila@esedulainen.fi', 'Paivahoitohakemus | Pirtti',$message, $headers);
 	echo "Päivähoitohakemus lähetetty!";
-	    // header( "Refresh:1; url=Paivahoitohakemus.html", true, 1);
+header( "Refresh:1; url=paivahoitohakemus.html", true, 5);
 
 
 
@@ -112,7 +115,5 @@
 $conn->close();
 ?>
 <html>
-<head>
 
-</head>
 </html>

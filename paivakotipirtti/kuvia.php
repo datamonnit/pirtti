@@ -5,7 +5,7 @@ $ignore = Array(".", "..");
 $kuvat_html = "";
 foreach($images as $curimg){
   if(!in_array($curimg, $ignore)) {
-      $kuvat_html .= "<div class='container9' style='float:left;margin-right:10px'><p><a href='uploads/$curimg'> <img  height='150' width='150' src='uploads/$curimg' /><br>\n</div></p>";
+      $kuvat_html .= "<div class='container9'><p><a href='uploads/$curimg'> <img  max-height='350' max-width='350' src='uploads/$curimg' /><br>\n</div></p>";
   };
 }
 ?>
@@ -18,7 +18,7 @@ foreach($images as $curimg){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <meta name="keywords" content="päiväkoti, päiväkotiyhdistys, Päiväkotiyhdistys pirtti ry">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Päiväkoti Pirtti | Kuvia</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/slider.css">
@@ -28,7 +28,7 @@ foreach($images as $curimg){
               $("nav").toggle(500);
           });
       });
-        document.getElementById("hide").onclick = function() {myFunction()};
+
 
 
 
@@ -58,6 +58,7 @@ foreach($images as $curimg){
       </div>
     </header>
     <hr class="style-two">
+    <p> Voit klikata kuvia suuremmiksi </p>
       <div class="kuvat">
         <?php echo $kuvat_html;
 

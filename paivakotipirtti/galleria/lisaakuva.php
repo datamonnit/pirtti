@@ -13,7 +13,7 @@ if(isset($_POST["submit"])) {
 
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
+        echo "Tarkistetaan kuvaa - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
         echo "Tiedostomuoto ei sallittu!";
@@ -24,7 +24,7 @@ if(isset($_POST["submit"])) {
       echo "Sama kuva on jo ladattu!";
       $uploadOk = 0;
   }
-  if ($_FILES["fileToUpload"]["size"] > 500000) {
+  if ($_FILES["fileToUpload"]["size"] > 5000000000000) {
       echo "Kuvan tiedostokoko on liian suuri";
      $uploadOk = 0;
   }
@@ -65,8 +65,8 @@ if(isset($_POST["submit"])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Päiväkoti Pirtti - Lisää kuva</title>
-    <link rel="stylesheet" href="..../assets/css/style.css">
-    <link rel="stylesheet" href="..../assets/css/slider.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/slider.css">
     <script> //Valikonpiilotus
       $(document).ready(function(){
           $("#hide").click(function(){
@@ -74,6 +74,33 @@ if(isset($_POST["submit"])) {
           });
       });
     </script>
+    <style>
+    input[type=text], select  {
+
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+      background-color: darkgray;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 60%;
+    transition: all 0.5s ease 0s;
+    font-size: 20px;
+    }
+    input[type=submit]:hover {
+        background-color:#54ff62;
+    }
+    </style>
   </head>
   <body>
     <header>
@@ -89,32 +116,32 @@ if(isset($_POST["submit"])) {
             </div></button>
         <nav>
           <ul>
-            <li class="current tab1"><a href="pirtti.html" class="fa fa-home">&nbsp;Etusivu </a></li>
-            <li  class="tab4"><a href="yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
+            <li class="current tab1"><a href="../pirtti.html" class="fa fa-home">&nbsp;Etusivu </a></li>
+            <li  class="tab4"><a href="../yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
             <li  class="tab5 dropdown">
               <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
               <div class="dropdown-content">
-              <a href="paivahoitohakemus.html">Päivähoitohakemus</a>
-              <a href="esiopetushakemus.html">Esiopetushakemus</a>
-              <a href="palvelusetelihakemus.html">Palvelusetelihakemus</a>
+              <a href="../paivahoitohakemus.html">Päivähoitohakemus</a>
+              <a href="../esiopetushakemus.html">Esiopetushakemus</a>
+              <a href="../palvelusetelihakemus.html">Palvelusetelihakemus</a>
               </div>
               </li>
-            <li  class="tab6"><a href="kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
+            <li  class="tab6"><a href="../kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
             </ul>
           </nav>
       </div>
     </header>
   <hr class="style-two">
   <center>
-
+<div class="lataakuva">
     <form action="lisaakuva.php" method="post" enctype="multipart/form-data"><br>
-      <label for="enimi">Valitse ladattava kuva:</label><br>
+      <label style="float:left;" for="enimi">Otsikko:</label><br>
+      <input class="css-input" type="text" name="otsikko"  placeholder="Anna kuvalle otsikko"><br>
+      <label style="font-size:25px;" for="enimi">Valitse ladattava kuva:</label><br>
       <input type="file" name="fileToUpload" id="fileToUpload"><br>
-      <label for="enimi">Otsikko:</label><br>
-      <input type="text" name="otsikko" id="otsikko" placeholder="Anna kuvalle otsikko"><br>
       <input type="submit" value="Upload Image" name="submit"><br>
     </form></center>
-
+</div>
 <script>
 function myFunction(x) {
     x.classList.toggle("change");
