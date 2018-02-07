@@ -37,7 +37,7 @@ body{
   height: auto;
   overflow:hidden;
   color: black;
-  background-color: #ffe8fe;
+  background-color:  rgba(255, 0, 109, 0.48);
   padding: 20px;
 
 
@@ -79,7 +79,7 @@ body{
   height: auto;
   overflow:hidden;
   color: black;
-  background-color: #e8fbff;
+  background-color: rgba(133, 255, 0, 0.48);
   padding: 20px;
   display: block;
 }
@@ -90,7 +90,7 @@ body{
   height: auto;
   overflow:hidden;
   color: black;
-  background-color: #e9ffe8;
+  background-color: rgba(0, 196, 196, 0.48);
   padding: 20px;
 
 
@@ -102,7 +102,7 @@ body{
   height: auto;
   overflow:hidden;
   color: black;
-  background-color: #ffe8e8;
+  background-color: rgba(255, 235, 0, 0.48);
   padding: 20px;
 
 
@@ -288,7 +288,7 @@ h3 {
 
 ul{
   margin:0;
-  padding: 1;
+  padding: 0;
 }
 
 .container h1 {
@@ -338,7 +338,7 @@ header nav{
 nav ul li {display: inline-block; }
 
 li.tab1{
-  background-color: #ffcee3;
+  background-color:  rgba(255, 0, 109, 0.48);
   padding: 20px;
   -ms-transform: rotate(-8deg); /* IE 9 */
   -webkit-transform: rotate(-8deg); /* Chrome, Safari, Opera */
@@ -363,7 +363,7 @@ li.tab3{
 } */
 
 li.tab4{
-  background-color:#ceffcc;
+  background-color: rgba(133, 255, 0, 0.48);
   padding: 20px;
   -ms-transform: rotate(7deg); /* IE 9 */
   -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
@@ -371,7 +371,7 @@ li.tab4{
 }
 
 li.tab5{
-  background-color: #dcceff;
+  background-color: rgba(0, 196, 196, 0.48);
   padding: 20px;
   -ms-transform: rotate(-8deg); /* IE 9 */
   -webkit-transform: rotate(-8deg); /* Chrome, Safari, Opera */
@@ -379,7 +379,7 @@ li.tab5{
 }
 
 li.tab6{
-  background-color: #ffdcce;
+  background-color: rgba(255, 235, 0, 0.48);
   padding: 20px;
   -ms-transform: rotate(5deg); /* IE 9 */
   -webkit-transform: rotate(5deg); /* Chrome, Safari, Opera */
@@ -592,12 +592,11 @@ display: none;
   }
 
   li.tab1{
-    float: left;
-    background-color: #ffcee3;
-    padding: 10px;
+
+    background-color: rgba(255, 0, 109, 0.48);
     width: 95vw;
     text-align: left;
-    font-size: 20px;
+    font-size: 25px;
     -ms-transform: rotate(0deg); /* IE 9 */
     -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
     transform: rotate(0deg);
@@ -629,36 +628,30 @@ display: none;
     }
 
   li.tab4{
-    background-color: #fff9ce;
-    padding: 10px;
-    float: left;
+    background-color: rgba(133, 255, 0, 0.48);
     width: 95vw;
     text-align: left;
-    font-size: 20px;
+    font-size: 25px;
     -ms-transform: rotate(0deg); /* IE 9 */
     -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
     transform: rotate(0deg);
     }
 
   li.tab5{
-    background-color: #dcceff;
-    padding: 10px;
-    float: left;
+    background-color: rgba(0, 196, 196, 0.48);
     width: 95vw;
     text-align: left;
-    font-size: 20px;
+    font-size: 25px;
     -ms-transform: rotate(0deg); /* IE 9 */
     -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
     transform: rotate(0deg);
     }
 
   li.tab6{
-    background-color: #ffdcce;
-    padding: 10px;
-    float: left;
+    background-color: rgba(255, 235, 0, 0.48);
     width: 95vw;
     text-align: left;
-    font-size: 20px;
+    font-size: 25px;
     -ms-transform: rotate(0deg); /* IE 9 */
     -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
     transform: rotate(0deg);
@@ -672,7 +665,7 @@ display: none;
      width:91vw;
      overflow:hidden;
      color: black;
-     background-color: #ffe8fe;
+     background-color:  rgba(255, 0, 109, 0.48);
      font-size: 15px;
   display: block;
 
@@ -680,7 +673,7 @@ display: none;
    }
 
    .container3{
-      background-color: #e8fbff;
+      background-color: rgba(133, 255, 0, 0.48);
       width:91vw;
       overflow: hidden;
       color: black;
@@ -692,7 +685,7 @@ display: none;
       width:91vw;
       overflow:hidden;
       color: black;
-      background-color: #e9ffe8;
+      background-color: rgba(0, 196, 196, 0.48);
       padding: 20px;
 
 
@@ -702,7 +695,7 @@ display: none;
       width:91vw;
       overflow:hidden;
       color: black;
-      background-color: #ffe8e8;
+      background-color: rgba(255, 235, 0, 0.48);
       padding: 20px;
 
 
