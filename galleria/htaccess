@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Password Protected Area"
+AuthUserFile /home/juho.pirila/www/pirtti/paivakotipirtti/galleria/.htpasswd
+Require valid-user

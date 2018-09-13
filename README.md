@@ -1,2 +1,0 @@
-# pirtti
-Pirtin päiväkodin verkkosivut
