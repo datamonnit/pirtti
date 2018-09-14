@@ -157,7 +157,14 @@ textarea {
       <form action="paivahoitohakemussend.php" method="POST">
 
 <!-- Lapsen henkilötiedot -->
-<h1> Päiväkoti Pirtti - Päivähoitohakemus </h1> <br>
+<h1> Päivähoitohakemus </h1> <br>
+
+          <label for="paivakoti">Valitse päiväkoti:</label><br>
+          <select onchange="yesnoCheck(this);" id="paivakoti" name="paivakoti">
+            <option disabled="" selected value="valitse">Valitse</option>
+            <option value="pkpirtti">Päiväkoti Pirtti</option>
+            <option value="pkmoisio">Moision päiväkoti</option>
+          </select><br>
 
           <h2> Lapsen henkilötiedot </h2>
 

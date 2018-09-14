@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Päiväkoti Pirtti | Esiopetushakemus</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
 
     <style>
     #myBtn {
@@ -172,6 +172,13 @@ textarea {
   <section class="hakemus">
     <div class="paivahoitohakemus">
       <form action="esiopetushakemussend.php" method="POST">
+
+          <label for="paivakoti">Valitse päiväkoti:</label><br>
+          <select onchange="yesnoCheck(this);" id="paivakoti" name="paivakoti">
+            <option disabled="" selected value="valitse">Valitse</option>
+            <option value="pkpirtti">Päiväkoti Pirtti</option>
+            <option value="pkmoisio">Moision päiväkoti</option>
+          </select><br>
 
         <h2> Lapsen henkilötiedot </h2>
 
