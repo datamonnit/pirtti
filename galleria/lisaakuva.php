@@ -136,7 +136,7 @@ function make_thumb($src, $dest, $desired_width, $desired_height) {
             </div></button>
         <nav>
           <ul>
-            <li class="current tab1"><a href="../pirtti.html" class="fa fa-home">&nbsp;Etusivu </a></li>
+            <li class="current tab1"><a href="../index.html" class="fa fa-home">&nbsp;Etusivu </a></li>
             <li  class="tab4"><a href="../yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
             <li  class="tab5 dropdown">
               <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
