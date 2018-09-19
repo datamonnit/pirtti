@@ -1,15 +1,30 @@
 <?php
-$dirname = "galleria/thumbs/";
-$images = scandir($dirname);
-$ignore = array(".", ".");
+        $conn = mysqli_connect("localhost", "root", "", "pirttil");
+
+// $dirname = "galleria/thumbs/";
+// $images = scandir($dirname);
+// $ignore = array(".", ".");
 $kuvat_html = "";
-foreach($images as $thumb){
-  if(!in_array($thumb, $ignore)) {
-      $image = str_replace("thumb_", "", $thumb);
-      $kuvat_html .= "<a href='galleria/uploads/$image'> <img src='$dirname$thumb' />";
+// foreach($images as $thumb){
+//   if(!in_array($thumb, $ignore)) {
+//       $image = str_replace("thumb_", "", $thumb);
+//       $kuvat_html .= "<a href='galleria/uploads/$image'> <img src='$dirname$thumb' />";
      
-  };
+//   };
+// }
+
+$sql = "SELECT * FROM gallery";
+$results = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($results)){
+    while ($row = mysqli_fetch_array($results)){
+            $kuvat_html .= "<p>".$row[1]."</p>";
+            $kuvat_html .= "<a href='galleria/"."$row[4]"."'> <img src='galleria/"."$row[7]'/>";
+            $kuvat_html .= "<p>".$row[3]."</p>";
+    }
 }
+
+  
 ?>
 <!DOCTYPE html>
 <html>
