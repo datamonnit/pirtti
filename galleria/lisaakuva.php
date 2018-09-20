@@ -1,7 +1,10 @@
 <?php
-    if(isset($_POST["submit"])){
         $conn = mysqli_connect("localhost", "root", "", "pirttil");
+
+    if(isset($_POST["submit"])){
     
+            //Kuvan lissääminen kantaan ja kansioon
+
             $filetmp = $_FILES["image"]["tmp_name"];
             $filename = $_FILES["image"]["name"];
             $filetype = $_FILES["image"]["type"];
@@ -34,7 +37,7 @@
                     }
                     else
                     {
-                        
+                    
                         move_uploaded_file($filetmp,$filepath);				
                         
                         if($filetype == "image/jpeg")
@@ -63,19 +66,36 @@
                         $imageformat($image_p, $filepath_thumb);//thumb kansio		
             
                         $query = "INSERT INTO gallery (otsikko, time, img_path_thumb, img_path, img_name, img_type, image_text) VALUES('$otsikko', NOW(),'$filepath_thumb', '$filepath', '$filename', '$filetype', '$image_text')";
-                        $result = mysqli_query($conn, $query);
+                        $results = mysqli_query($conn, $query);
                         
                     }
                     
                 }
             }
         }
-        
-        
 
-
-
-
+        //kuvan ja tietojen hakeminen kannasta
+        $query = "SELECT * FROM gallery";
+        $results = mysqli_query($conn, $query);
+        $kuvat_html = "";
+        if (mysqli_num_rows($results)){
+            while ($row = mysqli_fetch_array($results)){
+              $kuvat_html .= "<div id='kuva' style='margin:3px;'>";
+              $kuvat_html .= "<p style:'margin:3px'>".$row[1]."</p>";
+              $kuvat_html .= "<a href='../galleria/".$row[4]."'/> <img src='../galleria/".$row[7]."'/></a >";
+              $kuvat_html .= "<p id='desc'>".$row[3]."</p>";
+              $kuvat_html .= "<button>"."<a href='lisaakuva.php?delbutton=$row[0]' class=''>"."Poista"."</a>"."</button>";
+              $kuvat_html .= "</div>";
+            }
+        }
+        //Kuvan poisto
+        if(isset($_GET['delbutton'])){
+            $gallery_id = $_GET['delbutton'];
+            $query = "DELETE FROM gallery WHERE gallery_id='$gallery_id'";
+            $res= mysqli_query($conn, $query) or die("Failed".mysqli_error());
+            echo "<meta http-equiv='refresh' content='0;url=lisaakuva.php'>";
+        }
+    
 
 
 // VANHAA KOODIA.
@@ -200,6 +220,29 @@
     input[type=submit]:hover {
         background-color:#54ff62;
     }
+
+
+          #kuva {
+        margin: 5px;
+        border: 1px solid #ccc;
+        float: left;
+        width: 180px;
+        background: #00000071;
+      }
+
+      #kuva:hover {
+        border: 1px solid #777;
+      }
+
+      #kuva img {
+        width: 100%;
+        height: auto;
+      }
+
+      #desc {
+      padding: 15px;
+      text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -248,6 +291,10 @@ function myFunction(x) {
     x.classList.toggle("change");
 }
 </script>
+
+    <?php echo $kuvat_html;
+
+    ?>
   </body>
   <script>
 $(document).ready(function(){

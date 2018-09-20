@@ -18,9 +18,11 @@ $results = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($results)){
     while ($row = mysqli_fetch_array($results)){
-            $kuvat_html .= "<p>".$row[1]."</p>";
-            $kuvat_html .= "<a href='galleria/"."$row[4]"."'> <img src='galleria/"."$row[7]'/>";
-            $kuvat_html .= "<p>".$row[3]."</p>";
+      $kuvat_html .= "<div id='kuva' style='margin:3px;'>";
+      $kuvat_html .= "<p style:'margin:3px'>".$row[1]."</p>";
+      $kuvat_html .= "<a href='galleria/".$row[4]."'/> <img src='galleria/".$row[7]."'/></a >";
+      $kuvat_html .= "<p id='desc'>".$row[3]."</p>";
+      $kuvat_html .= "</div>";
     }
 }
 
@@ -50,6 +52,30 @@ if (mysqli_num_rows($results)){
 
 
     </script>
+    <style>
+      #kuva {
+        margin: auto;
+        border: 1px solid #ccc;
+        float: left;
+        width: 180px;
+        background: #00000071;
+      }
+
+      #kuva:hover {
+        border: 1px solid #777;
+      }
+
+      #kuva img {
+        width: 100%;
+        height: auto;
+      }
+
+      #desc {
+      padding: 15px;
+      text-align: center;
+      }
+
+    </style>
   </head>
   <body>
     <header>
@@ -78,7 +104,7 @@ if (mysqli_num_rows($results)){
     <div class="juu"><center>
     
       <div class="kuvat">
-      <p style="color:white;"> Voit klikata kuvia suuremmiksi </p>
+      <p style="color:balck;"> Voit klikata kuvia suuremmiksi </p>
         <?php echo $kuvat_html;
 
         ?>
