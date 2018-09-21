@@ -20,7 +20,7 @@ if (mysqli_num_rows($results)){
     while ($row = mysqli_fetch_array($results)){
       $kuvat_html .= "<div id='kuva' style='margin:3px;'>";
       $kuvat_html .= "<p style:'margin:3px'>".$row[1]."</p>";
-      $kuvat_html .= "<a href='galleria/".$row[4]."'/> <img src='galleria/".$row[7]."'/></a >";
+      $kuvat_html .= "<a href='galleria/".$row[4]."'data-lightbox='roadtrip'  data-title='$row[3]'/> <img src='galleria/".$row[7]."'/></a >";
       $kuvat_html .= "<p id='desc'>".$row[3]."</p>";
       $kuvat_html .= "</div>";
     }
@@ -41,6 +41,8 @@ if (mysqli_num_rows($results)){
     <title>Päiväkoti Pirtti | Kuvia</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/slider.css">
+    <link rel="stylesheet" href="./assets/css/lightbox.css">
+    <script src="./assets/js/lightbox.js"></script>
     <script>
       $(document).ready(function(){
           $("button").click(function(){

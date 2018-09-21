@@ -2,9 +2,11 @@
         $conn = mysqli_connect("localhost", "root", "", "pirttil");
 
     if(isset($_POST["submit"])){
-    
-            //Kuvan lissääminen kantaan ja kansioon
 
+            $target_dir = "uploads/";
+            $target_thumbdir = "thumbs/";
+            $target_file = $target_dir . basename($_FILES["image"]["name"]);
+            $uploadOk = 1;
             $filetmp = $_FILES["image"]["tmp_name"];
             $filename = $_FILES["image"]["name"];
             $filetype = $_FILES["image"]["type"];
@@ -13,22 +15,25 @@
             $filewidth = $fileinfo[0];
             $fileheight = $fileinfo[1];
             $filepath = "uploads/".$filename;
-            $filepath_thumb = "thumbs/".$filename;
+            $filepath_thumb = "thumbs/"."thumb_".$filename;
             $otsikko = mysqli_real_escape_string($conn, $_POST['otsikko']);
             $image_text = mysqli_real_escape_string($conn, $_POST['image_text']);
-            
+
             if($filetmp == "")
             {
                 echo "valitse kuva";
             }
             else
             {
-             
-                if($filesize > 5000000000000    )
-                {
-                    echo "photo > 2mb";
-                }
-                else
+                if (file_exists($target_file)) {
+                    echo "Sama kuva on jo ladattu!";
+                    $uploadOk = 0;
+                }else
+                // if($filesize > 5000000000000 )
+                // {
+                //     echo "photo > 2mb";
+                // }
+                // else
                 {
                     
                     if($filetype != "image/jpeg" && $filetype != "image/png" && $filetype != "image/gif")
@@ -37,39 +42,38 @@
                     }
                     else
                     {
-                    
-                        move_uploaded_file($filetmp,$filepath);				
-                        
-                        if($filetype == "image/jpeg")
-                        {
-                          $imagecreate = "imagecreatefromjpeg";
-                          $imageformat = "imagejpeg";
-                        }
-                        if($filetype == "image/png")
-                        {						 
-                          $imagecreate = "imagecreatefrompng";
-                          $imageformat = "imagepng";
-                        }
-                        if($filetype == "image/gif")
-                        {						 
-                          $imagecreate= "imagecreatefromgif";
-                          $imageformat = "imagegif";
-                        }
-                        
-                        $new_width = "200";
-                        $new_height = "200";
-                        //lataa kuvan normi koossa               
-                        $image_p = imagecreatetruecolor($new_width, $new_height);
-                        $image = $imagecreate($filepath); //kuvan kansio
-                         //muuttaa kuvan koon       
-                        imagecopyresampled($image_p, $image, 0, 0, 0, 0, $new_width, $new_height, $filewidth, $fileheight);						
-                        $imageformat($image_p, $filepath_thumb);//thumb kansio		
-            
-                        $query = "INSERT INTO gallery (otsikko, time, img_path_thumb, img_path, img_name, img_type, image_text) VALUES('$otsikko', NOW(),'$filepath_thumb', '$filepath', '$filename', '$filetype', '$image_text')";
-                        $results = mysqli_query($conn, $query);
-                        
+                    move_uploaded_file($filetmp,$filepath);				
+                    if($filetype == "image/jpeg")
+                    {
+                        $imagecreate = "imagecreatefromjpeg";
+                        $imageformat = "imagejpeg";
                     }
-                    
+                    if($filetype == "image/png")
+                    {						 
+                        $imagecreate = "imagecreatefrompng";
+                        $imageformat = "imagepng";
+                    }
+                    if($filetype == "image/gif")
+                    {						 
+                        $imagecreate= "imagecreatefromgif";
+                        $imageformat = "imagegif";
+                    }
+                    $new_width = "200";
+                    $new_height = "200";
+                        if($uploadOk == 0){
+                            echo "Kuvan lataamisessa tapahtui virhe!";
+                        }else{
+                            //lataa kuvan normi koossa               
+                            $image_p = imagecreatetruecolor($new_width, $new_height);
+                            $image = $imagecreate($filepath); //kuvan kansio
+                            //muuttaa kuvan koon       
+                            imagecopyresampled($image_p, $image, 0, 0, 0, 0, $new_width, $new_height, $filewidth, $fileheight);						
+                            $imageformat($image_p, $filepath_thumb);//thumb kansio		
+                
+                            $query = "INSERT INTO gallery (otsikko, time, img_path_thumb, img_path, img_name, img_type, image_text) VALUES('$otsikko', NOW(),'$filepath_thumb', '$filepath', '$filename', '$filetype', '$image_text')";
+                            $results = mysqli_query($conn, $query);
+                        }
+                    }
                 }
             }
         }
@@ -82,7 +86,7 @@
             while ($row = mysqli_fetch_array($results)){
               $kuvat_html .= "<div id='kuva' style='margin:3px;'>";
               $kuvat_html .= "<p style:'margin:3px'>".$row[1]."</p>";
-              $kuvat_html .= "<a href='../galleria/".$row[4]."'/> <img src='../galleria/".$row[7]."'/></a >";
+              $kuvat_html .= "<a href='../galleria/".$row[4]."'  data-lightbox='roadtrip'/> <img src='../galleria/".$row[7]."'/></a >";
               $kuvat_html .= "<p id='desc'>".$row[3]."</p>";
               $kuvat_html .= "<button>"."<a href='lisaakuva.php?delbutton=$row[0]' class=''>"."Poista"."</a>"."</button>";
               $kuvat_html .= "</div>";
@@ -187,6 +191,9 @@
     <title>Päiväkoti Pirtti - Lisää kuva</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/slider.css">
+    <link rel="stylesheet" href="../assets/css/lightbox.css">
+    <script src="../assets/js/lightbox.js"></script>
+    
     <script> //Valikonpiilotus
       $(document).ready(function(){
           $("#hide").click(function(){
