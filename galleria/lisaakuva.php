@@ -1,5 +1,12 @@
 <?php
-        $conn = mysqli_connect("localhost", "root", "", "pirttil");
+ 
+  $conn = mysqli_connect("localhost", "root", "", "pirttil");
+  session_start();
+  if (!isset($_SESSION[$username])) {
+    header('location: ../adminimg.php');
+}   
+
+
 
     if(isset($_POST["submit"])){
 

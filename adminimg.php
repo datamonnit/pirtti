@@ -1,3 +1,6 @@
+<?php include('login.php');
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,8 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Päiväkoti Pirtti | Etusivu</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
     <script>
       $(document).ready(function(){
           $("#hide").click(function(){
@@ -54,15 +57,20 @@
         </nav>
       </div>
     </header>
-    <hr class="style-two">
-    <div class="kirjaudu">
-    <form name="login" action="login.php" method="post">
-Username<input type="text" name="username"/>
-Password<input type="password" name="pswrd"/>
-<input type="submit" onclick="check(this.form)" value="Login"/>
-<input type="reset" value="Cancel"/>
-</form>
-</div>
+
+            <div id="login_page">
+                <div id="login_screen">
+                    <form method="post" action="adminimg.php">
+                        Käyttäjätunnus:<br>
+                        <input type="text" name="username">
+                        <br>
+                        Salasana:<br>
+                        <input type="password" name="password" >
+                        <br><br>
+                        <button type="submit" class="btn" name="login_user">Login</button>
+                    </form> 
+                </div>
+            </div>
 <script language="javascript">
 
 </script>
