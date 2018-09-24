@@ -1,5 +1,5 @@
 <?php
-        $conn = mysqli_connect("localhost", "root", "", "pirttil");
+        $conn = mysqli_connect("localhost", "root", "", "pirttidb");
 
     if(isset($_POST["submit"])){
 
