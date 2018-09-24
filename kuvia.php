@@ -1,15 +1,32 @@
 <?php
-$dirname = "galleria/thumbs/";
-$images = scandir($dirname);
-$ignore = array(".", ".");
+        $conn = mysqli_connect("localhost", "root", "", "pirttidb");
+
+// $dirname = "galleria/thumbs/";
+// $images = scandir($dirname);
+// $ignore = array(".", ".");
 $kuvat_html = "";
-foreach($images as $thumb){
-  if(!in_array($thumb, $ignore)) {
-      $image = str_replace("thumb_", "", $thumb);
-      $kuvat_html .= "<a href='galleria/uploads/$image'> <img src='$dirname$thumb' />";
+// foreach($images as $thumb){
+//   if(!in_array($thumb, $ignore)) {
+//       $image = str_replace("thumb_", "", $thumb);
+//       $kuvat_html .= "<a href='galleria/uploads/$image'> <img src='$dirname$thumb' />";
      
-  };
+//   };
+// }
+
+$sql = "SELECT * FROM gallery";
+$results = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($results)){
+    while ($row = mysqli_fetch_array($results)){
+      $kuvat_html .= "<div id='kuva' style='margin:3px;'>";
+      $kuvat_html .= "<p style:'margin:3px'>".$row[1]."</p>";
+      $kuvat_html .= "<a href='galleria/".$row[4]."'data-lightbox='roadtrip'  data-title='$row[3]'/> <img src='galleria/".$row[7]."'/></a >";
+      $kuvat_html .= "<p id='desc'>".$row[3]."</p>";
+      $kuvat_html .= "</div>";
+    }
 }
+
+  
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,6 +41,8 @@ foreach($images as $thumb){
     <title>Päiväkoti Pirtti | Kuvia</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/slider.css">
+    <link rel="stylesheet" href="./assets/css/lightbox.css">
+    <script src="./assets/js/lightbox.js"></script>
     <script>
       $(document).ready(function(){
           $("button").click(function(){
@@ -35,6 +54,30 @@ foreach($images as $thumb){
 
 
     </script>
+    <style>
+      #kuva {
+        margin: auto;
+        border: 1px solid #ccc;
+        float: left;
+        width: 180px;
+        background: #00000071;
+      }
+
+      #kuva:hover {
+        border: 1px solid #777;
+      }
+
+      #kuva img {
+        width: 100%;
+        height: auto;
+      }
+
+      #desc {
+      padding: 15px;
+      text-align: center;
+      }
+
+    </style>
   </head>
   <body>
     <header>
@@ -63,7 +106,7 @@ foreach($images as $thumb){
     <div class="juu"><center>
     
       <div class="kuvat">
-      <p style="color:white;"> Voit klikata kuvia suuremmiksi </p>
+      <p style="color:balck;"> Voit klikata kuvia suuremmiksi </p>
         <?php echo $kuvat_html;
 
         ?>
