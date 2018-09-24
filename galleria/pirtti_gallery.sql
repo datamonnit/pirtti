@@ -19,20 +19,20 @@
 -- Table structure for table `gallery`
 --
 
-DROP TABLE IF EXISTS `gallery`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `gallery` (
-  `gallery_id` int(11) NOT NULL AUTO_INCREMENT,
-  `otsikko` varchar(45) CHARACTER SET latin1 NOT NULL,
-  `time` varchar(45) CHARACTER SET latin1 NOT NULL,
-  `image_text` varchar(45) CHARACTER SET latin1 NOT NULL,
-  `img_path` varchar(45) CHARACTER SET latin1 NOT NULL,
-  `img_name` varchar(45) CHARACTER SET latin1 NOT NULL,
-  `img_type` varchar(45) CHARACTER SET latin1 NOT NULL,
-  `img_path_thumb` varchar(45) CHARACTER SET latin1 NOT NULL,
-  PRIMARY KEY (`gallery_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
+-- DROP TABLE IF EXISTS `gallery`;
+-- /*!40101 SET @saved_cs_client     = @@character_set_client */;
+-- /*!40101 SET character_set_client = utf8 */;
+-- CREATE TABLE `gallery` (
+--   `gallery_id` int(11) NOT NULL AUTO_INCREMENT,
+--   `otsikko` varchar(45) CHARACTER SET latin1 NOT NULL,
+--   `time` varchar(45) CHARACTER SET latin1 NOT NULL,
+--   `image_text` varchar(45) CHARACTER SET latin1 NOT NULL,
+--   `img_path` varchar(45) CHARACTER SET latin1 NOT NULL,
+--   `img_name` varchar(45) CHARACTER SET latin1 NOT NULL,
+--   `img_type` varchar(45) CHARACTER SET latin1 NOT NULL,
+--   `img_path_thumb` varchar(45) CHARACTER SET latin1 NOT NULL,
+--   PRIMARY KEY (`gallery_id`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
