@@ -1,4 +1,5 @@
-<?php include('login.php');
+<!-- <?php include('login.php');
+  include('db.php');
 
 ?>
 <!DOCTYPE html>
@@ -59,19 +60,10 @@
     </header>
     <?php include('errors.php'); ?>
 
-            <div id="login_page">
-                <div id="login_screen">
-                    <form method="post" action="adminimg.php">
-                        Käyttäjätunnus:<br>
-                        <input type="text" name="username">
-                        <br>
-                        Salasana:<br>
-                        <input type="password" name="password" >
-                        <br><br>
-                        <button type="submit" class="btn" name="login_user">Login</button>
-                    </form> 
-                </div>
-            </div>
+    <form class="contact-form" action="forgotPassword.php" method="post">
+      <input type="text" name="email">
+      <button type="submit" name="submit">Lähetä</button>
+    </form>
 <script language="javascript">
 
 </script>
@@ -113,4 +105,80 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 </script>
+</html> -->
+
+
+<?php
+$servername = "it.esedu.fi";
+$username = "pirtti";
+$password = "p1rtt1onp4r4s!";
+$database = "pirttidb";
+
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $database = "pirttil";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
+// Check connection
+if ($conn->connect_error) {
+    die("Kantaan ei pysty yhdistämään" . $conn->connect_error);
+}
+?>
+<?php
+require_once('db.php');
+require('db.php');
+// require('PHPMailer/PHPMailerAutoload.php');
+if(isset($_POST) & !empty($_POST)){
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $query = "SELECT * FROM gallery_user WHERE username='$username'";
+    $results = mysqli_query($conn, $query);
+    if (mysqli_num_rows($results) == 1) {
+        $row = mysqli_fetch_assoc($results);
+		$password = $row['password'];
+		$to = $row['email'];
+		$subject = "Your Recovered Password";
+ 
+		$message = "Please use this password to login " . $password;
+		$headers = "From: miklas.marko@live.com" . "\r\n";
+		if(mail($to, $subject, $message, $headers)){
+			echo "Your Password has been sent to your email id";
+		}else{
+			echo "Failed to Recover your password, try again";
+		}
+ 
+	}else{
+		echo "User name does not exist in database";
+	}
+
+}
+
+ 
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forgot Password in PHP & MySQL</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+ 
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+ 
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<div class="container">
+      <?php if(isset($smsg)){ ?><div class="alert alert-success" role="alert"> <?php echo $smsg; ?> </div><?php } ?>
+      <?php if(isset($fmsg)){ ?><div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
+      <form class="form-signin" method="POST">
+        <h2 class="form-signin-heading">Please Register</h2>
+        <div class="input-group">
+		  <input type="text" name="username" class="form-control" placeholder="Username" required>
+		</div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Forgot Password</button>
+        <a class="btn btn-lg btn-primary btn-block" href="register.php">Register</a>
+      </form>
+</div>
+</body>
 </html>

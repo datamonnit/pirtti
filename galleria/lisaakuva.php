@@ -1,13 +1,21 @@
 <?php
- 
-  $conn = mysqli_connect("localhost", "root", "", "pirttil");
-  session_start();
-  if (!isset($_SESSION[$username])) {
-    header('location: ../adminimg.php');
-}   
+    include('../db.php');
+    session_start();
+
+    if(!isset($_SESSION['username'])){
+        header("location: ../adminimg.php");
+
+    }
+
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        unset($_SESSION['username']);
+        header("location: ../adminimg.php");
+            
+    }
 
 
-
+    
     if(isset($_POST["submit"])){
 
             $target_dir = "uploads/";
@@ -286,6 +294,7 @@
             <li  class="tab6"><a href="../kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
             </ul>
           </nav>
+          <p> <a href="lisaakuva.php?logout='1'" style="color: red;">Kirjaudu ulos</a> </p>
       </div>
     </header>
   <hr class="style-two">
