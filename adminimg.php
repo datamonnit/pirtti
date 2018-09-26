@@ -69,7 +69,7 @@
                         <input type="password" name="password" >
                         <br><br>
                         <button type="submit" class="btn" name="login_user">Login</button>
-                        <a href="forgotPassword.php">asdasd</a>
+                        <a href="forgotPassword.php">Salasana unohtui</a>
                     </form> 
                 </div>
             </div>

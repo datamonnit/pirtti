@@ -18,14 +18,16 @@
             $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
             return substr(str_shuffle($data), 0, $chars);
           }
-          $newPassword = password_generate(7)."\n";
+          $newPassword = password_generate(7);
           $newPassword_md5 = md5($newPassword);
               $gr = "UPDATE gallery_user SET password='$newPassword_md5' WHERE id = '$row[id]'";
               $results = mysqli_query($conn, $gr);
   
-  
+          echo "</br>".$newPassword;
+          echo "</br>".$newPassword_md5;
+
           $message = "Tässä on uusi salasana: " . $newPassword;
-          $headers = "From: miklas.marko@live.com" . "\r\n";
+          $headers = "From: miklas.marko@live.com" . "\n";
           if(mail($to, $subject, $message, $headers)){
               echo "Salasana on lähetetty sähköpostiosoitteeseesi";
        

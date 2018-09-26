@@ -295,6 +295,7 @@
             </ul>
           </nav>
           <p> <a href="lisaakuva.php?logout='1'" style="color: red;">Kirjaudu ulos</a> </p>
+
       </div>
     </header>
   <hr class="style-two">
