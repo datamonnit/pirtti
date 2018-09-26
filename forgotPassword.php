@@ -1,7 +1,47 @@
-<!-- <?php include('login.php');
+<?php include('login.php');
   include('db.php');
 
-?>
+  require_once('db.php');
+  
+  if(isset($_POST) & !empty($_POST)){
+      $username = mysqli_real_escape_string($conn, $_POST['username']);
+      $query = "SELECT * FROM gallery_user WHERE username='$username'";
+      $results = mysqli_query($conn, $query);
+      if (mysqli_num_rows($results) == 1) {
+          $row = mysqli_fetch_assoc($results);
+          $password = $row['password'];
+          $to = $row['email'];
+          $subject = "Palautettu salasanasi";
+          
+          function password_generate($chars) 
+          {
+            $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
+            return substr(str_shuffle($data), 0, $chars);
+          }
+          $newPassword = password_generate(7)."\n";
+          $newPassword_md5 = md5($newPassword);
+              $gr = "UPDATE gallery_user SET password='$newPassword_md5' WHERE id = '$row[id]'";
+              $results = mysqli_query($conn, $gr);
+  
+  
+          $message = "Tässä on uusi salasana: " . $newPassword;
+          $headers = "From: miklas.marko@live.com" . "\r\n";
+          if(mail($to, $subject, $message, $headers)){
+              echo "Salasana on lähetetty sähköpostiosoitteeseesi";
+       
+          }else{
+              echo "Salasanan palauttaminen epäonnistui, yritä uudelleen";
+          }
+   
+      }else{
+          echo "Käyttäjänimiä ei ole tietokannassa";
+      }
+  
+  }
+  
+  
+  ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -59,11 +99,12 @@
       </div>
     </header>
     <?php include('errors.php'); ?>
-
-    <form class="contact-form" action="forgotPassword.php" method="post">
-      <input type="text" name="email">
-      <button type="submit" name="submit">Lähetä</button>
-    </form>
+    <form class="form-signin" method="POST">
+        <div class="input-group">
+		  <input type="text" name="username" class="form-control" placeholder="Username" required>
+		</div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Lähetä</button>
+      </form>
 <script language="javascript">
 
 </script>
@@ -105,80 +146,6 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 </script>
-</html> -->
-
-
-<?php
-$servername = "it.esedu.fi";
-$username = "pirtti";
-$password = "p1rtt1onp4r4s!";
-$database = "pirttidb";
-
-// $servername = "localhost";
-// $username = "root";
-// $password = "";
-// $database = "pirttil";
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
-// Check connection
-if ($conn->connect_error) {
-    die("Kantaan ei pysty yhdistämään" . $conn->connect_error);
-}
-?>
-<?php
-require_once('db.php');
-require('db.php');
-// require('PHPMailer/PHPMailerAutoload.php');
-if(isset($_POST) & !empty($_POST)){
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $query = "SELECT * FROM gallery_user WHERE username='$username'";
-    $results = mysqli_query($conn, $query);
-    if (mysqli_num_rows($results) == 1) {
-        $row = mysqli_fetch_assoc($results);
-		$password = $row['password'];
-		$to = $row['email'];
-		$subject = "Your Recovered Password";
- 
-		$message = "Please use this password to login " . $password;
-		$headers = "From: miklas.marko@live.com" . "\r\n";
-		if(mail($to, $subject, $message, $headers)){
-			echo "Your Password has been sent to your email id";
-		}else{
-			echo "Failed to Recover your password, try again";
-		}
- 
-	}else{
-		echo "User name does not exist in database";
-	}
-
-}
-
- 
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Forgot Password in PHP & MySQL</title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
- 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
- 
-	<link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-<div class="container">
-      <?php if(isset($smsg)){ ?><div class="alert alert-success" role="alert"> <?php echo $smsg; ?> </div><?php } ?>
-      <?php if(isset($fmsg)){ ?><div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
-      <form class="form-signin" method="POST">
-        <h2 class="form-signin-heading">Please Register</h2>
-        <div class="input-group">
-		  <input type="text" name="username" class="form-control" placeholder="Username" required>
-		</div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Forgot Password</button>
-        <a class="btn btn-lg btn-primary btn-block" href="register.php">Register</a>
-      </form>
-</div>
-</body>
 </html>
+
+

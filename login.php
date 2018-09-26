@@ -10,10 +10,10 @@ if (isset($_POST['login_user'])) {
   $password = mysqli_real_escape_string($conn, $_POST['password']);
 
     if (empty($username)) {
-        array_push($errors, "Username is required");
+        array_push($errors, "Käyttäjätunnus on pakollinen");
     }
     if (empty($password)) {
-        array_push($errors, "Password is required");
+        array_push($errors, "salasana tarvitaan");
     }
 
     if (count($errors) == 0) {
@@ -25,7 +25,7 @@ if (isset($_POST['login_user'])) {
           $_SESSION['username'] = $username;
           header('location: galleria/lisaakuva.php');
       }else {
-        array_push($errors, "Wrong username/password combination");
+        array_push($errors, "Väärä käyttäjätunnuksen / salasanan yhdistelmä");
       }
     }
   }
