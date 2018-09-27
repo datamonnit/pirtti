@@ -295,6 +295,7 @@
             </ul>
           </nav>
           <p> <a href="lisaakuva.php?logout='1'" style="color: red;">Kirjaudu ulos</a> </p>
+          <p> <a href="../password_change.php" style="color: red;">Vaihda salasana</a> </p>    
 
       </div>
     </header>
