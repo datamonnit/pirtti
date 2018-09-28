@@ -95,18 +95,19 @@
                  <a href="palvelusetelihakemus.html">Palvelusetelihakemus</a>
                </div>
             </li>
-            <li  class="tab6"><a href="kuvia.html" class="fa fa-image">&nbsp;Kuvia</a></li>
+            <li  class="tab6"><a href="kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
           </ul>
         </nav>
       </div>
     </header>
+    <center>
     <?php include('errors.php'); ?>
     <form class="form-signin" method="POST">
         <div class="input-group">
-		  <input type="text" name="username" class="form-control" placeholder="Username" required>
+		  <input type="text" name="username" class="css-input" placeholder="Username" required>
 		</div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Lähetä</button>
-      </form>
+        <button class="css-input"  type="submit">Lähetä</button>
+      </form></center>
 <script language="javascript">
 
 </script>

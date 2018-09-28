@@ -36,12 +36,12 @@
 
             if($filetmp == "")
             {
-                echo "valitse kuva";
+                $error =  "valitse kuva";
             }
             else
             {
                 if (file_exists($target_file)) {
-                    echo "Sama kuva on jo ladattu!";
+                    $error = "Sama kuva on jo ladattu!";
                     $uploadOk = 0;
                 }else
                 // if($filesize > 5000000000000 )
@@ -53,7 +53,7 @@
                     
                     if($filetype != "image/jpeg" && $filetype != "image/png" && $filetype != "image/gif")
                     {
-                        echo "valitse kuva joka on muodossa  jpg / png / gif";
+                        $error = "valitse kuva joka on muodossa  jpg / png / gif";
                     }
                     else
                     {
@@ -76,7 +76,7 @@
                     $new_width = "200";
                     $new_height = "200";
                         if($uploadOk == 0){
-                            echo "Kuvan lataamisessa tapahtui virhe!";
+                            $error = "Kuvan lataamisessa tapahtui virhe!";
                         }else{
                             //lataa kuvan normi koossa               
                             $image_p = imagecreatetruecolor($new_width, $new_height);
@@ -99,11 +99,11 @@
         $kuvat_html = "";
         if (mysqli_num_rows($results)){
             while ($row = mysqli_fetch_array($results)){
-              $kuvat_html .= "<div id='kuva' style='margin:3px;'>";
+              $kuvat_html .= "<div id='kuva' >";
               $kuvat_html .= "<p style:'margin:3px'>".$row[1]."</p>";
               $kuvat_html .= "<a href='../galleria/".$row[4]."'  data-lightbox='roadtrip'/> <img src='../galleria/".$row[7]."'/></a >";
               $kuvat_html .= "<p id='desc'>".$row[3]."</p>";
-              $kuvat_html .= "<button>"."<a href='lisaakuva.php?delbutton=$row[0]' class=''>"."Poista"."</a>"."</button>";
+              $kuvat_html .= "<button class='link-input'>"."<a href='lisaakuva.php?delbutton=$row[0]' class=''>"."Poista"."</a>"."</button>";
               $kuvat_html .= "</div>";
             }
         }
@@ -243,28 +243,6 @@
         background-color:#54ff62;
     }
 
-
-          #kuva {
-        margin: 5px;
-        border: 1px solid #ccc;
-        float: left;
-        width: 180px;
-        background: #00000071;
-      }
-
-      #kuva:hover {
-        border: 1px solid #777;
-      }
-
-      #kuva img {
-        width: 100%;
-        height: auto;
-      }
-
-      #desc {
-      padding: 15px;
-      text-align: center;
-      }
     </style>
   </head>
   <body>
@@ -301,25 +279,29 @@
     </header>
   <hr class="style-two">
   <center>
-<div class="lataakuva">
+  <div class="kuvat">
+    <div class="lataakuva">
+        <?php echo $error;?>
     <form action="lisaakuva.php" method="post" enctype="multipart/form-data"><br>
       <label style="float:left;" for="enimi">Otsikko:</label><br>
       <input class="css-input" type="text" name="otsikko"  placeholder="Anna kuvalle otsikko"><br>
-      <textarea rows="4" cols="50" name="image_text"></textarea>
+      <textarea class="css-input" rows="4" cols="23" name="image_text"></textarea>
       <label style="font-size:25px;" for="enimi">Valitse ladattava kuva:</label><br>
-      <input type="file" name="image" id="image"><br>
+      <input type="file" name="image" id="image" ><br>
       <input type="submit" value="Upload Image" name="submit"><br>
-    </form></center>
+    </form>
+      </div>
+    <?php echo $kuvat_html;?>
+
 </div>
+</center>
 <script>
 function myFunction(x) {
     x.classList.toggle("change");
 }
 </script>
 
-    <?php echo $kuvat_html;
 
-    ?>
   </body>
   <script>
 $(document).ready(function(){

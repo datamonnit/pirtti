@@ -57,22 +57,22 @@
         </nav>
       </div>
     </header>
+    <center>
     <?php include('errors.php'); ?>
-
             <div id="login_page">
                 <div id="login_screen">
                     <form method="post" action="adminimg.php">
                         Käyttäjätunnus:<br>
-                        <input type="text" name="username">
+                        <input type="text" class="css-input" name="username">
                         <br>
                         Salasana:<br>
-                        <input type="password" name="password" >
+                        <input type="password" class="css-input" name="password" >
                         <br><br>
-                        <button type="submit" class="btn" name="login_user">Login</button>
+                        <button type="submit" class="css-input" value="submit" name="login_user">Login</button>
                         <a href="forgotPassword.php">Salasana unohtui</a>
                     </form> 
                 </div>
-            </div>
+            </div>  </center>
 <script language="javascript">
 
 </script>

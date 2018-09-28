@@ -54,30 +54,6 @@ if (mysqli_num_rows($results)){
 
 
     </script>
-    <style>
-      #kuva {
-        margin: auto;
-        border: 1px solid #ccc;
-        float: left;
-        width: 180px;
-        background: #00000071;
-      }
-
-      #kuva:hover {
-        border: 1px solid #777;
-      }
-
-      #kuva img {
-        width: 100%;
-        height: auto;
-      }
-
-      #desc {
-      padding: 15px;
-      text-align: center;
-      }
-
-    </style>
   </head>
   <body>
     <header>
@@ -102,8 +78,9 @@ if (mysqli_num_rows($results)){
         </nav>
       </div>
     </header>
+    <center>
     <hr class="style-two">
-    <div class="juu"><center>
+    <div class="juu">
     
       <div class="kuvat">
       <p style="color:balck;"> Voit klikata kuvia suuremmiksi </p>
@@ -111,14 +88,13 @@ if (mysqli_num_rows($results)){
 
         ?>
       </div>
-    </center>
-    <div/>
+    </div>
 
-    <!-- <footer>
+    <footer>
       <p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2017</p>
-      <p><a style="color:black;"  href="galleria/lisaakuva.php">Kirjaudu</a></p>
-    </footer> -->
-
+      <!-- <p><a style="color:black;"  href="galleria/lisaakuva.php">Kirjaudu</a></p> -->
+    </footer>
+    </center>
     <script>
   var slideIndex = 1;
   showDivs(slideIndex);
