@@ -1,6 +1,7 @@
 <?php
     include('../db.php');
     session_start();
+    $vaarin = "";
 
     if(!isset($_SESSION['username'])){
         header("location: ../adminimg.php");
@@ -36,12 +37,12 @@
 
             if($filetmp == "")
             {
-                $error =  "valitse kuva";
+                $vaarin = "valitse kuva";
             }
             else
             {
                 if (file_exists($target_file)) {
-                    $error = "Sama kuva on jo ladattu!";
+                    $vaarin = "Sama kuva on jo ladattu!";
                     $uploadOk = 0;
                 }else
                 // if($filesize > 5000000000000 )
@@ -53,7 +54,7 @@
                     
                     if($filetype != "image/jpeg" && $filetype != "image/png" && $filetype != "image/gif")
                     {
-                        $error = "valitse kuva joka on muodossa  jpg / png / gif";
+                        $vaarin = "valitse kuva joka on muodossa  jpg / png / gif";
                     }
                     else
                     {
@@ -76,7 +77,7 @@
                     $new_width = "200";
                     $new_height = "200";
                         if($uploadOk == 0){
-                            $error = "Kuvan lataamisessa tapahtui virhe!";
+                            $vaarin = "Kuvan lataamisessa tapahtui virhe!";
                         }else{
                             //lataa kuvan normi koossa               
                             $image_p = imagecreatetruecolor($new_width, $new_height);
@@ -103,7 +104,7 @@
               $kuvat_html .= "<p style:'margin:3px'>".$row[1]."</p>";
               $kuvat_html .= "<a href='../galleria/".$row[4]."'  data-lightbox='roadtrip'/> <img src='../galleria/".$row[7]."'/></a >";
               $kuvat_html .= "<p id='desc'>".$row[3]."</p>";
-              $kuvat_html .= "<button class='link-input'>"."<a href='lisaakuva.php?delbutton=$row[0]' class=''>"."Poista"."</a>"."</button>";
+              $kuvat_html .= "<button type='submit' class='link-input'>"."<a href='lisaakuva.php?delbutton=$row[0]' class=''>"."Poista"."</a>"."</button>";
               $kuvat_html .= "</div>";
             }
         }
@@ -217,31 +218,8 @@
       });
     </script>
     <style>
-    input[type=text], select  {
 
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-
-    input[type=submit] {
-      background-color: darkgray;
-    color: black;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 60%;
-    transition: all 0.5s ease 0s;
-    font-size: 20px;
-    }
-    input[type=submit]:hover {
-        background-color:#54ff62;
-    }
+    
 
     </style>
   </head>
@@ -279,18 +257,19 @@
     </header>
   <hr class="style-two">
   <center>
-  <div class="kuvat">
+
     <div class="lataakuva">
-        <?php echo $error;?>
+    <?php echo $vaarin;?>
     <form action="lisaakuva.php" method="post" enctype="multipart/form-data"><br>
       <label style="float:left;" for="enimi">Otsikko:</label><br>
       <input class="css-input" type="text" name="otsikko"  placeholder="Anna kuvalle otsikko"><br>
-      <textarea class="css-input" rows="4" cols="23" name="image_text"></textarea>
+      <textarea class="css-input" type="text" rows="4" cols="23" name="image_text"></textarea>
       <label style="font-size:25px;" for="enimi">Valitse ladattava kuva:</label><br>
       <input type="file" name="image" id="image" ><br>
       <input type="submit" value="Upload Image" name="submit"><br>
     </form>
       </div>
+      <div class="kuvat">
     <?php echo $kuvat_html;?>
 
 </div>

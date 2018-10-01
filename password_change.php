@@ -68,54 +68,7 @@
       });
     </script>
     <style>
-    input[type=text], select  {
 
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-
-    input[type=submit] {
-      background-color: darkgray;
-    color: black;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 60%;
-    transition: all 0.5s ease 0s;
-    font-size: 20px;
-    }
-    input[type=submit]:hover {
-        background-color:#54ff62;
-    }
-
-
-          #kuva {
-        margin: 5px;
-        border: 1px solid #ccc;
-        float: left;
-        width: 180px;
-        background: #00000071;
-      }
-
-      #kuva:hover {
-        border: 1px solid #777;
-      }
-
-      #kuva img {
-        width: 100%;
-        height: auto;
-      }
-
-      #desc {
-      padding: 15px;
-      text-align: center;
-      }
     </style>
   </head>
   <body>
@@ -155,15 +108,15 @@
         <form class="form-signin" method="POST">
         <?php include('errors.php'); ?>
                 Käyttäjätunnus:<br>
-                <input type="text" name="username" >
+                <input class="css-input" type="text" name="username" >
                 <br><br>
                 Salasana:<br>
-                <input type="password" name="password_1">
+                <input  class="css-input" type="password" name="password_1">
                 <br><br>
                 Salasana uudelleen:<br>
-                <input type="password" name="password_2">
+                <input class="css-input" type="password" name="password_2">
                 <br><br>
-                <button type="submit" class="btn" name="passchan">Vaihda salasana</button>                
+                <button class="css-input" type="submit" name="passchan">Vaihda salasana</button>                
             </form> 
 <script>
 function myFunction(x) {

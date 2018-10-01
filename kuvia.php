@@ -45,14 +45,11 @@ if (mysqli_num_rows($results)){
     <script src="./assets/js/lightbox.js"></script>
     <script>
       $(document).ready(function(){
-          $("button").click(function(){
-              $("nav").toggle(500);
+          $("#hide").click(function(){
+              $("nav").slideToggle("fast");
           });
       });
-
-
-
-
+          document.getElementById("hide").onclick = function() {myFunction()};
     </script>
   </head>
   <body>
@@ -60,7 +57,7 @@ if (mysqli_num_rows($results)){
       <div class="container">
           <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
           <h1> Päiväkoti Pirtti</h1>
-          <!-- <button id="hide">&#9776</button> -->
+          <button id="hide">&#9776</button>
         <nav>
           <ul>
             <li class="current tab1"><a href="index.html" class="fa fa-home">&nbsp;Etusivu </a></li>

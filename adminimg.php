@@ -21,7 +21,7 @@
               $("nav").slideToggle("fast");
           });
       });
-          document.getElementById("hide").onclick = function() {myFunction()};
+        //   document.getElementById("hide").onclick = function() {myFunction()};
     </script>
     <style>
 
@@ -35,11 +35,12 @@
       <div class="container">
           <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
           <h1> Päiväkoti Pirtti</h1>
-<button name="myButton" id="hide">      <div class="juttu" onclick="myFunction(this)">
-  <div class="bar1"></div>
-  <div class="bar2"></div>
-  <div class="bar3"></div>
-</div></button>
+    <button name="myButton" id="hide"> 
+    <div class="juttu" onclick="myFunction(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+    </div></button>
         <nav>
           <ul>
             <li class="current tab1"><a href="index.html" class="fa fa-home">&nbsp;Etusivu </a></li>
