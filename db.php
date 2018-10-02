@@ -8,4 +8,3 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     die("Kantaan ei pysty yhdistämään" . $conn->connect_error);
 }
-?>
