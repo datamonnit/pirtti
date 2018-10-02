@@ -45,46 +45,19 @@ if (mysqli_num_rows($results)){
     <script src="./assets/js/lightbox.js"></script>
     <script>
       $(document).ready(function(){
-          $("button").click(function(){
-              $("nav").toggle(500);
+          $("#hide").click(function(){
+              $("nav").slideToggle("fast");
           });
       });
-
-
-
-
+          document.getElementById("hide").onclick = function() {myFunction()};
     </script>
-    <style>
-      #kuva {
-        margin: auto;
-        border: 1px solid #ccc;
-        float: left;
-        width: 180px;
-        background: #00000071;
-      }
-
-      #kuva:hover {
-        border: 1px solid #777;
-      }
-
-      #kuva img {
-        width: 100%;
-        height: auto;
-      }
-
-      #desc {
-      padding: 15px;
-      text-align: center;
-      }
-
-    </style>
   </head>
   <body>
     <header>
       <div class="container">
           <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
           <h1> Päiväkoti Pirtti</h1>
-          <!-- <button id="hide">&#9776</button> -->
+          <button id="hide">&#9776</button>
         <nav>
           <ul>
             <li class="current tab1"><a href="index.html" class="fa fa-home">&nbsp;Etusivu </a></li>
@@ -102,8 +75,9 @@ if (mysqli_num_rows($results)){
         </nav>
       </div>
     </header>
+    <center>
     <hr class="style-two">
-    <div class="juu"><center>
+    <div class="juu">
     
       <div class="kuvat">
       <p style="color:balck;"> Voit klikata kuvia suuremmiksi </p>
@@ -111,14 +85,13 @@ if (mysqli_num_rows($results)){
 
         ?>
       </div>
-    </center>
-    <div/>
+    </div>
 
-    <!-- <footer>
+    <footer>
       <p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2017</p>
-      <p><a style="color:black;"  href="galleria/lisaakuva.php">Kirjaudu</a></p>
-    </footer> -->
-
+      <!-- <p><a style="color:black;"  href="galleria/lisaakuva.php">Kirjaudu</a></p> -->
+    </footer>
+    </center>
     <script>
   var slideIndex = 1;
   showDivs(slideIndex);

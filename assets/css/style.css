@@ -4,6 +4,7 @@ body{
   margin:0;
   background-image: url("../img/tausta.png");
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  
 }
 h5 {
   color: white;
@@ -147,12 +148,11 @@ svg {padding-top: 20px;}
 
 }
 .kuvat {
-  padding: 45px;
+  padding: 5px;
   max-width: 1800px;
-  min-height: 200px;
-  background-color: rgb(54, 72, 82);
+  margin: auto;
+  overflow: auto;
 
-  
 }
 
 ::-webkit-scrollbar-button{ display: block; height: 13px; border-radius: 0px; background-color: #ffffff; } ::-webkit-scrollbar-button:hover{ background-color: #ffffff; } ::-webkit-scrollbar-thumb{ background-color: #606060; } ::-webkit-scrollbar-thumb:hover{ background-color: #808080; border-radius: 0px; } ::-webkit-scrollbar-track{ background-color: #efefef; } ::-webkit-scrollbar-track:hover{ background-color: #CCC; } ::-webkit-scrollbar{ width: 5px; }
@@ -175,19 +175,43 @@ max-height: 500px;
 }
 .css-input {
      padding: 6px;
-     font-size: 23px;
+     font-size: 20px;
      border-width: 0px;
      border-color: #DADADA;
      background-color: #f9f9f9;
      color: #000000;
      border-style: solid;
-     border-radius: 0px;
+     border-radius: 4px;
      box-shadow: 0px 0px 3px rgba(66,66,66,.75);
      text-shadow: undefined 0px 0px 5px px rgba(66,66,66,.75);
+     /* height: ; */
 }
  .css-input:focus {
      outline:none;
 }
+.link-input{
+  box-sizing: border-box;
+  padding: 6px;
+  font-size: 15;
+  border-width: 1px;
+  border-color: #DADADA;
+  background-color: #f9f9f9;
+  color: #000000;
+  border-style: solid;
+  border-radius: 4px;
+  box-shadow: 0px 0px 3px rgba(66,66,66,.75);
+  text-shadow: undefined 0px 0px 5px px rgba(66,66,66,.75);
+  margin: auto;
+}
+.link-input a{
+  padding: 2px;
+  margin: 4px;
+}
+
+.link-input:focus {
+  outline:none;
+}
+
 #myBtn {
 display: none;
 position: fixed;
@@ -505,6 +529,8 @@ footer{
   width: 100%;
   height: 200px;
   margin: auto;
+  clear:both;
+
   /* padding-top: 60px; */
 }
 footer p {
@@ -540,14 +566,82 @@ hr.style-two {
 
 
 
+#kuva {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+  background: #00000071;
+  border-radius: 7px;
+
+}
+
+#kuva:hover {
+  border: 1px solid #777;
+}
+
+#kuva img {
+  width: 90%;
+  height: auto;
+  border-radius: 7px;
+
+}
+
+#desc {
+  padding: 5px;
+  text-align: left;
+  font-size: 12px;
+  margin: 0%;
+}
+
+input[type=text], select  {
+
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea{
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+
+  input[type=submit] {
+  background-color: darkgray;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 60%;
+  transition: all 0.5s ease 0s;
+  font-size: 20px;
+  }
+  input[type=submit]:hover {
+    background-color:#54ff62;
+  }
+
+  input[type=password] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
 
 
-
-
-
-
-
-
+  #hide{
+    display:  none;
+  }
 
 
 
@@ -866,7 +960,8 @@ display: none;
     padding: 10px;
     width: 100%;
     min-height: 200px;
-    background-color: rgba(86, 86, 86, 0.78);
+     overflow: auto;
+
     
   }
 
@@ -876,5 +971,33 @@ display: none;
     width: 100vw;
     height: 100px;
 
+  }
+
+  #kuva {
+    width: 4  0%;
+    font-size: 10px;
+    
+  }
+  #kuva p{
+    text-align: left;
+    margin: auto ;
+  }
+
+  #desc a{
+    width: 20%;
+    margin: 0px;
+
+
+  }
+
+  #kuva {
+    width: 30%;
+
+  }
+  .lataakuva{
+    /* float: left;  */
+  }
+  .link-input {
+    width: 80%;
   }
 }

@@ -1,6 +1,49 @@
 <?php include('login.php');
+  include('db.php');
 
-?>
+  require_once('db.php');
+  
+  if(isset($_POST) & !empty($_POST)){
+      $username = mysqli_real_escape_string($conn, $_POST['username']);
+      $query = "SELECT * FROM gallery_user WHERE username='$username'";
+      $results = mysqli_query($conn, $query);
+      if (mysqli_num_rows($results) == 1) {
+          $row = mysqli_fetch_assoc($results);
+          $password = $row['password'];
+          $to = $row['email'];
+          $subject = "Palautettu salasanasi";
+          
+          function password_generate($chars) 
+          {
+            $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
+            return substr(str_shuffle($data), 0, $chars);
+          }
+          $newPassword = password_generate(7);
+          $newPassword_md5 = md5($newPassword);
+              $gr = "UPDATE gallery_user SET password='$newPassword_md5' WHERE id = '$row[id]'";
+              $results = mysqli_query($conn, $gr);
+  
+          echo "</br>".$newPassword;
+          echo "</br>".$newPassword_md5;
+
+          $message = "Tässä on uusi salasana: " . $newPassword;
+          $headers = "From: miklas.marko@live.com" . "\n";
+          if(mail($to, $subject, $message, $headers)){
+              echo "Salasana on lähetetty sähköpostiosoitteeseesi";
+       
+          }else{
+              echo "Salasanan palauttaminen epäonnistui, yritä uudelleen";
+          }
+   
+      }else{
+          echo "Käyttäjänimiä ei ole tietokannassa";
+      }
+  
+  }
+  
+  
+  ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,7 +64,7 @@
               $("nav").slideToggle("fast");
           });
       });
-        //   document.getElementById("hide").onclick = function() {myFunction()};
+          document.getElementById("hide").onclick = function() {myFunction()};
     </script>
     <style>
 
@@ -35,12 +78,11 @@
       <div class="container">
           <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
           <h1> Päiväkoti Pirtti</h1>
-    <button name="myButton" id="hide"> 
-    <div class="juttu" onclick="myFunction(this)">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
-    </div></button>
+<button name="myButton" id="hide">      <div class="juttu" onclick="myFunction(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div></button>
         <nav>
           <ul>
             <li class="current tab1"><a href="index.html" class="fa fa-home">&nbsp;Etusivu </a></li>
@@ -53,27 +95,19 @@
                  <a href="palvelusetelihakemus.html">Palvelusetelihakemus</a>
                </div>
             </li>
-            <li  class="tab6"><a href="kuvia.html" class="fa fa-image">&nbsp;Kuvia</a></li>
+            <li  class="tab6"><a href="kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
           </ul>
         </nav>
       </div>
     </header>
     <center>
     <?php include('errors.php'); ?>
-            <div id="login_page">
-                <div id="login_screen">
-                    <form method="post" action="adminimg.php">
-                        Käyttäjätunnus:<br>
-                        <input type="text" class="css-input" name="username">
-                        <br>
-                        Salasana:<br>
-                        <input type="password" class="css-input" name="password" >
-                        <br><br>
-                        <button type="submit" class="css-input" value="submit" name="login_user">Login</button>
-                        <a href="forgotPassword.php">Salasana unohtui</a>
-                    </form> 
-                </div>
-            </div>  </center>
+    <form class="form-signin" method="POST">
+        <div class="input-group">
+		  <input type="text" name="username" class="css-input" placeholder="Username" required>
+		</div>
+        <button class="css-input"  type="submit">Lähetä</button>
+      </form></center>
 <script language="javascript">
 
 </script>
@@ -116,3 +150,5 @@ function topFunction() {
 }
 </script>
 </html>
+
+

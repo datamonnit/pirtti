@@ -1,6 +1,22 @@
 <?php
-        $conn = mysqli_connect("localhost", "root", "", "pirttidb");
+    include('../db.php');
+    session_start();
+    $vaarin = "";
 
+    if(!isset($_SESSION['username'])){
+        header("location: ../adminimg.php");
+
+    }
+
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        unset($_SESSION['username']);
+        header("location: ../adminimg.php");
+            
+    }
+
+
+    
     if(isset($_POST["submit"])){
 
             $target_dir = "uploads/";
@@ -21,12 +37,12 @@
 
             if($filetmp == "")
             {
-                echo "valitse kuva";
+                $vaarin = "valitse kuva";
             }
             else
             {
                 if (file_exists($target_file)) {
-                    echo "Sama kuva on jo ladattu!";
+                    $vaarin = "Sama kuva on jo ladattu!";
                     $uploadOk = 0;
                 }else
                 // if($filesize > 5000000000000 )
@@ -38,7 +54,7 @@
                     
                     if($filetype != "image/jpeg" && $filetype != "image/png" && $filetype != "image/gif")
                     {
-                        echo "valitse kuva joka on muodossa  jpg / png / gif";
+                        $vaarin = "valitse kuva joka on muodossa  jpg / png / gif";
                     }
                     else
                     {
@@ -61,7 +77,7 @@
                     $new_width = "200";
                     $new_height = "200";
                         if($uploadOk == 0){
-                            echo "Kuvan lataamisessa tapahtui virhe!";
+                            $vaarin = "Kuvan lataamisessa tapahtui virhe!";
                         }else{
                             //lataa kuvan normi koossa               
                             $image_p = imagecreatetruecolor($new_width, $new_height);
@@ -84,11 +100,11 @@
         $kuvat_html = "";
         if (mysqli_num_rows($results)){
             while ($row = mysqli_fetch_array($results)){
-              $kuvat_html .= "<div id='kuva' style='margin:3px;'>";
+              $kuvat_html .= "<div id='kuva' >";
               $kuvat_html .= "<p style:'margin:3px'>".$row[1]."</p>";
               $kuvat_html .= "<a href='../galleria/".$row[4]."'  data-lightbox='roadtrip'/> <img src='../galleria/".$row[7]."'/></a >";
               $kuvat_html .= "<p id='desc'>".$row[3]."</p>";
-              $kuvat_html .= "<button>"."<a href='lisaakuva.php?delbutton=$row[0]' class=''>"."Poista"."</a>"."</button>";
+              $kuvat_html .= "<button type='submit' class='link-input'>"."<a href='lisaakuva.php?delbutton=$row[0]' class=''>"."Poista"."</a>"."</button>";
               $kuvat_html .= "</div>";
             }
         }
@@ -202,54 +218,9 @@
       });
     </script>
     <style>
-    input[type=text], select  {
 
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
+    
 
-    input[type=submit] {
-      background-color: darkgray;
-    color: black;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 60%;
-    transition: all 0.5s ease 0s;
-    font-size: 20px;
-    }
-    input[type=submit]:hover {
-        background-color:#54ff62;
-    }
-
-
-          #kuva {
-        margin: 5px;
-        border: 1px solid #ccc;
-        float: left;
-        width: 180px;
-        background: #00000071;
-      }
-
-      #kuva:hover {
-        border: 1px solid #777;
-      }
-
-      #kuva img {
-        width: 100%;
-        height: auto;
-      }
-
-      #desc {
-      padding: 15px;
-      text-align: center;
-      }
     </style>
   </head>
   <body>
@@ -279,29 +250,37 @@
             <li  class="tab6"><a href="../kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
             </ul>
           </nav>
+          <p> <a href="lisaakuva.php?logout='1'" style="color: red;">Kirjaudu ulos</a> </p>
+          <p> <a href="../password_change.php" style="color: red;">Vaihda salasana</a> </p>    
+
       </div>
     </header>
   <hr class="style-two">
   <center>
-<div class="lataakuva">
+
+    <div class="lataakuva">
+    <?php echo $vaarin;?>
     <form action="lisaakuva.php" method="post" enctype="multipart/form-data"><br>
       <label style="float:left;" for="enimi">Otsikko:</label><br>
       <input class="css-input" type="text" name="otsikko"  placeholder="Anna kuvalle otsikko"><br>
-      <textarea rows="4" cols="50" name="image_text"></textarea>
+      <textarea class="css-input" type="text" rows="4" cols="23" name="image_text"></textarea>
       <label style="font-size:25px;" for="enimi">Valitse ladattava kuva:</label><br>
-      <input type="file" name="image" id="image"><br>
+      <input type="file" name="image" id="image" ><br>
       <input type="submit" value="Upload Image" name="submit"><br>
-    </form></center>
+    </form>
+      </div>
+      <div class="kuvat">
+    <?php echo $kuvat_html;?>
+
 </div>
+</center>
 <script>
 function myFunction(x) {
     x.classList.toggle("change");
 }
 </script>
 
-    <?php echo $kuvat_html;
 
-    ?>
   </body>
   <script>
 $(document).ready(function(){
