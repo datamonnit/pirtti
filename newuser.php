@@ -1,5 +1,5 @@
 <?php include('login.php');
-  session_start();
+
    
   if(!isset($_SESSION['username'])){
     header("location: adminimg.php");
