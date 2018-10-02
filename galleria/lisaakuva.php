@@ -252,7 +252,8 @@
           </nav>
           <p> <a href="lisaakuva.php?logout='1'" style="color: red;">Kirjaudu ulos</a> </p>
           <p> <a href="../password_change.php" style="color: red;">Vaihda salasana</a> </p>    
-
+          <p> <a href="../newuser.php" style="color: red;">luo Käyttäjä</a> </p>    
+          <p>Käyttäjä: <?php echo $_SESSION['username']?></p>
       </div>
     </header>
   <hr class="style-two">

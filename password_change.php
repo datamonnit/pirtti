@@ -85,8 +85,8 @@
             </div></button>
         <nav>
           <ul>
-            <li class="current tab1"><a href="../index.html" class="fa fa-home">&nbsp;Etusivu </a></li>
-            <li  class="tab4"><a href="../yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
+            <li class="current tab1"><a href="index.html" class="fa fa-home">&nbsp;Etusivu </a></li>
+            <li  class="tab4"><a href="yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
             <li  class="tab5 dropdown">
               <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
               <div class="dropdown-content">
@@ -100,6 +100,8 @@
           </nav>
           <p> <a href="password_change.php?logout='1'" style="color: red;">Kirjaudu ulos</a> </p>
           <p> <a href="galleria/lisaakuva.php" style="color: red;">Takas</a> </p>   
+          <p> <a href="newuser.php" style="color: red;">luo Käyttäjä</a> </p>   
+          <P>Käyttäjä: <?php echo $_SESSION['username']?></p>
       </div>
     </header>
   <hr class="style-two">
