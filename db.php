@@ -1,13 +1,7 @@
 <?php
-// $servername = "it.esedu.fi";
-// $username = "pirtti";
-// $password = "p1rtt1onp4r4s!";
-// $database = "pirttidb";
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "pirttil";
+include 'config.php';
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
 // Check connection
