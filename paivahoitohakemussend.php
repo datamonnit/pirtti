@@ -85,10 +85,10 @@
 	.PHP_EOL. PHP_EOL. PHP_EOL;
 	PHP_EOL.	"Älä vastaa tähän viestiin!";
 
-	$hash = md5($paivakoti.$huoltajasahkoposti.$huoltajapuhelin.$pvm);
+	$hash = md5($paivakoti.$huoltajasahkoposti.$huoltajapuhelin.$pvm.$lapsihenkilotunnus.$lapsietunimi);
+	$tablename = 'paivahoitohakemus';
 
-	$message .= PHP_EOL. "Kuittaa hakemus luetuksi: https://paja.esedu.fi/data14/juho.pirila/pirtti/paivakotipirtti/verify.php?email=$email&hash=$hash";
-
+	$message .= PHP_EOL. "Kuittaa hakemus luetuksi: http://it.esedu.fi/~pirtti/verify.php?hash=$hash&tablename=$tablename&email=$huoltajasahkoposti";
 	if (true === false){
 		echo "<script>alert('Hakemuksen lähettämisessä tapahtui virhe! Yritä uudelleen!')</script>";
 		exit();
@@ -97,7 +97,7 @@
 		require('db.php');
 	// INSERT paivahoitohakemus (huoltajasahkoposti, huoltajapuhelin, hakumuspvm)
 
-	$sql = "INSERT INTO paivahoitohakemus (paivakoti, huoltajasahkoposti, huoltajapuhelin, pvm, hash) VALUES ('$paivakoti', '$huoltajasahkoposti', '$huoltajapuhelin',  DATE(NOW()), '$hash')" ;
+	$sql = "INSERT INTO $tablename (paivakoti, huoltajasahkoposti, huoltajapuhelin, pvm, hash) VALUES ('$paivakoti', '$huoltajasahkoposti', '$huoltajapuhelin',  DATE(NOW()), '$hash')" ;
 	if ($conn->query($sql) === TRUE) {
     echo "";
 } else {
@@ -107,10 +107,14 @@
 		$headers = 'From: paivahoitohakemus@pirtti.com' . "\r\n" .
 						    'Reply-To: noreply@pirtti.com' . "\r\n" .
 						    'X-Mailer: PHP/' . phpversion();
-	mail('juho.pirila@esedulainen.fi', 'Paivahoitohakemus | Pirtti',$message, $headers);
+	mail('miklas.maczulskij@esedulainen.fi', 'Paivahoitohakemus | Pirtti',$message, $headers);
 	echo "Päivähoitohakemus lähetetty!";
-header( "Refresh:1; url=paivahoitohakemus.html", true, 5);
+header( "Refresh:0; url=paivahoitohakemus.html", true, 5);
 
+	// $headers = 'From: maczulskijmiklas@gmail.com' . "\r\n";
+	// mail('miklas.maczulskij@esedulainen.fi', 'Paivahoitohakemus | Pirtti',$message, $headers);
+	// echo "Päivähoitohakemus lähetetty!";
+	// header( "Refresh:0; url=paivahoitohakemus.html", true, 1);
 
 
 }

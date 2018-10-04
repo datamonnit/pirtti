@@ -1,8 +1,5 @@
 <?php
-$servername = "it.esedu.fi";
-$username = "pirtti";
-$password = "p1rtt1onp4r4s!";
-$database = "pirttidb";
+require('config.php');
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
