@@ -1,5 +1,5 @@
 <?php
-        $conn = mysqli_connect("localhost", "root", "", "pirttidb");
+  include 'db.php';
 
 // $dirname = "galleria/thumbs/";
 // $images = scandir($dirname);
@@ -53,7 +53,7 @@ if (mysqli_num_rows($results)){
     </script>
   </head>
   <body>
-    <header>
+    <!-- <header>
       <div class="container">
           <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
           <h1> Päiväkoti Pirtti</h1>
@@ -74,7 +74,9 @@ if (mysqli_num_rows($results)){
           </ul>
         </nav>
       </div>
-    </header>
+    </header> -->
+    <?php include 'header.php';?>
+
     <center>
     <hr class="style-two">
     <div class="juu">
@@ -87,10 +89,10 @@ if (mysqli_num_rows($results)){
       </div>
     </div>
 
-    <footer>
-      <p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2017</p>
-      <!-- <p><a style="color:black;"  href="galleria/lisaakuva.php">Kirjaudu</a></p> -->
-    </footer>
+  <footer>
+      <a href="adminimg.php"><p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2018</p></a>
+
+  </footer>
     </center>
     <script>
   var slideIndex = 1;

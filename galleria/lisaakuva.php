@@ -224,7 +224,7 @@
     </style>
   </head>
   <body>
-    <header>
+    <!-- <header>
       <button onclick="topFunction()" id="myBtn">Ylös</button>
       <div class="container">
           <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
@@ -249,8 +249,10 @@
               </li>
             <li  class="tab6"><a href="../kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
             </ul>
-          </nav>
-          <p> <a href="lisaakuva.php?logout='1'" style="color: red;">Kirjaudu ulos</a> </p>
+          </nav>-->
+
+    <?php include 'header.php';?>
+    <p> <a href="lisaakuva.php?logout='1'" style="color: red;">Kirjaudu ulos</a> </p>
           <p> <a href="../password_change.php" style="color: red;">Vaihda salasana</a> </p>    
           <p> <a href="../newuser.php" style="color: red;">luo Käyttäjä</a> </p>    
           <p>Käyttäjä: <?php echo $_SESSION['username']?></p>

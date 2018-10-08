@@ -73,7 +73,7 @@
   </head>
   <body>
 
-    <header>
+    <!-- <header>
       <button onclick="topFunction()" id="myBtn">Ylös</button>
       <div class="container">
           <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
@@ -99,8 +99,12 @@
           </ul>
         </nav>
       </div>
+    </header> -->
+    <?php include 'header.php';?>
+    </div>
     </header>
-    <center>
+  <hr class="style-two">
+  <center>
     <?php include('errors.php'); ?>
     <form class="form-signin" method="POST">
         <div class="input-group">
