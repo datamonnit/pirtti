@@ -42,7 +42,7 @@ if (isset($_GET['logout'])) {
   </head>
   <body>
 
-    <header>
+    <!-- <header>
       <button onclick="topFunction()" id="myBtn">Ylös</button>
       <div class="container">
           <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
@@ -72,8 +72,14 @@ if (isset($_GET['logout'])) {
         <p> <a href="galleria/lisaakuva.php" style="color: red;">Takas</a> </p>
         <P>Käyttäjä: <?php echo $_SESSION['username']?></p> 
       </div>
+    </header> -->
+    <?php include 'galleria/header.php';?>
+    <p> <a href="password_change.php?logout='1'" style="color: red;">Kirjaudu ulos</a> </p>
+        <p> <a href="galleria/lisaakuva.php" style="color: red;">Takas</a> </p>
+          <P>Käyttäjä: <?php echo $_SESSION['username']?></p>
+    </div>
     </header>
-    <hr class="style-two">
+  <hr class="style-two">
     <center>
     <?php include('errors.php'); ?>
             <div id="login_page">

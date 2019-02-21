@@ -22,7 +22,7 @@
     </script>
   </head>
   <body>
-    <header>
+    <!-- <header>
       <div class="container">
           <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
           <h1> Päiväkoti Pirtti</h1>
@@ -43,7 +43,9 @@
             </ul>
           </nav>
       </div>
-    </header>
+    </header> -->
+    <?php include 'header.php';?>
+
     <hr class="style-two">
       <section id="yhteystiedot">
         <div class="maps">
@@ -52,11 +54,15 @@
             <div class="yhteystiedotpirtti">
               <h3> Päiväkoti Pirtti </h3>
                 <p>  Puh.yläkerta 0440 214 298</p>
-                <p>  puh.alakerta (pienten ryhmä) 0447 214 297</p>
+                <p>  puh.alakerta <strong>(pienten ryhmä)</strong> 0447 214 297</p>
                 <p> Päiväkodin johtaja Heli Joensuu<p>
-                <p> puh. 0440 214 297</p>
-                <p> pkpirttiry@surffi.fi</p>
-                <p> Telkänkatu 2 50190 Mikkeli </p>
+                <p> puh. 0440 214 297 <strong>(Päiväkoti pirtti)</strong></p>
+                <p> puh. 0445 336 555 <strong>(Moision päiväkoti)</strong></p>
+
+                <p> pkpirttiry@surffi.fi <strong>(Päiväkoti pirtti)</strong></p>
+                <p> moisiopk@surffi.fi <strong>(Moision päiväkoti</strong>)</p>
+                <p> Telkänkatu 2 50190 Mikkeli (<strong>Päiväkori pirtti)</strong> </p>
+                <p> Moisiontie 5 (<strong>Moision päiväkoti)</strong> </p>
                 <br>
                 <h3>Henkilökunta:</h3>
                   <p>  Heli Joensuu, päiväkodin johtaja / lastentarhanopettaja</p>
@@ -65,7 +71,11 @@
                   <p>  Riitta Ruuska , lastenhoitaja</p>
                   <p>  Arja Hurri , päivähoitaja</p>
                   <p>  Taija Virtanen, lähihoitaja</p>
-                <button id="kartalla" onclick="window.location.href='https://goo.gl/maps/dLP99r2Ds8n'">Näytä kartalla</button>
+                <button id="kartalla" onclick="window.location.href='https://goo.gl/maps/dLP99r2Ds8n'">Näytä kartalla <strong>(Päiväkoti pirtti)</strong></button>
+                <button id="kartalla" onclick="window.location.href='https://goo.gl/maps/qAuJcwcbMXx'">Näytä kartalla <strong>(Moision päiväkoti)</strong></button>
+
+            </div>
+
             </div>
           </div>
             <h2 id="juuj"> Päiväkoti pirtti </h2>
@@ -75,7 +85,9 @@
               }
             </script>
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1892.2470627236496!2d27.29933722395828!3d61.68823598352508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469aa19aa8d32e1b%3A0xcabaeadedccf099e!2sP%C3%A4iv%C3%A4kotiyhdistys+Pirtti+Ry!5e0!3m2!1sfi!2sfi!4v1487151959017" class="mappi" id="iframe" width="500" height="500" frameborder="" style="border:0" allowfullscreen></iframe>
-        </div>
+                <h2 id="juuj"> Päiväkoti moisio</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5514.218634229615!2d27.27420141573487!3d61.65849311208076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469aa1b484b35df3%3A0xcbdbba74d9ae6590!2zTW9pc2lvbiBQw6RpdsOka290aQ!5e0!3m2!1sfi!2sfi!4v1538981205315" class="mappi" id="iframe" width="500" height="500" frameborder="" style="border:0" allowfullscreen></iframe>
+              </div>
       </section>
       <footer>
         <p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2017</p>

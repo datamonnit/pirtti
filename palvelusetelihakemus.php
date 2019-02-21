@@ -27,7 +27,7 @@
   </head>
   <body>
 
-    <header>
+    <!-- <header>
       <button onclick="topFunction()" id="myBtn">Ylös</button>
       <div class="container">
         <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
@@ -53,16 +53,23 @@
           </ul>
         </nav>
       </div>
-    </header>
+    </header> -->
+    <?php include 'header.php';?>
+
     <hr class="style-two">
-
-    <div class="container">
-      <h1>Tietoa palvelusetelistä sekä ohjeet ja hakemuslomakkeen löydätte alla olevasta linkistä. </h1>
-      <a href="http://www.mikkeli.fi/palvelut/yksityisen-paivakotihoidon-palveluseteli/">Yksityisen päiväkotihoidon palveluseteli</a><br><br><br><br><br><br>
-    <h2></h2>
-  </div>
-
-
+    <section id="boxes"> 
+    <div class="container3">
+      <p>
+      <p><strong>Asiakasmaksut:</strong><br /><a id="LPlnk584278" href="http://www.mikkeli.fi/sisalto/palvelut/varhaiskasvatus/varhaiskasvatuksen-asiakasmaksut" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable">www.mikkeli.fi/sisalto/palvelut/varhaiskasvatus/varhaiskasvatuksen-asiakasmaksut</a><br/>
+      <br/><strong>Facebook&nbsp; : pkpirttiry</strong>
+      <br /><br />
+      <strong>Palvelusetelihakemus:</strong><br /><a href="https://mikkeli.daisynet.fi/eDaisy" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable">https://mikkeli.daisynet.fi/eDaisy</a></p>
+      <p><strong>Omavalvontasuunnitelma Moisio</strong></p>
+      <a href="assets/PDF/OmavalvontasuunnitelmaMoisio.docx">Lataa</a>
+      <p><strong>Omavalvontasuunnitelma Pirtti</strong></p>
+      <a href="assets/PDF/OmavalvontasuunnitelmaPirtti.docx">Lataa</a>
+        </div>
+        <section> 
     <footer>
       <p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2017</p>
     </footer>

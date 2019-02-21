@@ -146,7 +146,7 @@ textarea {
   </script>
   <body>
   <button onclick="topFunction()" id="myBtn">Ylös</button>
-    <header>
+    <!-- <header>
       <div class="container">
           <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
           <h1> Päiväkoti Pirtti</h1>
@@ -167,7 +167,9 @@ textarea {
           </ul>
         </nav>
       </div>
-    </header>
+    </header> -->
+    <?php include 'header.php';?>
+
     <hr class="style-two">
   <section class="hakemus">
     <div class="paivahoitohakemus">
