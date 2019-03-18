@@ -78,14 +78,11 @@
   
   <section id="showcase">
     <div class="container">
-      <div id="slider" >
-        <figure>
-          <img src="./assets/img/bannerikuva1.png">
-          <img src="./assets/img/bannerikuva2.png">
-          <img src="./assets/img/bannerikuva1.png">
-          <img src="./assets/img/bannerikuva2.png">
-          <img src="./assets/img/bannerikuva1.png">
-        </figure>
+        <div class="header">
+          <div class="header_img">
+            <img src="./assets/img/kuva2.png">
+          </div>
+        </div>
       </div>
     </div>
   </section>

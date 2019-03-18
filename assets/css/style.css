@@ -50,6 +50,37 @@ svg {padding-top: 20px;}
 
 }
 
+/* .header_img {
+  width: 60%;
+  margin:auto;
+  padding-top: 20px;
+}
+.header_img img{
+  width: 60%;
+
+} */
+
+.header {
+	overflow: hidden;
+}
+
+.header_img img {
+  width: 20%;
+  height: 10%;
+	float: left;
+}
+
+.header_img {
+	position: relative;
+	width: 500%;
+	margin: 0;
+	left: 0;
+	text-align: left;
+  font-size: 0;
+  
+
+}
+
 .paivahoitohakemus {
   margin: auto;
   max-width: 960px;

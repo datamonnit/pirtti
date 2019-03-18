@@ -78,36 +78,41 @@
   
   <section id="showcase">
   <h1><strong>Moision päiväkoti</strong> </h1>
+  <section id="showcase">
     <div class="container">
-      <!-- <div id="slider" >
-        <figure>
-          <img src="./assets/img/bannerikuva1.png">
-          <img src="./assets/img/bannerikuva2.png">
-          <img src="./assets/img/bannerikuva1.png">
-          <img src="./assets/img/bannerikuva2.png">
-          <img src="./assets/img/bannerikuva1.png">
-        </figure>
-      </div> -->
+        <div class="header">
+          <div class="header_img">
+            <img src="./assets/img/kuva4.png">
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="boxes"> 
    
     <div class="container2">
-      <p><strong>Moision päiväkoti</strong>  on perustettu 1968 ja liitetty Päiväkotiyhdistys Pirtti ry:n alaisuuteen 2003. Moision päiväkodissa on 28 hoitopaikkaa 2-6 vuotiaille lapsille ja se sijaitsee osoitteessa Moisiontie 5.Päiväkodin vahvuutena on lähiluonto ja sen hyödyntäminen toiminnassa.
-Päiväkodissamme työskentelee kaksi lastentarhanopettajaa,kaksi lastenhoitajaa,päiväkotiapulainen sekä päiväkotien yhteinen johtaja. 
-Lisäksi päiväkodissamme on sosionomi- ja lähihoitajaopiskelijoita.
-Päiväkodin aukioloaika on 6.30-17.00  
+      <p><strong>Moision päiväkoti</strong>Moision päiväkoti on Päiväkotyhdistys Pirtti ry:n ylläpitämä yksityinen päiväkoti Mikkelissä. Päiväkoti on aloittanut toimintansa vuonna 1968. Moision päiväkoti sijaitsee luonnon keskellä Moision kaupunginosassa. Yhteistyö Moision sairaalan kanssa mahdollistaa meille liikuntasalin käytön viikoittain lasten liikuntatuokioilla. 
+Mikkelin kaupunki valvoo päiväkodin toimintaa ja sen toimintaa ohjaavat samat lait ja asetukset kuin kunnallista varhaiskasvatusta. Päiväkodissamme on käytössä yksityisen päiväkotihoidon palveluseteli. Perhe hakee palveluseteliä Mikkelin kaupungilta saatuaan päivähoitopaikan päiväkodista. Varhaiskasvatuksen asiakasmaksut määräytyvät kunnallisten maksumääritysperusteiden mukaan. Asiakasmaksuun lisätään yksityisen päivähoidon omavastuulisä, joka on kokopäivähoidossa olevilta 30 euroa kuukaudessa.
+0  
       </p>
     </div>
     <div class="container3">
-      <p>
-          <h1>Ryhmät:</h1>
-        •	Pikku Myyt (2-4 -vuotiaat)<br>
-        •	Nalle Puhit (5 -vuotiaat)<br>
-        •	Nuuskamuikkuset (esikoulu)<br>
-              </p>
+      <p>Moision päiväkodissa toimii kolme lapsiryhmää 2-6 – vuotiaille lapsille.</p>
+      <ul>
+        <li>Pikku Myyt, 2-3 -vuotiaat (4 päivähoitopaikkaa)</li>
+        <li>Muumipeikot, 4-5 -vuotiaat (8 päivähoitopaikkaa</li>
+        <li>Nuuskamuikkuset, esikoulu (8-10 esiopetuspaikkaa)</li>
+
+      </ul>
         </div>
+      <div class="container3">
+      <p>Henkilökuntaan kuuluu kaksi lastentarhanopettajaa, lastenhoitaja sekä avustaja.
+Toiminnassamme painotamme lapsikeskeisyyttä, turvallisuutta sekä luonto- ja ympäristökasvatusta.
+Päiväkodin aukioloaika on ma-pe 6.30 – 17 .
+</p>
+      </div>
+
   </section>
   <footer>
       <a href="adminimg.php"><p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2018</p></a>

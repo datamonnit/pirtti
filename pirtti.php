@@ -79,41 +79,40 @@
   <section id="showcase">
   <h1><strong>Päiväkoti Pirtti</strong></h1>
 
+  <section id="showcase">
     <div class="container">
-      <!-- <div id="slider" >
-        <figure>
-          <img src="./assets/img/bannerikuva1.png">
-          <img src="./assets/img/bannerikuva2.png">
-          <img src="./assets/img/bannerikuva1.png">
-          <img src="./assets/img/bannerikuva2.png">
-          <img src="./assets/img/bannerikuva1.png">
-        </figure>
-      </div> -->
+        <div class="header">
+          <div class="header_img">
+            <img src="./assets/img/bannerikuva1.png">
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="boxes"> 
    
     <div class="container2">
-      <p><strong>Päiväkoti Pirtti</strong> on Päiväkotyhdistys Pirtti ry:n ylläpitämä yksityinen päiväkoti Mikkelissä. Päiväkoti on aloittanut toimintansa vuonna 1977. Päiväkoti Pirtti sijaitsee Tikanpellon alueella Tuppuralan kaupunginosassa.
-        Mikkelin kaupunki valvoo päiväkodin toimintaa ja sen toimintaa ohjaavat samat lait ja asetukset kuin kunnallista varhaiskasvatusta. Päiväkodissamme on käytössä yksityisen päiväkotihoidon palveluseteli. Perhe hakee palveluseteliä Mikkelin kaupungilta saatuaan päivähoitopaikan päiväkodista. Varhaiskasvatuksen asiakasmaksut määräytyvät kunnallisten maksumääritysperusteiden mukaan. Kunnalliseen asiakasmaksuun lisätään yksityisen päivähoidon omavastuulisä, joka on kokopäivähoidossa olevilta 30 euroa kuukaudessa.
-        Päiväkoti Pirtissä toimii neljä lapsiryhmää 1-6 – vuotiaille lapsille.
+      <p><strong>Päiväkoti Pirtti</strong>Päiväkoti Pirtti on Päiväkotyhdistys Pirtti ry:n ylläpitämä yksityinen päiväkoti Mikkelissä. Päiväkoti on aloittanut toimintansa vuonna 1977. Päiväkoti Pirtti sijaitsee Tikanpellon alueella Tuppuralan kaupunginosassa. 
+Mikkelin kaupunki valvoo päiväkodin toimintaa ja sen toimintaa ohjaavat samat lait ja asetukset kuin kunnallista varhaiskasvatusta. Päiväkodissamme on käytössä yksityisen päiväkotihoidon palveluseteli. Perhe hakee palveluseteliä Mikkelin kaupungilta saatuaan päivähoitopaikan päiväkodista. Varhaiskasvatuksen asiakasmaksut määräytyvät kunnallisten maksumääritysperusteiden mukaan. Kunnalliseen asiakasmaksuun lisätään yksityisen päivähoidon omavastuulisä, joka on kokopäivähoidossa olevilta 30 euroa kuukaudessa.
+Päiväkoti Pirtissä toimii viisi lapsiryhmää 1-6 – vuotiaille lapsille.
+
       </p>
     </div>
 
     <div class="container3">
       <p>
           <h1>Ryhmät:</h1>
-        •	Nuput, 1-3 -vuotiaat (8 päivähoitopaikkaa)<br>
-        •	Metsätähdet, 3-4 -vuotiaat (8 päivähoitopaikkaa)<br>
-        •	Sinikellot , 4-5 -vuotiaat (14-16 päivähoitopaikkaa)<br>
-        •	Esikot, esikoulu (8-10 esiopetuspaikkaa)<br><br>
+          <ul>
+          <li>Nuput, 1-3 -vuotiaat (8 päivähoitopaikkaa)</li>
+          <li>Metsätähdet, 3-4 -vuotiaat (8 päivähoitopaikkaa)</li>
+          <li>Sinikellot , 4-5 -vuotiaat (14-16 päivähoitopaikkaa)</li>
+          <li>Esikot, esikoulu (8-10 esiopetuspaikkaa)</li>
+        </ul>
       </p>
         </div>
     <div class="container4">
-      <p> Henkilökuntaan kuuluu kolme lastentarhanopettajaa, kolme lastenhoitajaa sekä avustaja.
-        Toiminnassamme painotamme lapsikeskeisyyttä, turvallisuutta sekä luonto- ja ympäristökasvatusta.<br>
-        Päiväkodin aukioloaika on ma-pe 6.30 – 17 .
+      <p>Henkilökuntaan kuuluu neljä lastentarhanopettajaa, kolme lastenhoitajaa sekä avustaja.
       </p>
     </div>
     <!-- <div class="container5">
