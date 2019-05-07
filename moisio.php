@@ -24,57 +24,6 @@
     </script>
   <body>
     <?php include 'header.php';?>
-    <!-- <header>
-      <button onclick="topFunction()" id="myBtn">Ylös</button>
-      <div class="container">
-          <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
-          <h1> Päiväkoti Pirtti</h1>
-          <button name="myButton" id="hide">&#9776</button> -->
-          <!-- <button name="myButton" id="hide">
-            <div class="juttu" onclick="myFunction(this)"> 
-              <div class="bar1"></div>
-              <div class="bar2"></div>
-              <div class="bar3"></div>
-            </div>
-          </button> -->
-        
-          <!-- <nav>
-            <ul>
-              <li class="current tab1"><a href="index.html" class="fa fa-home">&nbsp;Etusivu </a></li>
-              <li  class="tab4"><a href="yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
-              <li  class="tab5 dropdown">
-                <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
-                  <div class="dropdown-content">
-                    <a href="paivahoitohakemus.html">Päivähoitohakemus</a>
-                    <a href="esiopetushakemus.html">Esiopetushakemus</a>
-                    <a href="palvelusetelihakemus.html">Palvelusetelihakemus</a>				 
-                  </div>
-              </li>
-              <li  class="tab6"><a href="kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
-            </ul>
-          </nav>
-      </div>
-    </header><hr class="style-two">  -->
-
-	
- <!-- sidemenun alkup. paikka -->
-<!-- 
- <div onclick="openSlideMenu()" id="pikalinkit" class=pikalinkit>
-    <svg style="padding: 15px 10px 25px 10px;" width="30" height="30"><path d="M0,5 30,5" stroke="#000" stroke-width="3"/><path d="M0,14 30,14" stroke="#000" stroke-width="3"/><path d="M0,23 30,23" stroke="#000" stroke-width="3"/>   </svg> <h5 id="pikah5">pikalinkit</h5>
-    
-        
-      </div>
- <div id="side-menu" class="side-nav">
-      <h6> Pikalinkit</h6>
-      <hr class="style-two" style="padding:-5px; border:2;height:6px;background:#ffffffad;">
-      <a  href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>      
-      <a  href="./assets/VarhaiskasvatussuunnitelmaPäiväkotiPirtti.pdf">Varhaiskasvatussuunnitelma</a>
-      <a  href="http://www.mikkeli.fi/palvelut/yksityisen-paivakotihoidon-palveluseteli/">Palvelusetelihakemus</a>
-      <a  href="http://www.mikkeli.fi/palvelut/varhaiskasvatuksen-asiakasmaksut">Varhaiskasvatuksen asiakasmaksut</a>
-      <a  href="paivahoitohakemus.html">Päivähoitohakemus</a>
-      <a  href="palvelusetelihakemus.html">Esiopetushakemus</a>
-    </div>  -->
-  
   
   <section id="showcase">
   <h1><strong>Moision päiväkoti</strong> </h1>
@@ -90,27 +39,46 @@
   </section>
 
   <section id="boxes"> 
+
+      <?php 
+        
+        include 'db.php';
+
+        $html_content = "";
+
+        $sql ="SELECT * FROM pirtti_db.content";
+        $results = mysqli_query($conn, $sql);
+
+        if(mysql_num_rows($results)){
+          while ($rows = mysql_fetch_array($results)){
+            $html_content .= "";
+          }
+        }
+        
+      ?>
    
     <div class="container2">
-      <p><strong>Moision päiväkoti</strong>Moision päiväkoti on Päiväkotyhdistys Pirtti ry:n ylläpitämä yksityinen päiväkoti Mikkelissä. Päiväkoti on aloittanut toimintansa vuonna 1968. Moision päiväkoti sijaitsee luonnon keskellä Moision kaupunginosassa. Yhteistyö Moision sairaalan kanssa mahdollistaa meille liikuntasalin käytön viikoittain lasten liikuntatuokioilla. 
+        <?php echo html.content; ?>
+      <!-- <p>
+      <strong>Moision päiväkoti</strong> on Päiväkotyhdistys Pirtti ry:n ylläpitämä yksityinen päiväkoti Mikkelissä. Päiväkoti on aloittanut toimintansa vuonna 1968. Moision päiväkoti sijaitsee luonnon keskellä Moision kaupunginosassa. Yhteistyö Moision sairaalan kanssa mahdollistaa meille liikuntasalin käytön viikoittain lasten liikuntatuokioilla. 
 Mikkelin kaupunki valvoo päiväkodin toimintaa ja sen toimintaa ohjaavat samat lait ja asetukset kuin kunnallista varhaiskasvatusta. Päiväkodissamme on käytössä yksityisen päiväkotihoidon palveluseteli. Perhe hakee palveluseteliä Mikkelin kaupungilta saatuaan päivähoitopaikan päiväkodista. Varhaiskasvatuksen asiakasmaksut määräytyvät kunnallisten maksumääritysperusteiden mukaan. Asiakasmaksuun lisätään yksityisen päivähoidon omavastuulisä, joka on kokopäivähoidossa olevilta 30 euroa kuukaudessa.
-0  
-      </p>
+
+      </p> -->
     </div>
     <div class="container3">
-      <p>Moision päiväkodissa toimii kolme lapsiryhmää 2-6 – vuotiaille lapsille.</p>
+      <!-- <p>Moision päiväkodissa toimii kolme lapsiryhmää 2-6 – vuotiaille lapsille.</p>
       <ul>
         <li>Pikku Myyt, 2-3 -vuotiaat (4 päivähoitopaikkaa)</li>
         <li>Muumipeikot, 4-5 -vuotiaat (8 päivähoitopaikkaa</li>
         <li>Nuuskamuikkuset, esikoulu (8-10 esiopetuspaikkaa)</li>
 
-      </ul>
+      </ul> -->
         </div>
       <div class="container3">
-      <p>Henkilökuntaan kuuluu kaksi lastentarhanopettajaa, lastenhoitaja sekä avustaja.
+      <!-- <p>Henkilökuntaan kuuluu kaksi lastentarhanopettajaa, lastenhoitaja sekä avustaja.
 Toiminnassamme painotamme lapsikeskeisyyttä, turvallisuutta sekä luonto- ja ympäristökasvatusta.
 Päiväkodin aukioloaika on ma-pe 6.30 – 17 .
-</p>
+</p> -->
       </div>
 
   </section>

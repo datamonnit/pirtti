@@ -61,7 +61,7 @@
 
                 <p> pkpirttiry@surffi.fi <strong>(Päiväkoti pirtti)</strong></p>
                 <p> moisiopk@surffi.fi <strong>(Moision päiväkoti</strong>)</p>
-                <p> Telkänkatu 2 50190 Mikkeli (<strong>Päiväkori pirtti)</strong> </p>
+                <p> Telkänkatu 2 50190 Mikkeli (<strong>Päiväkoti pirtti)</strong> </p>
                 <p> Moisiontie 5 (<strong>Moision päiväkoti)</strong> </p>
                 <br>
                 <h3>Henkilökunta:</h3>
