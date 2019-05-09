@@ -153,8 +153,8 @@
     <?php include 'header.php';?>
     <p> <a href="lisaakuva.php?logout='1'" style="color: red;">Kirjaudu ulos</a> </p>
           <p> <a href="../password_change.php" style="color: red;">Vaihda salasana</a> </p>    
-          <p> <a href="../newuser.php" style="color: red;">luo Käyttäjä</a> </p>   
-           <!--Tähän sivujen muokkaus painike  -->
+          <p> <a href="../newuser.php" style="color: red;">Luo Käyttäjä</a> </p>   
+           <p> <a href="../sivujen_muokkaus.php" style="color: red;">Muokkaa sivuja</a> </p>
           <p>Käyttäjä: <?php echo $_SESSION['username']?></p>
       </div>
     </header>

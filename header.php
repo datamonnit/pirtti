@@ -1,3 +1,4 @@
+<!-- Root Header Start -->
 <script> //Valikonpiilotus
        $(document).ready(function(){
           $("#hide").click(function(){
@@ -36,4 +37,4 @@
           </nav>
       </div>
     </header><hr class="style-two"> 
-    
+    <!-- Header End -->

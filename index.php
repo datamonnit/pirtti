@@ -51,7 +51,7 @@
       
       ?>
    
-    <div class="container2">
+    <div class="container-x <?php echo $row['class']; ?>">
 
       <?php echo $row['html_content']; ?>
 

@@ -46,26 +46,27 @@
 
         $html_content = "";
 
-        $sql ="SELECT * FROM pirtti_db.content";
+        $sql = "SELECT * FROM pirtti_db.content WHERE page_name = 'moisio'";
         $results = mysqli_query($conn, $sql);
 
-        if(mysql_num_rows($results)){
-          while ($rows = mysql_fetch_array($results)){
-            $html_content .= "";
+        if(mysqli_num_rows($results)) {
+          while ($rows = mysqli_fetch_array($results)) {
+            echo '<div class="container-x ' . $rows['class'] . '">';
+            echo $rows['html_content'];
+            echo '</div>';
           }
         }
         
       ?>
    
-    <div class="container2">
-        <?php echo html.content; ?>
+    <div class="container-x">
       <!-- <p>
       <strong>Moision päiväkoti</strong> on Päiväkotyhdistys Pirtti ry:n ylläpitämä yksityinen päiväkoti Mikkelissä. Päiväkoti on aloittanut toimintansa vuonna 1968. Moision päiväkoti sijaitsee luonnon keskellä Moision kaupunginosassa. Yhteistyö Moision sairaalan kanssa mahdollistaa meille liikuntasalin käytön viikoittain lasten liikuntatuokioilla. 
 Mikkelin kaupunki valvoo päiväkodin toimintaa ja sen toimintaa ohjaavat samat lait ja asetukset kuin kunnallista varhaiskasvatusta. Päiväkodissamme on käytössä yksityisen päiväkotihoidon palveluseteli. Perhe hakee palveluseteliä Mikkelin kaupungilta saatuaan päivähoitopaikan päiväkodista. Varhaiskasvatuksen asiakasmaksut määräytyvät kunnallisten maksumääritysperusteiden mukaan. Asiakasmaksuun lisätään yksityisen päivähoidon omavastuulisä, joka on kokopäivähoidossa olevilta 30 euroa kuukaudessa.
 
       </p> -->
     </div>
-    <div class="container3">
+    <div class="container-x">
       <!-- <p>Moision päiväkodissa toimii kolme lapsiryhmää 2-6 – vuotiaille lapsille.</p>
       <ul>
         <li>Pikku Myyt, 2-3 -vuotiaat (4 päivähoitopaikkaa)</li>
@@ -74,7 +75,7 @@ Mikkelin kaupunki valvoo päiväkodin toimintaa ja sen toimintaa ohjaavat samat 
 
       </ul> -->
         </div>
-      <div class="container3">
+      <div class="container-x">
       <!-- <p>Henkilökuntaan kuuluu kaksi lastentarhanopettajaa, lastenhoitaja sekä avustaja.
 Toiminnassamme painotamme lapsikeskeisyyttä, turvallisuutta sekä luonto- ja ympäristökasvatusta.
 Päiväkodin aukioloaika on ma-pe 6.30 – 17 .

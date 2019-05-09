@@ -1,3 +1,4 @@
+<!-- Gallery Header Start -->
 <script> //Valikonpiilotus
       $(document).ready(function(){
           $("#hide").click(function(){
@@ -7,15 +8,20 @@
     </script>
 <header>
       <button onclick="topFunction()" id="myBtn">Ylös</button>
-      <div class="container">
-          <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
-          <h1> Päiväkotiyhdistys Pirtti ry  </h1>
+      <!--div class="container"-->
+          <div id="title">
+            <p>Puh. 0440 214 297<br>
+            Telkänkatu 2 50190 Mikkeli<br>
+            pkpirttiry@surffi.fi</p>
+          </div>
+          <h1> Päiväkotiyhdistys Pirtti ry</h1>
           <button name="myButton" id="hide"> 
-          <div class="juttu" onclick="myFunction(this)">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
-          </div></button>
+            <div class="juttu" onclick="myFunction(this)">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </div>
+          </button>
           <nav>
             <ul>
               <li class="current tab1"><a href="../index.php" class="fa fa-home">&nbsp;Etusivu </a></li>
@@ -33,3 +39,4 @@
               <li  class="tab6"><a href="../kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
             </ul>
           </nav>
+   <!-- Gallery Header End -->
