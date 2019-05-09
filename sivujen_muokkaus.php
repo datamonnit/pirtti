@@ -50,15 +50,27 @@
                 <a href="<?php echo $_SERVER['PHP_SELF']; ?>?sivu=pirtti">Pirtti</a> <br>
         </div>
 
-<?php if (isset($_GET['sivu'])): ?>
+ <?php if (isset($_GET['sivu'])) {
+    
+        include 'db.php';
 
-      <h1>Tähän ladataan tietokannasta valitun sivun tiedot</h1>
+        $html_content= "";
 
+        $sql = "SELECT * FROM pirtti_db.content WHERE page_name ='" . $_GET['sivu'] ."';";
+        $results = mysqli_query($conn, $sql);
+  
+        if(mysqli_num_rows($results)) {
+          while ($rows = mysqli_fetch_array($results)) {
+            echo '<div class="container-x ' . '">';
+            echo $rows['html_content'];
+            echo '</div>';
+          }
+        }
+     }
+    
+    ?>
 
-
-
-<?php endif; ?>
-
+      <div class="container-x"></div>
 
 
     </div>
