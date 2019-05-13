@@ -15,6 +15,8 @@
     <title>Päiväkoti Pirtti | Etusivu</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/edit-style.css">
+
     <script>
       $(document).ready(function(){
           $("#hide").click(function(){
@@ -23,9 +25,6 @@
       });
         //   document.getElementById("hide").onclick = function() {myFunction()};
     </script>
-    <style>
-
-</style>
 
   </head>
   <body>
@@ -37,7 +36,6 @@
           <p> <a href="newuser.php" style="color: red;">Luo Käyttäjä</a> </p>   
           <p> <a href="galleria/lisaakuva.php" style="color: red;">Takas</a> </p>
           <p>Käyttäjä: <?php echo $_SESSION['username']?></p>
-      </div>
 
     <?php include('errors.php'); ?>
 
@@ -50,56 +48,71 @@
                 <a href="<?php echo $_SERVER['PHP_SELF']; ?>?sivu=pirtti">Pirtti</a> <br>
         </div>
 
- <?php if (isset($_GET['sivu'])) {
+        <?php 
+        
+          if (isset($_GET['sivu'])) {
+      
+            include 'db.php';
+
+            $html_content= "";
+
+            $sql = "SELECT * FROM pirtti_db.content WHERE page_name ='" . $_GET['sivu'] ."';";
+            $results = mysqli_query($conn, $sql);
     
-        include 'db.php';
-
-        $html_content= "";
-
-        $sql = "SELECT * FROM pirtti_db.content WHERE page_name ='" . $_GET['sivu'] ."';";
-        $results = mysqli_query($conn, $sql);
-  
-        if(mysqli_num_rows($results)) {
-          while ($rows = mysqli_fetch_array($results)) {
-            echo '<div class="container-x ' . '">';
-            echo $rows['html_content'];
-            echo '</div>';
+            if(mysqli_num_rows($results)) {
+              while ($rows = mysqli_fetch_array($results)) {
+                echo '<form method="post" action="tallenna_sivu.php">';
+                echo '<textarea name="html_content" class="container-edit ' . '">';
+                echo $rows['html_content'];
+                echo '</textarea>';
+                echo '<input name="class" type="text" value="' . $rows['class'] . '">';
+                echo '<input name="id" type="text" value="' . $rows['id'] . '">';
+                echo '<input type="submit" name="tallenna" value="Tallenna">';
+                echo '</form>';
+              }
+            }
           }
-        }
-     }
-    
-    ?>
-
-      <div class="container-x"></div>
-
+        ?>
 
     </div>
 
 
+
+    <footer>
+      <p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2017</p>
+    </footer>
+
+<script src="./assets/tinymce/js/tinymce/tinymce.min.js"></script>
+
 <script language="javascript">
+  
 
-</script>
+  // TinyMCE -init
+  tinymce.init({
+  selector: '.container-edit',
+  height: 500,
+  menubar: false,
+  plugins: [
+    'advlist autolink lists link image charmap print preview anchor textcolor',
+    'searchreplace visualblocks code fullscreen',
+    'insertdatetime media table paste code help wordcount'
+  ],
+  toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+  content_css: [
+    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+    '//www.tiny.cloud/css/codepen.min.css'
+  ]
+});
 
-
-<script>
 function myFunction(x) {
     x.classList.toggle("change");
 }
-</script>
 
-  <footer>
-      <p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2017</p>
-  </footer>
-  </body>
-
-  <script>
 $(document).ready(function(){
     $("#flip").click(function(){
         $("#panel").slideToggle("fast");
     });
 });
-</script>
-<script>
 
 window.onscroll = function() {scrollFunction()};
 
@@ -117,4 +130,6 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 </script>
+
+</body>
 </html>
