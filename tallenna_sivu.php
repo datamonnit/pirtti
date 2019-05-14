@@ -1,4 +1,8 @@
+
+
 <?php
+
+// Tällä sivulla tapahtuu muokatun tekstin päivitys tietokantaan
 
     include 'db.php';
 

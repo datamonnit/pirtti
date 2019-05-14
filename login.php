@@ -26,6 +26,7 @@ if (isset($_POST['login_user'])) {
       if (mysqli_num_rows($results) == 1) {
           $row = mysqli_fetch_assoc($results);
           $_SESSION['username'] = $username;
+          $_SESSION['user_id'] = $row['id'];
           header('location: galleria/lisaakuva.php');
       }else {
         array_push($errors, "Väärä käyttäjätunnuksen / salasanan yhdistelmä");

@@ -42,7 +42,7 @@
 
   <section id="boxes"> 
 
-  <!-- Tietokantahaku -->
+  <!-- Luodaan yhteys tietokantaan ja tulostetaan siellä olevat teksit sivulle -->
 
   <?php
 

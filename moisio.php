@@ -40,6 +40,8 @@
 
   <section id="boxes"> 
 
+  <!-- Luodaan yhteys tietokantaan ja tulostetaan siellä olevat teksit sivulle -->
+
       <?php 
         
         include 'db.php';

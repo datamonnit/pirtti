@@ -1,6 +1,4 @@
-<?php include('login.php');
-
-?>
+<?php include('login.php');?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -41,13 +39,15 @@
 
     <div id="login_page">
         <div id="login_screen">
-            <!-- Muokkaus kenttä -->
+            <!-- Valitaan muokattava sivu -->
                 Valitse muokattava sivu: <br>
                 <a href="<?php echo $_SERVER['PHP_SELF']; ?>?sivu=index">Etusivu</a> <br>
                 <a href="<?php echo $_SERVER['PHP_SELF']; ?>?sivu=moisio">Moisio</a> <br>
                 <a href="<?php echo $_SERVER['PHP_SELF']; ?>?sivu=pirtti">Pirtti</a> <br>
         </div>
 
+        <!-- Haetaan tekstit tietokannasta ja tuodaan ne sivulle muokattavaksi käyttäen TinyMCE tekstinmuokkaus pohjaa -->
+        
         <?php 
         
           if (isset($_GET['sivu'])) {
@@ -65,8 +65,29 @@
                 echo '<textarea name="html_content" class="container-edit ' . '">';
                 echo $rows['html_content'];
                 echo '</textarea>';
-                echo '<input name="class" type="text" value="' . $rows['class'] . '">';
-                echo '<input name="id" type="text" value="' . $rows['id'] . '">';
+                echo 'Vaihda laatikon väriä';
+                echo '<br>';
+                echo '<select name="class">';
+                // Tekstilaatikoiden väriä voi myös muuttaa halutessaan
+                if ($rows['class'] == 'red') {
+                  echo '<option selected value="red">Punainen</option>';
+                } else {
+                  echo '<option value="red">Punainen</option>';
+                }
+
+                if ($rows['class'] == 'green') {
+                  echo '<option selected value="green">Vihreä</option>';
+                } else {
+                  echo '<option value="green">Vihreä</option>';
+                }
+
+                if ($rows['class'] == 'blue') {
+                  echo '<option selected value="blue">Sininen</option>';
+                } else {
+                  echo '<option value="blue">Sininen</option>';
+                }  
+                echo '</select>';
+                echo '<input name="id" type="hidden" value="' . $rows['id'] . '"><br>';
                 echo '<input type="submit" name="tallenna" value="Tallenna">';
                 echo '</form>';
               }
@@ -75,8 +96,6 @@
         ?>
 
     </div>
-
-
 
     <footer>
       <p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2017</p>
@@ -87,7 +106,7 @@
 <script language="javascript">
   
 
-  // TinyMCE -init
+  // TinyMCE -init koodi
   tinymce.init({
   selector: '.container-edit',
   height: 500,
