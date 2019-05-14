@@ -93,7 +93,7 @@
       <h1>Päiväkotiyhdistys Pirtti ry</h1>
     <p>Päiväkotiyhdistys Pirtti ry omistaa ja hallinnoi Päiväkoti Pirttiä ja Moision päiväkotia Mikkelissä.
 
-    Päiväkotiyhdistyksen hallinnosta ja taloudesta vastaa johtokunta , johon kuuluu puheenjohtajan lisäksi kuusi varsinaista jäsentä ja neljä varajäsentä.<
+    Päiväkotiyhdistyksen hallinnosta ja taloudesta vastaa johtokunta , johon kuuluu puheenjohtajan lisäksi kuusi varsinaista jäsentä ja neljä varajäsentä.
     Johtokunta kokoontuu tarpeen mukaan ja kokouksissa sihteerinä ja asioiden esittelijänä toimii päiväkodin johtaja.Johtokunnan jäsenet ovat Etelä-Savon sairaanhoitopiirin henkilökuntaa ja päiväkodeissa hoidossa olevien lasten vanhempia. <br><br>
     Päiväkotien yhteisenä johtajana toimii Heli Joensuu. <br>
     <br>
