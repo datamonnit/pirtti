@@ -42,7 +42,7 @@
 
   <section id="boxes"> 
 
-  <!-- Luodaan yhteys tietokantaan ja tulostetaan siellä olevat teksit sivulle -->
+   <!-- Luodaan yhteys tietokantaan ja tulostetaan siellä olevat tekstit sivulle -->
 
   <?php
 
@@ -64,16 +64,12 @@
   ?>
    
     <div class="container-x">
-      <!-- <p><strong>Päiväkoti Pirtti</strong> on Päiväkotyhdistys Pirtti ry:n ylläpitämä yksityinen päiväkoti Mikkelissä. Päiväkoti on aloittanut toimintansa vuonna 1977. Päiväkoti Pirtti sijaitsee Tikanpellon alueella Tuppuralan kaupunginosassa. 
-Mikkelin kaupunki valvoo päiväkodin toimintaa ja sen toimintaa ohjaavat samat lait ja asetukset kuin kunnallista varhaiskasvatusta. Päiväkodissamme on käytössä yksityisen päiväkotihoidon palveluseteli. Perhe hakee palveluseteliä Mikkelin kaupungilta saatuaan päivähoitopaikan päiväkodista. Varhaiskasvatuksen asiakasmaksut määräytyvät kunnallisten maksumääritysperusteiden mukaan. Kunnalliseen asiakasmaksuun lisätään yksityisen päivähoidon omavastuulisä, joka on kokopäivähoidossa olevilta 30 euroa kuukaudessa.
-Päiväkoti Pirtissä toimii viisi lapsiryhmää 1-6 – vuotiaille lapsille.
 
-      </p> -->
     </div>
 
     <div class="container3">
       <!-- <p>
-          <h1>Ryhmät:</h1>
+          <h1>Ryhmä HAU:</h1>
           <ul>
           <li>Nuput, 1-3 -vuotiaat (8 päivähoitopaikkaa)</li>
           <li>Metsätähdet, 3-4 -vuotiaat (8 päivähoitopaikkaa)</li>

@@ -40,7 +40,7 @@
 
   <section id="boxes"> 
 
-  <!-- Luodaan yhteys tietokantaan ja tulostetaan siellä olevat teksit sivulle -->
+   <!-- Luodaan yhteys tietokantaan ja tulostetaan siellä olevat tekstit sivulle -->
 
       <?php 
         

@@ -1,4 +1,14 @@
-<?php include('login.php');?>
+<?php 
+  // include('login.php');
+  session_start();
+    $vaarin = "";
+
+    if(!isset($_SESSION['username'])){
+        header("location: adminimg.php");
+
+    }
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -29,7 +39,7 @@
 
     <?php include 'header.php';?>
 
-    <p> <a href="lisaakuva.php?logout='1'" style="color: red;">Kirjaudu ulos</a> </p>
+    <p> <a href="logout.php" style="color: red;">Kirjaudu ulos</a> </p>
           <p> <a href="password_change.php" style="color: red;">Vaihda salasana</a> </p>    
           <p> <a href="newuser.php" style="color: red;">Luo Käyttäjä</a> </p>   
           <p> <a href="galleria/lisaakuva.php" style="color: red;">Takas</a> </p>
