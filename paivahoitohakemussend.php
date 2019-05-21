@@ -1,5 +1,8 @@
 <?php
 	print_r($_POST);
+	include_once('config.php');
+
+	$pvm = time();
 
 	$paivakoti = $_POST['paivakoti'];
 	$lapsietunimi = $_POST['lapsietunimi'];
@@ -87,7 +90,7 @@
 
 	$hash = md5($paivakoti.$huoltajasahkoposti.$huoltajapuhelin.$pvm);
 
-	$message .= PHP_EOL. "Kuittaa hakemus luetuksi: https://paja.esedu.fi/data14/juho.pirila/pirtti/paivakotipirtti/verify.php?email=$email&hash=$hash";
+	$message .= PHP_EOL. "Kuittaa hakemus luetuksi: " . $http_host  ."verify.php?email=$huoltajasahkoposti&hash=$hash";
 
 	if (true === false){
 		echo "<script>alert('Hakemuksen lähettämisessä tapahtui virhe! Yritä uudelleen!')</script>";
@@ -109,7 +112,7 @@
 						    'X-Mailer: PHP/' . phpversion();
 	mail('juho.pirila@esedulainen.fi', 'Paivahoitohakemus | Pirtti',$message, $headers);
 	echo "Päivähoitohakemus lähetetty!";
-header( "Refresh:1; url=paivahoitohakemus.html", true, 5);
+// header( "Refresh:1; url=paivahoitohakemus.html", true, 5);
 
 
 
