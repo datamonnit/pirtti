@@ -193,7 +193,7 @@ textarea {
           <select onchange="yesnoCheck2(this);" id="lemmikkeja" name="lemmikkeja">
             <option disabled="" selected value="valitse">Valitse</option>
             <option value="ei">Ei</option>
-            <option value="other2">On, mikä?</option>
+            <option value="muu">On, mikä?</option>
           </select><br>
           <div id="Yes" style="display: none;">
           <input type="text" id="lemmikkeja" name="lapsiaidinkieli" placeholder="On, mikä?"/><br />
@@ -331,16 +331,17 @@ textarea {
 
   <script>
 // Muu, mikä -kenttien näyttäminen/piilotaminen
-  function yesnoCheck(that,id) {
+  function yesnoCheck(that) {
       if (that.value == "other") {
-          document.getElementById(id).style.display = "block";
+
+          document.getElementById("ifYes").style.display = "block";
       } else {
-          document.getElementById(id).style.display = "none";
+          document.getElementById("ifYes").style.display = "none";
       }
   }
 
   function yesnoCheck2(that) {
-    if (that.value == "other2") {
+    if (that.value == "muu") {
 
         document.getElementById("Yes").style.display = "block";
     } else {

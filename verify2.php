@@ -11,7 +11,7 @@ if (isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && 
   $email = $conn->real_escape_string($_GET['email']); // Set email variable
   $hash = $conn->real_escape_string($_GET['hash']); // Set hash variable
 
-  $sql = "SELECT huoltajasahkoposti, hash FROM paivahoitohakemus WHERE huoltajasahkoposti='$email' AND hash='$hash'";
+  $sql = "SELECT huoltajasahkoposti, hash FROM esiopetushakemus WHERE huoltajasahkoposti='$email' AND hash='$hash'";
 
   if (!$search = $conn->query($sql)) {
     die($conn->error);
@@ -24,7 +24,7 @@ if (isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && 
   echo $match;
     if($match > 0){
 
-      $sql = "DELETE FROM paivahoitohakemus WHERE hash='$hash'";
+      $sql = "DELETE FROM esiopetushakemus WHERE hash='$hash'";
 
       if ($conn->query($sql) === TRUE) {  
         echo "Hakemus kuitattu luetuksi";
