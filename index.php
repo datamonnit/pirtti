@@ -45,10 +45,9 @@
 
       include './admin/db.php';
 
-      $sql = "SELECT * FROM pirtti_db.content WHERE page_name = 'index'";
+      $sql = "SELECT * FROM content WHERE page_name = 'index'";
       $results = mysqli_query($conn, $sql);
       $row = mysqli_fetch_array($results);
-      
       ?>
    
     <div class="container-x <?php echo $row['class']; ?>">

@@ -9,3 +9,4 @@ if ($conn->connect_error) {
     die("Kantaan ei pysty yhdistämään" . $conn->connect_error);
 }
 mysqli_set_charset($conn,"utf8");
+
