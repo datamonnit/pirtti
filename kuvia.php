@@ -1,6 +1,6 @@
 <?php
 
-include 'db.php';
+include 'admin/db.php';
 
 $kuvat_html = "";
 

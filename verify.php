@@ -6,27 +6,28 @@
 <?php
 require('db.php');
 
-if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
+if (isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
         // Verify data
-    $email = $conn->real_escape_string($_GET['email']); // Set email variable
-    $hash = $conn->real_escape_string($_GET['hash']); // Set hash variable
+  $email = $conn->real_escape_string($_GET['email']); // Set email variable
+  $hash = $conn->real_escape_string($_GET['hash']); // Set hash variable
 
-    $sql = "SELECT huoltajasahkoposti, hash FROM paivahoitohakemus WHERE huoltajasahkoposti='$email' AND hash='$hash'";
+  $sql = "SELECT huoltajasahkoposti, hash FROM paivahoitohakemus WHERE huoltajasahkoposti='$email' AND hash='$hash'";
 
-if (!$search = $conn->query($sql)) {
-die($conn->error);
-}
+  if (!$search = $conn->query($sql)) {
+    die($conn->error);
+  }
 
-$row = $search->fetch_assoc();
-var_dump($row);
+  $row = $search->fetch_assoc();
+  var_dump($row);
 
-$match = $search->num_rows;
+  $match = $search->num_rows;
   echo $match;
     if($match > 0){
 
-      $sql = "DELETE FROM paivahoitohakemus WHERE hash='$hash'"
+      $sql = "DELETE FROM paivahoitohakemus WHERE hash='$hash'";
 
-      if ($conn->query($sql) === TRUE) {  echo "Hakemus kuitattu luetuksi"
+      if ($conn->query($sql) === TRUE) {  
+        echo "Hakemus kuitattu luetuksi";
         $to      = $email;
         $subject = ' Päivähoitohakemus on luettu!';
         $message = '
@@ -41,7 +42,11 @@ $match = $search->num_rows;
         ';
         $headers = 'Päivähoitohakemus | Pirtti' . "\r\n";
         mail($to, $subject, $message, $headers);
-      } else { echo "virhe:" . $conn->error; }
+      } else { 
+        echo "virhe:" . $conn->error; 
+      }
+    }
+  }
 
 
 ?>

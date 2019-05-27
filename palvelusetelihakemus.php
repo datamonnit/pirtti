@@ -64,10 +64,6 @@
       <br/><strong>Facebook&nbsp; : pkpirttiry</strong>
       <br /><br />
       <strong>Palvelusetelihakemus:</strong><br /><a href="https://mikkeli.daisynet.fi/eDaisy" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable">https://mikkeli.daisynet.fi/eDaisy</a></p>
-      <p><strong>Omavalvontasuunnitelma Moisio</strong></p>
-      <a href="assets/PDF/OmavalvontasuunnitelmaMoisio.docx">Lataa</a>
-      <p><strong>Omavalvontasuunnitelma Pirtti</strong></p>
-      <a href="assets/PDF/OmavalvontasuunnitelmaPirtti.docx">Lataa</a>
         </div>
         <section> 
     <footer>
