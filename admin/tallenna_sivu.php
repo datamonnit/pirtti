@@ -10,7 +10,7 @@
     $vaarin = "";
 
     if(!isset($_SESSION['username'])){
-        header("location: adminimg.php");
+        header("location: login.php");
 
     }
 

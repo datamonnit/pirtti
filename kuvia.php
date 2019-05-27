@@ -61,7 +61,7 @@ if (mysqli_num_rows($results)){
     </div>
 
   <footer>
-      <a href="adminimg.php"><p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2018</p></a>
+      <a href="login.php"><p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2018</p></a>
 
   </footer>
     </center>

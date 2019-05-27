@@ -22,9 +22,9 @@ h6 {
   font-size: 25px;
   margin: 0;
 }
-svg {padding-top: 20px;}
+/* svg {padding-top: 20px;} */
  
-.container {
+.form {
   width:auto;
   margin:auto;
 }
@@ -95,7 +95,7 @@ svg {padding-top: 20px;}
   border-radius: 2px;
   background-color: #f2f2f2;
   padding: 15px;
-  margin-bottom: 500px;
+  /* margin-bottom: 500px; */
 }
 
 .side-nav{
@@ -179,9 +179,8 @@ ul  {list-style-type: square;}
 #flip {cursor: pointer;}
 
 .lataakuva {
-max-width: 300px;
-max-height: 500px;
-
+  max-width: 300px;
+  margin: 0 auto;
 }
 .css-input {
      padding: 6px;
@@ -258,7 +257,7 @@ transform: rotate(45deg) translate(-8px, -8px) ;
 #yhteystiedot{
   width:960px;
   margin:auto;
-  padding-bottom: 500px;
+  /* padding-bottom: 500px; */
   color: black;
 }
 .maps {
@@ -480,7 +479,7 @@ nav ul li {display: inline-block; }
   #pikalinkit {
     
   
-  
+
   }
 
 #showcase{
@@ -491,7 +490,7 @@ nav ul li {display: inline-block; }
   width:960px;
   margin:auto;
   padding-top: 20px;
-  padding-bottom: 500px;
+  /*padding-bottom: 500px;*/
 }
 .myButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -701,7 +700,7 @@ display: none;
 
 #yhteystiedot{
   width:100vw;
-  padding-bottom: 800px;
+  /* padding-bottom: 800px; */
   color: black;
 }
   #showcase {

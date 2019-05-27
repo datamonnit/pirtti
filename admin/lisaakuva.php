@@ -1,17 +1,17 @@
 <?php
-    include('../db.php');
+    include('db.php');
     session_start();
     $vaarin = "";
 
     if(!isset($_SESSION['username'])){
-        header("location: ../adminimg.php");
+        header("location: ../login.php");
 
     }
 
     if (isset($_GET['logout'])) {
         session_destroy();
         unset($_SESSION['username']);
-        header("location: ../adminimg.php");
+        header("location: ../login.php");
             
     }
 
@@ -133,6 +133,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/slider.css">
     <link rel="stylesheet" href="../assets/css/lightbox.css">
+    <link rel="stylesheet" href="../assets/css/edit-style.css">
     <script src="../assets/js/lightbox.js"></script>
     
     <script> //Valikonpiilotus
@@ -150,33 +151,29 @@
   </head>
   <body>
 
-    <?php include 'header.php';?>
-    <p> <a href="lisaakuva.php?logout='1'" style="color: red;">Kirjaudu ulos</a> </p>
-          <p> <a href="../password_change.php" style="color: red;">Vaihda salasana</a> </p>    
-          <p> <a href="../newuser.php" style="color: red;">Luo Käyttäjä</a> </p>   
-           <p> <a href="../sivujen_muokkaus.php" style="color: red;">Muokkaa sivuja</a> </p>
-          <p>Käyttäjä: <?php echo $_SESSION['username']?></p>
-      </div>
-    </header>
-  <hr class="style-two">
-  <center>
+    <?php include 'admin-header.php';?>
+    <?php include 'admin-nav.php';?>
+    
+    <div class="lataakuva container-x">
+    
+        <?php echo $vaarin;?>
+        
+        <form action="lisaakuva.php" method="post" enctype="multipart/form-data"><br>
+        <label style="float:left;" for="enimi">Otsikko:</label><br>
+        <input class="css-input" type="text" name="otsikko"  placeholder="Anna kuvalle otsikko"><br>
+        <textarea class="css-input" type="text" rows="4" cols="23" name="image_text"></textarea>
+        <label style="font-size:25px;" for="enimi">Valitse ladattava kuva:</label><br>
+        <input type="file" name="image" id="image" ><br>
+        <input type="submit" value="Upload Image" name="submit"><br>
+        </form>
+    
+    </div>
 
-    <div class="lataakuva">
-    <?php echo $vaarin;?>
-    <form action="lisaakuva.php" method="post" enctype="multipart/form-data"><br>
-      <label style="float:left;" for="enimi">Otsikko:</label><br>
-      <input class="css-input" type="text" name="otsikko"  placeholder="Anna kuvalle otsikko"><br>
-      <textarea class="css-input" type="text" rows="4" cols="23" name="image_text"></textarea>
-      <label style="font-size:25px;" for="enimi">Valitse ladattava kuva:</label><br>
-      <input type="file" name="image" id="image" ><br>
-      <input type="submit" value="Upload Image" name="submit"><br>
-    </form>
-      </div>
-      <div class="kuvat">
-    <?php echo $kuvat_html;?>
+    <div class="kuvat">
+        <?php echo $kuvat_html;?>
 
-</div>
-</center>
+    </div>
+
 <script>
 function myFunction(x) {
     x.classList.toggle("change");

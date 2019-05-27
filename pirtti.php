@@ -46,7 +46,7 @@
 
   <?php
 
-      include 'db.php';
+      include 'admin/db.php';
 
       $html_content= "";
 
@@ -94,7 +94,7 @@
     </div> -->
   </section>
   <footer>
-      <a href="adminimg.php"><p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2018</p></a>
+      <a href="login.php"><p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2018</p></a>
 
   </footer>
   </body>

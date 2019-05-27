@@ -4,14 +4,14 @@
     $errors = array(); 
 
     if(!isset($_SESSION['username'])){
-        header("location: adminimg.php");
+        header("location: login.php");
 
     }
 
     if (isset($_GET['logout'])) {
         session_destroy();
         unset($_SESSION['username']);
-        header("location: adminimg.php");
+        header("location: login.php");
             
     }
 
@@ -55,9 +55,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Päiväkoti Pirtti - Lisää kuva</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/slider.css">
-    <link rel="stylesheet" href="assets/css/lightbox.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/slider.css">
+    <link rel="stylesheet" href="../assets/css/lightbox.css">
+    <link rel="stylesheet" href="../assets/css/edit-style.css">
     <script src="assets/js/lightbox.js"></script>
     
     <script> //Valikonpiilotus
@@ -72,55 +73,23 @@
     </style>
   </head>
   <body>
-    <!-- <header>
-      <button onclick="topFunction()" id="myBtn">Ylös</button>
-      <div class="container">
-          <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
-          <h1> Päiväkoti Pirtti</h1>
-          <button name="myButton" id="hide">
-            <div class="juttu" onclick="myFunction(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-            </div></button>
-        <nav>
-          <ul>
-            <li class="current tab1"><a href="index.html" class="fa fa-home">&nbsp;Etusivu </a></li>
-            <li  class="tab4"><a href="yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
-            <li  class="tab5 dropdown">
-              <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
-              <div class="dropdown-content">
-              <a href="paivahoitohakemus.html">Päivähoitohakemus</a>
-              <a href="esiopetushakemus.html">Esiopetushakemus</a>
-              <a href="palvelusetelihakemus.html">Palvelusetelihakemus</a>
-              </div>
-              </li>
-            <li  class="tab6"><a href="../kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
-            </ul>
-          </nav> -->
-          <?php include 'galleria/header.php';?>
-          <p> <a href="password_change.php?logout='1'" style="color: red;">Kirjaudu ulos</a> </p>
-          <p> <a href="galleria/lisaakuva.php" style="color: red;">Takas</a> </p>   
-          <p> <a href="newuser.php" style="color: red;">luo Käyttäjä</a> </p>   
-          <P>Käyttäjä: <?php echo $_SESSION['username']?></p>
-    </div>
-    </header>
-  <hr class="style-two">
-  <center>
-
-        <form class="form-signin" method="POST">
+   <?php include 'admin-header.php'; ?>
+   <?php include 'admin-nav.php'; ?>
+    <div class="lataakuva container-x">
+      <form class="form-signin" method="POST">
         <?php include('errors.php'); ?>
-                Käyttäjätunnus:<br>
-                <input class="css-input" type="text" name="username" >
-                <br><br>
-                Salasana:<br>
-                <input  class="css-input" type="password" name="password_1">
-                <br><br>
-                Salasana uudelleen:<br>
-                <input class="css-input" type="password" name="password_2">
-                <br><br>
-                <button class="css-input" type="submit" name="passchan">Vaihda salasana</button>                
-            </form> 
+        Käyttäjätunnus:<br>
+        <input class="css-input" type="text" name="username" >
+        <br><br>
+        Salasana:<br>
+        <input  class="css-input" type="password" name="password_1">
+        <br><br>
+        Salasana uudelleen:<br>
+        <input class="css-input" type="password" name="password_2">
+        <br><br>
+        <button class="css-input" type="submit" name="passchan">Vaihda salasana</button>                
+        </form> 
+      </div>
 <script>
 function myFunction(x) {
     x.classList.toggle("change");

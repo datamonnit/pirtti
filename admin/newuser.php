@@ -1,5 +1,17 @@
-<?php include('login.php');
+<?php include('user_functions.php');
 
+   
+  if(!isset($_SESSION['username'])){
+    header("location: ../login.php");
+
+}
+
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: ../login.php");
+}
+     
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,8 +25,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Päiväkoti Pirtti | Etusivu</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/slider.css">
+    <link rel="stylesheet" href="../assets/css/edit-style.css">
     <script>
       $(document).ready(function(){
           $("#hide").click(function(){
@@ -30,49 +43,29 @@
   </head>
   <body>
 
-    <!-- <header>
-      <button onclick="topFunction()" id="myBtn">Ylös</button>
-      <div class="container">
-          <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
-          <h1> Päiväkoti Pirtti</h1>
-    <button name="myButton" id="hide"> 
-    <div class="juttu" onclick="myFunction(this)">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
-    </div></button>
-        <nav>
-          <ul>
-            <li class="current tab1"><a href="index.html" class="fa fa-home">&nbsp;Etusivu </a></li>
-            <li  class="tab4"><a href="yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
-            <li  class="tab5 dropdown">
-             <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
-               <div class="dropdown-content">
-                 <a href="paivahoitohakemus.html">Päivähoitohakemus</a>
-                 <a href="esiopetushakemus.html">Esiopetushakemus</a>
-                 <a href="palvelusetelihakemus.html">Palvelusetelihakemus</a>
-               </div>
-            </li>
-            <li  class="tab6"><a href="kuvia.html" class="fa fa-image">&nbsp;Kuvia</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header> -->
-    <?php include 'header.php';?>
+    <?php include 'admin-header.php';?>
+    <?php include 'admin-nav.php'; ?>
 
+  <hr class="style-two">
     <center>
     <?php include('errors.php'); ?>
             <div id="login_page">
                 <div id="login_screen">
-                    <form method="post" action="adminimg.php">
+                    <form method="post" action="user_functions.php">
                         Käyttäjätunnus:<br>
                         <input type="text" class="css-input" name="username">
                         <br>
+                        Sähköposti:<br>
+                        <input type="email" class="css-input" name="email" >
+                        <br>
                         Salasana:<br>
-                        <input type="password" class="css-input" name="password" >
-                        <br><br>
-                        <button type="submit" class="css-input" value="submit" name="login_user">Login</button>
-                        <a href="forgotPassword.php">Salasana unohtui</a>
+                        <input type="password" class="css-input" name="password_1" >
+                        <br>
+                        Salasana uudelleen:<br>
+                        <input type="password" class="css-input" name="password_2" >
+                        <br>
+                        <button type="submit" class="css-input" value="submit" name="reg_user">Luo</button>
+                        <a href="login.php">Kirjaudu</a>
                     </form> 
                 </div>
             </div>  </center>

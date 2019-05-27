@@ -44,7 +44,7 @@
 
       <?php 
         
-        include 'db.php';
+        include 'admin/db.php';
 
         $html_content = "";
 
@@ -60,33 +60,9 @@
         }
         
       ?>
-   
-    <div class="container-x">
-      <!-- <p>
-      <strong>Moision päiväkoti</strong> on Päiväkotyhdistys Pirtti ry:n ylläpitämä yksityinen päiväkoti Mikkelissä. Päiväkoti on aloittanut toimintansa vuonna 1968. Moision päiväkoti sijaitsee luonnon keskellä Moision kaupunginosassa. Yhteistyö Moision sairaalan kanssa mahdollistaa meille liikuntasalin käytön viikoittain lasten liikuntatuokioilla. 
-Mikkelin kaupunki valvoo päiväkodin toimintaa ja sen toimintaa ohjaavat samat lait ja asetukset kuin kunnallista varhaiskasvatusta. Päiväkodissamme on käytössä yksityisen päiväkotihoidon palveluseteli. Perhe hakee palveluseteliä Mikkelin kaupungilta saatuaan päivähoitopaikan päiväkodista. Varhaiskasvatuksen asiakasmaksut määräytyvät kunnallisten maksumääritysperusteiden mukaan. Asiakasmaksuun lisätään yksityisen päivähoidon omavastuulisä, joka on kokopäivähoidossa olevilta 30 euroa kuukaudessa.
-
-      </p> -->
-    </div>
-    <div class="container-x">
-      <!-- <p>Moision päiväkodissa toimii kolme lapsiryhmää 2-6 – vuotiaille lapsille.</p>
-      <ul>
-        <li>Pikku Myyt, 2-3 -vuotiaat (4 päivähoitopaikkaa)</li>
-        <li>Muumipeikot, 4-5 -vuotiaat (8 päivähoitopaikkaa</li>
-        <li>Nuuskamuikkuset, esikoulu (8-10 esiopetuspaikkaa)</li>
-
-      </ul> -->
-        </div>
-      <div class="container-x">
-      <!-- <p>Henkilökuntaan kuuluu kaksi lastentarhanopettajaa, lastenhoitaja sekä avustaja.
-Toiminnassamme painotamme lapsikeskeisyyttä, turvallisuutta sekä luonto- ja ympäristökasvatusta.
-Päiväkodin aukioloaika on ma-pe 6.30 – 17 .
-</p> -->
-      </div>
-
   </section>
   <footer>
-      <a href="adminimg.php"><p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2018</p></a>
+      <a href="login.php"><p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2018</p></a>
 
   </footer>
   </body>
