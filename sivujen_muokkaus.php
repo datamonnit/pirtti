@@ -1,11 +1,13 @@
 <?php 
-// include('user_functions.php');
-session_start();
-$vaarin = "";
+  // include('login.php');
+  session_start();
+    $vaarin = "";
 
-if(!isset($_SESSION['username'])){
-  header("location: ../login.php");
-}
+    if(!isset($_SESSION['username'])){
+        header("location: adminimg.php");
+
+    }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,9 +21,9 @@ if(!isset($_SESSION['username'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <title>Päiväkoti Pirtti | Etusivu</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/slider.css">
-    <link rel="stylesheet" href="../assets/css/edit-style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/edit-style.css">
 
     <script>
       $(document).ready(function(){
@@ -35,22 +37,28 @@ if(!isset($_SESSION['username'])){
   </head>
   <body>
 
-    <?php include 'admin-header.php';?>
-    <?php include 'admin-nav.php';?>
+    <?php include 'header.php';?>
+
+    <p> <a href="logout.php" style="color: red;">Kirjaudu ulos</a> </p>
+          <p> <a href="password_change.php" style="color: red;">Vaihda salasana</a> </p>    
+          <p> <a href="newuser.php" style="color: red;">Luo Käyttäjä</a> </p>   
+          <p> <a href="galleria/lisaakuva.php" style="color: red;">Takas</a> </p>
+          <p>Käyttäjä: <?php echo $_SESSION['username']?></p>
 
     <?php include('errors.php'); ?>
 
     <div id="login_page">
-      <div id="login_screen">
-        <!-- Valitaan muokattava sivu -->
-        Valitse muokattava sivu: <br>
-        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?sivu=index">Etusivu</a> <br>
-        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?sivu=moisio">Moisio</a> <br>
-        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?sivu=pirtti">Pirtti</a> <br>
-      </div>
-      <!-- Haetaan tekstit tietokannasta ja tuodaan ne sivulle muokattavaksi käyttäen TinyMCE tekstinmuokkaus pohjaa -->
-      
-      <?php 
+        <div id="login_screen">
+            <!-- Valitaan muokattava sivu -->
+                Valitse muokattava sivu: <br>
+                <a href="<?php echo $_SERVER['PHP_SELF']; ?>?sivu=index">Etusivu</a> <br>
+                <a href="<?php echo $_SERVER['PHP_SELF']; ?>?sivu=moisio">Moisio</a> <br>
+                <a href="<?php echo $_SERVER['PHP_SELF']; ?>?sivu=pirtti">Pirtti</a> <br>
+        </div>
+
+        <!-- Haetaan tekstit tietokannasta ja tuodaan ne sivulle muokattavaksi käyttäen TinyMCE tekstinmuokkaus pohjaa -->
+        
+        <?php 
         
           if (isset($_GET['sivu'])) {
       
@@ -103,7 +111,7 @@ if(!isset($_SESSION['username'])){
       <p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2017</p>
     </footer>
 
-<script src="../assets/tinymce/js/tinymce/tinymce.min.js"></script>
+<script src="./assets/tinymce/js/tinymce/tinymce.min.js"></script>
 
 <script language="javascript">
   

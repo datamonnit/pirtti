@@ -50,7 +50,7 @@
 
       $html_content= "";
 
-      $sql = "SELECT * FROM pirtti_db.content WHERE page_name = 'pirtti'";
+      $sql = "SELECT * FROM content WHERE page_name = 'pirtti'";
       $results = mysqli_query($conn, $sql);
 
       if(mysqli_num_rows($results)) {

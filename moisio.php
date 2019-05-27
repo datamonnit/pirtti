@@ -48,7 +48,7 @@
 
         $html_content = "";
 
-        $sql = "SELECT * FROM pirtti_db.content WHERE page_name = 'moisio'";
+        $sql = "SELECT * FROM content WHERE page_name = 'moisio'";
         $results = mysqli_query($conn, $sql);
 
         if(mysqli_num_rows($results)) {
