@@ -26,7 +26,7 @@
     <?php include 'header.php';?>
   
   <section id="showcase">
-    <h1>Moision päiväkoti</h1>
+  <h1><strong>Moision päiväkoti</strong> </h1>
   <section id="showcase">
     <div class="container">
         <div class="header">

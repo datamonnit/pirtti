@@ -54,8 +54,8 @@
             <div class="yhteystiedotpirtti">
                 <p>Heli Joensuu, päiväkodin johtaja / lastentarhanopettaja</p>
               <h3> Päiväkoti Pirtti </h3>
-                <p>  Puh. yläkerta 0440 214 298</p>
-                <p>  Puh. alakerta 0447 214 297</p>
+                <p> Puh. yläkerta 0440 214 298</p>
+                <p> Puh. alakerta 0447 214 297</p>
                 <p> Telkänkatu 2 50190 Mikkeli</p>
                 <p> pkpirttiry@surffi.fi</p>
                 <p> puh. 0440 214 297</p>
@@ -65,12 +65,6 @@
                 <p> moisiopk@surffi.fi</p>
                 <p> puh. 0445 336 555</p>
                 
-                <h3>Henkilökunta:</h3>
-                  <p>  Sari Pekkanen, varajohtaja, sosionomi (amk)</p>
-                  <p>  Eija Laamanen, lastentarhanopettaja</p>
-                  <p>  Riitta Ruuska, lastenhoitaja</p>
-                  <p>  Arja Hurri, päivähoitaja</p>
-                  <p>  Taija Virtanen, lähihoitaja</p>
                 <button id="kartalla" onclick="window.location.href='https://goo.gl/maps/dLP99r2Ds8n'">Näytä kartalla <strong>(Päiväkoti pirtti)</strong></button>
                 <button id="kartalla" onclick="window.location.href='https://goo.gl/maps/qAuJcwcbMXx'">Näytä kartalla <strong>(Moision päiväkoti)</strong></button>
 

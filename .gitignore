@@ -1,4 +1,5 @@
 config.php
+error_log
 */config/development
 */logs/log-*.php
 !*/logs/index.html

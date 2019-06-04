@@ -1,5 +1,4 @@
 <?php
-	print_r($_POST);
 	include_once('config.php');
 
 	$pvm = time();
@@ -110,9 +109,9 @@
 		$headers = 'From: paivahoitohakemus@pirtti.com' . "\r\n" .
 						    'Reply-To: noreply@pirtti.com' . "\r\n" .
 						    'X-Mailer: PHP/' . phpversion();
-	mail('juho.pirila@esedulainen.fi', 'Paivahoitohakemus | Pirtti',$message, $headers);
+	mail('pkpirttiry@surffi.fi', 'Paivahoitohakemus | Pirtti',$message, $headers);
 	echo "Päivähoitohakemus lähetetty!";
-// header( "Refresh:1; url=paivahoitohakemus.html", true, 5);
+header( "Refresh:1; url=kiitos.php", true, 5);
 
 
 

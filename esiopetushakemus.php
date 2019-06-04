@@ -133,47 +133,19 @@ textarea {
 
     </style>
   </head>
-  <script>
-    $(document).ready(function(){
-        $("#hide").click(function(){
-            $("nav").slideToggle("fast");
-        });
-    });
-        document.getElementById("hide").onclick = function() {myFunction()};
 
-
-
-  </script>
   <body>
   <button onclick="topFunction()" id="myBtn">Ylös</button>
-    <!-- <header>
-      <div class="container">
-          <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
-          <h1> Päiväkoti Pirtti</h1>
-          <button   id="hide">&#9776</button>
-        <nav>
-          <ul>
-            <li class="current tab1"><a href="index.html" class="fa fa-home">&nbsp;Etusivu </a></li>
-            <li  class="tab4"><a href="yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
-            <li  class="tab5 dropdown">
-             <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
-               <div class="dropdown-content">
-                 <a href="paivahoitohakemus.html">Päivähoitohakemus</a>
-                 <a href="esiopetushakemus.html">Esiopetushakemus</a>
-                 <a href="palvelusetelihakemus.html">Palvelusetelihakemus</a>
-               </div>
-            </li>
-            <li  class="tab6"><a href="kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header> -->
+
     <?php include 'header.php';?>
 
     <hr class="style-two">
   <section class="hakemus">
     <div class="paivahoitohakemus">
       <form action="esiopetushakemussend.php" method="POST">
+
+<!-- Lapsen Henkilötiedot -->
+<h1> Esiopetushakemus </h1> <br>
 
           <label for="paivakoti">Valitse päiväkoti:</label><br>
           <select onchange="yesnoCheck(this);" id="paivakoti" name="paivakoti">
@@ -204,19 +176,28 @@ textarea {
         <input type="text" id="puhkoti" name="puhkoti" placeholder="Puh."><br>
 
         <label for="akieli">Äidinkieli:</label><br>
-          <select id="lapsiaidinkieli" name="lapsiaidinkieli">
+          <select onchange="yesnoCheck(this);" id="lapsiaidinkieli" name="lapsiaidinkieli">
             <option disabled="" selected value="valitse">Valitse</option>
             <option value="suomi">Suomi</option>
             <option value="ruotsi">Ruotsi</option>
-            <option value="muu">Muu, mikä?</option>
+            <option value="other">Muu, mikä?</option>
           </select><br>
+          <div id="ifYes" style="display: none;">
+          <input type="text" id="lapsiaidinkieli" name="lapsiaidinkieli" placeholder="Muu, mikä?"/><br />
+</div>
+<script>
+
+</script>
 
         <label for="lemmikkeja">Onko kotonasi lemmikkieläimiä:</label><br>
-          <select id="lemmikkeja" name="lemmikkeja">
+          <select onchange="yesnoCheck2(this);" id="lemmikkeja" name="lemmikkeja">
             <option disabled="" selected value="valitse">Valitse</option>
             <option value="ei">Ei</option>
-            <option value="on">On, mikä?</option>
+            <option value="muu">On, mikä?</option>
           </select><br>
+          <div id="Yes" style="display: none;">
+          <input type="text" id="lemmikkeja" name="lapsiaidinkieli" placeholder="On, mikä?"/><br />
+          </div>
 
 
   <hr class="style-two">
@@ -335,11 +316,11 @@ textarea {
         <textarea name="sairaudet" rows="8" cols="100"></textarea><br>
 
         <label for="sairaalahoidot">Onko lapsi ollut sairaalahoidossa tai jatkuvassa lääkärinhoidossa, milloin ja miksi?</label><br>
-        <textarea name"sairaalahoidot" rows="8" cols="100"></textarea><br>
+        <textarea name="sairaalahoidot" rows="8" cols="100"></textarea><br>
 
 
         <label for="lisatiedot">Lisätiedot hakemuksen perusteeksi:</label><br>
-        <textarea name"lisatiedot" rows="8" cols="100"></textarea><br>
+        <textarea name="lisatiedot" rows="8" cols="100"></textarea><br>
 
         <input type="submit" value="submit">
       </form>
@@ -349,6 +330,25 @@ textarea {
   </section>
 
   <script>
+// Muu, mikä -kenttien näyttäminen/piilotaminen
+  function yesnoCheck(that) {
+      if (that.value == "other") {
+
+          document.getElementById("ifYes").style.display = "block";
+      } else {
+          document.getElementById("ifYes").style.display = "none";
+      }
+  }
+
+  function yesnoCheck2(that) {
+    if (that.value == "muu") {
+
+        document.getElementById("Yes").style.display = "block";
+    } else {
+        document.getElementById("Yes").style.display = "none";
+    }
+}  
+
 
   window.onscroll = function() {scrollFunction()};
 
