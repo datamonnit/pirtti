@@ -22,32 +22,42 @@ h6 {
   font-size: 25px;
   margin: 0;
 }
-svg {padding-top: 20px;}
+/* svg {padding-top: 20px;} */
  
-.container{
+.form {
   width:auto;
   margin:auto;
-
 }
+
 .containerh1 {
   font-size: 50px;
   padding-bottom: 20px;
   font-variant: small-caps;
   text-align: center;
   margin-bottom: -20px;
-  font-family:  "Comic Sans MS",  sans-serif;
+  font-family: "Comic Sans MS",  sans-serif;
 
 }
-.container2{
+
+.container-x{
   max-width: 960px;
+  margin-top: 20px;
   height: auto;
-  overflow:hidden;
+  overflow: hidden;
   color: black;
-  background-color:  rgba(255, 0, 109, 0.48);
   padding: 20px;
+}
 
+.red {
+  background-color:rgba(255, 0, 109, 0.48);
+}
 
+.green {
+  background-color:rgba(133, 255, 0, 0.48);
+}
 
+.blue {
+  background-color:rgba(0, 196, 196, 0.48);
 }
 
 /* .header_img {
@@ -77,8 +87,6 @@ svg {padding-top: 20px;}
 	left: 0;
 	text-align: left;
   font-size: 0;
-  
-
 }
 
 .paivahoitohakemus {
@@ -87,7 +95,7 @@ svg {padding-top: 20px;}
   border-radius: 2px;
   background-color: #f2f2f2;
   padding: 15px;
-  margin-bottom: 500px;
+  /* margin-bottom: 500px; */
 }
 
 .side-nav{
@@ -107,10 +115,8 @@ svg {padding-top: 20px;}
   list-style: none;
   text-align: left;
   text-decoration: none;
-  
- 
-
 }
+
 .side-nav a:hover{
   color:#fff;
 }
@@ -136,36 +142,9 @@ svg {padding-top: 20px;}
   height: 415px;
   transition:0.2s;
   cursor: pointer;
-
-  
 	}
 
- 
 
-
-
-.container3{
-  margin-top: 20px;
-  max-width: 960px;
-  height: auto;
-  overflow:hidden;
-  color: black;
-  background-color: rgba(133, 255, 0, 0.48);
-  padding: 20px;
-  display: block;
-}
-
-.container4{
-  margin-top: 20px;
-  max-width: 960px;
-  height: auto;
-  overflow:hidden;
-  color: black;
-  background-color: rgba(0, 196, 196, 0.48);
-  padding: 20px;
-
-
-}
 
 .container5{
   margin-top: 20px;
@@ -200,9 +179,8 @@ ul  {list-style-type: square;}
 #flip {cursor: pointer;}
 
 .lataakuva {
-max-width: 300px;
-max-height: 500px;
-
+  max-width: 300px;
+  margin: 0 auto;
 }
 .css-input {
      padding: 6px;
@@ -279,7 +257,7 @@ transform: rotate(45deg) translate(-8px, -8px) ;
 #yhteystiedot{
   width:960px;
   margin:auto;
-  padding-bottom: 500px;
+  /* padding-bottom: 500px; */
   color: black;
 }
 .maps {
@@ -501,7 +479,7 @@ nav ul li {display: inline-block; }
   #pikalinkit {
     
   
-  
+
   }
 
 #showcase{
@@ -512,7 +490,7 @@ nav ul li {display: inline-block; }
   width:960px;
   margin:auto;
   padding-top: 20px;
-  padding-bottom: 500px;
+  /*padding-bottom: 500px;*/
 }
 .myButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -722,7 +700,7 @@ display: none;
 
 #yhteystiedot{
   width:100vw;
-  padding-bottom: 800px;
+  /* padding-bottom: 800px; */
   color: black;
 }
   #showcase {
@@ -881,7 +859,7 @@ display: none;
     width:100%;
    }
 
-   .container2{
+   .container-x{
      width:100vw;
      overflow:hidden;
      color: black;
@@ -920,7 +898,7 @@ display: none;
 
 
     }
-    .container2 p {
+    .container-x p {
       margin-right: 20px;
       float: left;
       font-size: 17px;

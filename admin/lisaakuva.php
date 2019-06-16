@@ -1,17 +1,17 @@
 <?php
-    include('../db.php');
+    include('db.php');
     session_start();
     $vaarin = "";
 
     if(!isset($_SESSION['username'])){
-        header("location: ../adminimg.php");
+        header("location: ../login.php");
 
     }
 
     if (isset($_GET['logout'])) {
         session_destroy();
         unset($_SESSION['username']);
-        header("location: ../adminimg.php");
+        header("location: ../login.php");
             
     }
 
@@ -116,82 +116,7 @@
             echo "<meta http-equiv='refresh' content='0;url=lisaakuva.php'>";
         }
     
-
-
-// VANHAA KOODIA.
-// if(isset($_POST["submit"])) {
-//   //kuvanpaikka
-//   $target_dir = "uploads/";
-//   $target_thumbdir = "thumbs/";
-//   $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-//   $uploadOk = 1;
-//   $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-
-//     //tarkistus
-//     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-//     if($check !== false) {
-//         echo "Tarkistetaan kuvaa - " . $check["mime"] . ".";
-//         $uploadOk = 1;
-//     } else {
-//         echo "Tiedostomuoto ei sallittu!";
-//         $uploadOk = 0;
-//     }   
-//    //onko kuva jo ladattu
-//   if (file_exists($target_file)) {
-//       echo "Sama kuva on jo ladattu!";
-//       $uploadOk = 0;
-//   } 
-//   //tiedostokoko
-//   if ($_FILES["fileToUpload"]["size"] > 5000000000000) {
-//       echo "Kuvan tiedostokoko on liian suuri";
-//      $uploadOk = 0;
-//   } 
-//   //tiedostomuoto
-//   if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-//   && $imageFileType != "gif" ) {
-//       echo "Vain JPG, JPEG, PNG & GIF tiedostomuodot ovat sallittuja.";
-//       $uploadOk = 0;
-//   }
-//   //kuvan lataaminen
-//   if ($uploadOk == 0) {
-//       echo "Kuvan lataamisessa tapahtui virhe!";
-//   } else {
-//         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-//             echo "Tiedosto ". basename( $_FILES["fileToUpload"]["name"]). " on ladattu.";
-//             echo '<div style="float:left;margin-right:10px"><p>Tässä lataamasi kuva</p>
-//                     <img height=150px; width=150px; src="'.$target_file.'" alt="kuvaa ei löydy" /></br>
-//                 </div>';
-//             $target_thumb=$target_thumbdir."thumb_" . basename($_FILES["fileToUpload"]["name"]);
-//             make_thumb($target_file,$target_thumb,300,300);
-//         } else {
-//             echo "Kuvan lataamisessa tapahtui virhe!";
-//         }   
-//     }
-// }
-
-// function make_thumb($src, $dest, $desired_width, $desired_height) {
-
-// 	/* read the source image */
-// 	$source_image = imagecreatefromjpeg($src);
-// 	$width = imagesx($source_image);
-// 	$height = imagesy($source_image);
-	
-// 	/* find the "desired height" of this thumbnail, relative to the desired width  */
-// 	$desired_height = floor($height * ($desired_width / $width));
-	
-// 	/* create a new, "virtual" image */
-// 	$virtual_image = imagecreatetruecolor($desired_width, $desired_height);
-	
-// 	/* copy source image at a resized size */
-// 	imagecopyresampled($virtual_image, $source_image, 0, 0, 0, 0, $desired_width, $desired_height, $width, $height);
-	
-// 	/* create the physical thumbnail image to its destination */
-//     imagejpeg($virtual_image, $dest);
-    
-// }
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -208,6 +133,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/slider.css">
     <link rel="stylesheet" href="../assets/css/lightbox.css">
+    <link rel="stylesheet" href="../assets/css/edit-style.css">
     <script src="../assets/js/lightbox.js"></script>
     
     <script> //Valikonpiilotus
@@ -224,59 +150,30 @@
     </style>
   </head>
   <body>
-    <!-- <header>
-      <button onclick="topFunction()" id="myBtn">Ylös</button>
-      <div class="container">
-          <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
-          <h1> Päiväkoti Pirtti</h1>
-          <button name="myButton" id="hide">
-            <div class="juttu" onclick="myFunction(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-            </div></button>
-        <nav>
-          <ul>
-            <li class="current tab1"><a href="../index.html" class="fa fa-home">&nbsp;Etusivu </a></li>
-            <li  class="tab4"><a href="../yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
-            <li  class="tab5 dropdown">
-              <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
-              <div class="dropdown-content">
-              <a href="../paivahoitohakemus.html">Päivähoitohakemus</a>
-              <a href="../esiopetushakemus.html">Esiopetushakemus</a>
-              <a href="../palvelusetelihakemus.html">Palvelusetelihakemus</a>
-              </div>
-              </li>
-            <li  class="tab6"><a href="../kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
-            </ul>
-          </nav>-->
 
-    <?php include 'header.php';?>
-    <p> <a href="lisaakuva.php?logout='1'" style="color: red;">Kirjaudu ulos</a> </p>
-          <p> <a href="../password_change.php" style="color: red;">Vaihda salasana</a> </p>    
-          <p> <a href="../newuser.php" style="color: red;">luo Käyttäjä</a> </p>    
-          <p>Käyttäjä: <?php echo $_SESSION['username']?></p>
-      </div>
-    </header>
-  <hr class="style-two">
-  <center>
+    <?php include 'admin-header.php';?>
+    <?php include 'admin-nav.php';?>
+    
+    <div class="lataakuva container-x">
+    
+        <?php echo $vaarin;?>
+        
+        <form action="lisaakuva.php" method="post" enctype="multipart/form-data"><br>
+        <label style="float:left;" for="enimi">Otsikko:</label><br>
+        <input class="css-input" type="text" name="otsikko"  placeholder="Anna kuvalle otsikko"><br>
+        <textarea class="css-input" type="text" rows="4" cols="23" name="image_text"></textarea>
+        <label style="font-size:25px;" for="enimi">Valitse ladattava kuva:</label><br>
+        <input type="file" name="image" id="image" ><br>
+        <input type="submit" value="Upload Image" name="submit"><br>
+        </form>
+    
+    </div>
 
-    <div class="lataakuva">
-    <?php echo $vaarin;?>
-    <form action="lisaakuva.php" method="post" enctype="multipart/form-data"><br>
-      <label style="float:left;" for="enimi">Otsikko:</label><br>
-      <input class="css-input" type="text" name="otsikko"  placeholder="Anna kuvalle otsikko"><br>
-      <textarea class="css-input" type="text" rows="4" cols="23" name="image_text"></textarea>
-      <label style="font-size:25px;" for="enimi">Valitse ladattava kuva:</label><br>
-      <input type="file" name="image" id="image" ><br>
-      <input type="submit" value="Upload Image" name="submit"><br>
-    </form>
-      </div>
-      <div class="kuvat">
-    <?php echo $kuvat_html;?>
+    <div class="kuvat">
+        <?php echo $kuvat_html;?>
 
-</div>
-</center>
+    </div>
+
 <script>
 function myFunction(x) {
     x.classList.toggle("change");

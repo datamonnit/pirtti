@@ -39,6 +39,7 @@ if (isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && 
         Telkänkatu 2 50190 Mikkeli
         pkpirttiry@surffi.fi
 
+
         (Tämä on automaattisesti lähetetty ilmoitus. Älä vastaa tähän viestiin!)
         ';
         $headers = 'Päivähoitohakemus | Pirtti' . "\r\n";

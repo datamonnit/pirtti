@@ -1,4 +1,4 @@
-<?php include('login.php');
+<?php include('user_functions.php');
   include('db.php');
 
   require_once('db.php');

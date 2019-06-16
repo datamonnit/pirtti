@@ -1,0 +1,23 @@
+#login_page {
+    max-width: 900px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.admin-nav {
+    max-width: 900px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+
+.admin-nav ul li {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+}
+
+#login_screen {
+    text-align: center;
+}

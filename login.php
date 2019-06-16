@@ -1,73 +1,94 @@
-<?php
-  include('db.php');
-  session_start();
-  $errors = array(); 
+<?php 
+include('./admin/user_functions.php'); 
+
+if (isset($_SESSION['username'])) {
+    header('Location: admin/index.php');
+}
+
+?>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Päiväkoti pirtti">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	  <meta name="keywords" content="päiväkoti, päiväkotiyhdistys, Päiväkotiyhdistys pirtti ry">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>Päiväkoti Pirtti | Etusivu</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/edit-style.css">
+    <script>
+    $(document).ready(function(){
+        $("#hide").click(function(){
+            $("nav").slideToggle("fast");
+        });
+    });
+      //   document.getElementById("hide").onclick = function() {myFunction()};
+    </script>
+    <style>
+
+</style>
+
+  </head>
+  <body>
+    <?php include 'header.php';?>
+
+    <?php include('errors.php'); ?>
+
+    <div id="login_page">
+        <div id="login_screen">
+            <form method="post" action="admin/user_functions.php">
+                Käyttäjätunnus:<br>
+                <input type="text" class="css-input" name="username">
+                <br>
+                Salasana:<br>
+                <input type="password" class="css-input" name="password" >
+                <br><br>
+                <button type="submit" class="css-input" value="submit" name="login_user">Login</button>
+                <a href="forgotPassword.php">Salasana unohtui</a>
+            </form> 
+        </div>
+    </div>
+
+  <footer>
+      <p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2017</p>
+  </footer>
+
+</body>
+
+<script>
+function myFunction(x) {
+    x.classList.toggle("change");
+}
 
 
 
-if (isset($_POST['login_user'])) {
-  $username = mysqli_real_escape_string($conn, $_POST['username']);
-  $password = mysqli_real_escape_string($conn, $_POST['password']);
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("fast");
+    });
+});
 
-    if (empty($username)) {
-        array_push($errors, "Käyttäjätunnus on pakollinen");
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
     }
-    if (empty($password)) {
-        array_push($errors, "salasana tarvitaan");
-    }
+}
 
-    if (count($errors) == 0) {
-      $password = md5($password);
-      $query = "SELECT * FROM gallery_user WHERE username='$username' AND password='$password'";
-      $results = mysqli_query($conn, $query);
-      if (mysqli_num_rows($results) == 1) {
-          $row = mysqli_fetch_assoc($results);
-          $_SESSION['username'] = $username;
-          header('location: galleria/lisaakuva.php');
-      }else {
-        array_push($errors, "Väärä käyttäjätunnuksen / salasanan yhdistelmä");
-      }
-    }
-  }
-
-
-  if (isset($_POST['reg_user'])) {
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password_1 = mysqli_real_escape_string($conn, $_POST['password_1']);
-    $password_2 = mysqli_real_escape_string($conn, $_POST['password_2']);
-  
-  
-  
-    if (empty($username)) { array_push($errors, "Käyttäjätunnus on pakollinen"); }
-    if (empty($email)) { array_push($errors, "Sähköposti on pakollinen"); }
-    if (empty($password_1)) { array_push($errors, "Salasana on pakollinen"); }
-    if ($password_1 != $password_2) {
-    array_push($errors, "salasanat eivät täsmää");
-    }
-  
-  
-    $user_check_query = "SELECT * FROM gallery_user WHERE username='$username' OR email='$email' LIMIT 1";
-    $result = mysqli_query($conn, $user_check_query);
-    $user = mysqli_fetch_assoc($result);
-    
-    if ($user) { 
-      if ($user['username'] === $username) {
-        array_push($errors, "Käyttäjätunnus on jo olemassa");
-      }
-  
-      if ($user['email'] === $email) {
-        array_push($errors, "Sähköposti on jo olemassa");
-      }
-    }
-  
-  
-    if (count($errors) == 0) {
-      $password = md5($password_1);
-  
-      $query = "INSERT INTO gallery_user (username, email, password) VALUES('$username', '$email', '$password')";
-      mysqli_query($conn, $query);
-      $_SESSION['username'] = $username;
-      header('location: adminimg.php');
-    }
-  }
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+</html>

@@ -94,7 +94,7 @@
 
 	$hash = md5($paivakoti.$huoltajasahkoposti.$huoltajapuhelin.$pvm);
 
-	$message .= PHP_EOL. "Kuittaa hakemus luetuksi: " . $http_host  ."verify.php?email=$huoltajasahkoposti&hash=$hash";
+	$message .= PHP_EOL. "Kuittaa hakemus luetuksi: " . $http_host  ."verify2.php?email=$huoltajasahkoposti&hash=$hash";
 
 
 	if (true === false){

@@ -23,11 +23,10 @@
           document.getElementById("hide").onclick = function() {myFunction()};
     </script>
   <body>
-    
-  <?php include 'header.php';?>
+    <?php include 'header.php';?>
   
   <section id="showcase">
-    <h1>Moision päiväkoti</h1>
+  <h1><strong>Moision päiväkoti</strong> </h1>
   <section id="showcase">
     <div class="container">
         <div class="header">
@@ -41,30 +40,29 @@
 
   <section id="boxes"> 
 
+   <!-- Luodaan yhteys tietokantaan ja tulostetaan siellä olevat tekstit sivulle -->
+
       <?php 
-        if (isset($_GET['sivu'])) {
-          
-        include 'db.php';
+        
+        include 'admin/db.php';
 
         $html_content = "";
 
-        $sql ="SELECT * FROM pirtti_db.content WHERE page_name = '" . $_GET['sivu'] . '";
+        $sql = "SELECT * FROM content WHERE page_name = 'moisio'";
         $results = mysqli_query($conn, $sql);
 
-        if(mysqli_num_rows($results)){
-          while ($rows = mysqli_fetch_array($results)){
+        if(mysqli_num_rows($results)) {
+          while ($rows = mysqli_fetch_array($results)) {
             echo '<div class="container-x ' . $rows['class'] . '">';
             echo $rows['html_content'];
             echo '</div>';
           }
         }
         
-      }
       ?>
-
   </section>
   <footer>
-      <a href="adminimg.php"><p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2018</p></a>
+      <a href="login.php"><p>Päiväkotiyhdistys Pirtti ry, Copyright &copy; 2018</p></a>
 
   </footer>
   </body>
