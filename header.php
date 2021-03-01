@@ -20,15 +20,15 @@
           <nav>
             <ul>
               <li class="current tab1"><a href="index.php" class="fa fa-home">&nbsp;Etusivu </a></li>
-              <li class="current tab1"><a href="moisio.php" class="fa fa-info">&nbsp;Moisio </a></li>
               <li class="current tab1"><a href="pirtti.php" class="fa fa-info">&nbsp;pirtti </a></li>
               <li  class="tab4"><a href="yhteystiedot.php" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
               <li  class="tab5 dropdown">
                 <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
                   <div class="dropdown-content">
-                    <a href="paivahoitohakemus.php">Päivähoitohakemus</a>
-                    <a href="esiopetushakemus.php">Esiopetushakemus</a>
-                    <a href="palvelusetelihakemus.php">Palvelusetelihakemus</a>				 
+                    <a href="varhaiskasvatushakemus.php">Varhaiskasvatushakemus</a>
+                    <a href="esiopetushakemus.php">Esiopetushakemus</a>	
+                    <a href="palvelusetelihakemus.php">
+                    Palvelusetelihakemus</a>
                   </div>
               </li>
               <li  class="tab6"><a href="kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>

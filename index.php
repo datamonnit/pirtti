@@ -14,66 +14,10 @@
     <link rel="stylesheet" href="./assets/css/slider.css">
     <title>Päiväkotiyhdistys Pirtti Ry | Etusivu</title>
   </head>
-    <script>
-      $(document).ready(function(){
-          $("#hide").click(function(){
-              $("nav").slideToggle("fast");
-          });
-      });
-          document.getElementById("hide").onclick = function() {myFunction()};
-    </script>
-  <body>
-    <!-- <header>
-      <button onclick="topFunction()" id="myBtn">Ylös</button>
-      <div class="container">
-          <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
-          <h1> Päiväkoti Pirtti</h1>
-          <button name="myButton" id="hide">&#9776</button> -->
-          <!-- <button name="myButton" id="hide">
-            <div class="juttu" onclick="myFunction(this)"> 
-              <div class="bar1"></div>
-              <div class="bar2"></div>
-              <div class="bar3"></div>
-            </div>
-          </button> -->
-        
-          <!-- <nav>
-            <ul>
-              <li class="current tab1"><a href="index.html" class="fa fa-home">&nbsp;Etusivu </a></li>
-              <li  class="tab4"><a href="yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
-              <li  class="tab5 dropdown">
-                <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
-                  <div class="dropdown-content">
-                    <a href="paivahoitohakemus.html">Päivähoitohakemus</a>
-                    <a href="esiopetushakemus.html">Esiopetushakemus</a>
-                    <a href="palvelusetelihakemus.html">Palvelusetelihakemus</a>				 
-                  </div>
-              </li>
-              <li  class="tab6"><a href="kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
-            </ul>
-          </nav>
-      </div>
-    </header><hr class="style-two">  -->
-
-	    <?php include 'header.php';?>
-
- <!-- sidemenun alkup. paikka -->
-<!-- 
- <div onclick="openSlideMenu()" id="pikalinkit" class=pikalinkit>
-    <svg style="padding: 15px 10px 25px 10px;" width="30" height="30"><path d="M0,5 30,5" stroke="#000" stroke-width="3"/><path d="M0,14 30,14" stroke="#000" stroke-width="3"/><path d="M0,23 30,23" stroke="#000" stroke-width="3"/>   </svg> <h5 id="pikah5">pikalinkit</h5>
     
-        
-      </div>
- <div id="side-menu" class="side-nav">
-      <h6> Pikalinkit</h6>
-      <hr class="style-two" style="padding:-5px; border:2;height:6px;background:#ffffffad;">
-      <a  href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>      
-      <a  href="./assets/VarhaiskasvatussuunnitelmaPäiväkotiPirtti.pdf">Varhaiskasvatussuunnitelma</a>
-      <a  href="http://www.mikkeli.fi/palvelut/yksityisen-paivakotihoidon-palveluseteli/">Palvelusetelihakemus</a>
-      <a  href="http://www.mikkeli.fi/palvelut/varhaiskasvatuksen-asiakasmaksut">Varhaiskasvatuksen asiakasmaksut</a>
-      <a  href="paivahoitohakemus.html">Päivähoitohakemus</a>
-      <a  href="palvelusetelihakemus.html">Esiopetushakemus</a>
-    </div>  -->
+  <body>
+    
+    <?php include 'header.php';?>
   
   
   <section id="showcase">
@@ -91,13 +35,17 @@
    
     <div class="container2">
       <h1>Päiväkotiyhdistys Pirtti ry</h1>
-    <p>Päiväkotiyhdistys Pirtti ry omistaa ja hallinnoi Päiväkoti Pirttiä ja Moision päiväkotia Mikkelissä.
-
-    Päiväkotiyhdistyksen hallinnosta ja taloudesta vastaa johtokunta , johon kuuluu puheenjohtajan lisäksi kuusi varsinaista jäsentä ja neljä varajäsentä.
-    Johtokunta kokoontuu tarpeen mukaan ja kokouksissa sihteerinä ja asioiden esittelijänä toimii päiväkodin johtaja.Johtokunnan jäsenet ovat Etelä-Savon sairaanhoitopiirin henkilökuntaa ja päiväkodeissa hoidossa olevien lasten vanhempia. <br><br>
-    Päiväkotien yhteisenä johtajana toimii Heli Joensuu. <br>
-    <br>
-    Molemmissa päiväkodeissa annetaan myös esiopetussuunnitelman mukaista esiopetusta.</p>
+    <p>Päiväkotiyhdistys Pirtti ry  ylläpitää Päiväkoti Pirttiä Mikkelissä. Yhdistys on voittoa tavoittelematon. Päiväkotiyhdistyksen hallinnosta ja taloudesta vastaa johtokunta, johon kuuluu puheenjohtajan lisäksi kuusi varsinaista jäsentä ja neljä varajäsentä. Johtokunta kokoontuu tarpeen mukaan ja kokouksissa sihteerinä ja asioiden esittelijänä toimii päiväkodin johtaja. Johtokunnan jäsenet ovat  päiväkodeissamme hoidossa olevien lasten vanhempia.
+    <br><br>
+    Päiväkodissa annetaan myös esiopetussuunnitelman mukaista esiopetusta.
+    <br><br>
+    Päiväkodissamme on käytössä yksityisen päiväkotihoidon palveluseteli. Perhe hakee seteliä Mikkelin kaupungilta saatuaan varmistuksen päivähoitopaikan myöntämisestä. Varhaiskasvatuksen asiakasmaksut määräytvät <a href="https://www.oppiminen.mikkeli.fi/varhaiskasvatus-ja-esiopetus/varhaiskasvatuksen-asiakasmaksut/">kaupungin määritelemien maksumääritysperusteiden</a> mukaan. Kaupungin määrittelemään hoitomaksuun lisätään yksityisen päiväkotihoidon omavastuulisä, joka on kokopäivähoidossa olevilta lapsilta 30 e/kk.
+    <br><br>
+    Tutustu toimintaamme myös Facebookissa :  Päiväkotiyhdistys Pirtti ry
+    <br><br>
+    Tällä hetkellä päiväkodissamme on vapaana 2 paikkaa alle 3-vuotiaille lapsille.
+    <br><br>
+    Lisätiedot : Päiväkodin johtaja Heli Joensuu p.0440 214 297 tai pkpirttiry@surffi.fi</p>
     </div>
 
 

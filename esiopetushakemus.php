@@ -147,13 +147,6 @@ textarea {
 <!-- Lapsen Henkilötiedot -->
 <h1> Esiopetushakemus </h1> <br>
 
-          <label for="paivakoti">Valitse päiväkoti:</label><br>
-          <select onchange="yesnoCheck(this);" id="paivakoti" name="paivakoti">
-            <option disabled="" selected value="valitse">Valitse</option>
-            <option value="pkpirtti">Päiväkoti Pirtti</option>
-            <option value="pkmoisio">Moision päiväkoti</option>
-          </select><br>
-
         <h2> Lapsen henkilötiedot </h2>
 
         <label for="enimi">Etunimet:</label><br>
@@ -171,9 +164,6 @@ textarea {
 
         <label for="kotikunta">Kotikunta:</label><br>
         <input type="text" id="lapsikotikunta" name="lapsikotikunta" placeholder="kotikunta"><br>
-
-        <label for="puhkoti">Puhelin kotiin:</label><br>
-        <input type="text" id="puhkoti" name="puhkoti" placeholder="Puh."><br>
 
         <label for="akieli">Äidinkieli:</label><br>
           <select onchange="yesnoCheck(this);" id="lapsiaidinkieli" name="lapsiaidinkieli">
@@ -209,20 +199,17 @@ textarea {
   <label for="snimi">Sukunimi:</label><br>
   <input type="text" id="huoltajasukunimi" name="huoltajasukunimi" placeholder="Sukunimi"><br>
 
-  <label for="htunnus">Henkilötunnus:</label><br>
-  <input type="text" id="huoltajahenkilotunnus" name="huoltajahenkilotunnus" placeholder="Henkilotunnus"><br>
-
   <label for="ammatti">Ammatti/Tehtävä:</label><br>
   <input type="text" id="huoltajaammatti" name="huoltajaammatti" placeholder="Ammatti/Tehtävä"><br>
 
   <label for="tyo">Nykyinen työ-/opiskelupaikka:</label><br>
   <input type="text" id="huoltajatyo" name="huoltajatyo" placeholder="Nykyinen työ-/opiskelupaikka"><br>
 
+  <label for="tyo">Puhelinnumero:</label><br>
+  <input type="text" id="huoltajapuhelin" name="huoltajapuhelin" placeholder="Puhelinnumero"><br>
+
   <label for="taika">Työaika esim(7:00-15:00):</label><br>
   <input type="text" id="huoltajatyoaika" name="huoltajatyoaika" placeholder="Työaika"><br>
-
-  <label for="tosoite">Työpaikan osoite ja puhelin:</label><br>
-  <input type="text" id="huoltajatyoosoite" name="huoltajatyoosoite" placeholder="Työpaikan osoite ja puhelin"><br>
 
   <label for="sposti">Sähköposti:</label><br>
   <input type="text" id="huoltajasahkoposti" name="huoltajasahkoposti" placeholder="Sähköposti"><br>
@@ -236,9 +223,6 @@ textarea {
 <label for="snimi">Sukunimi:</label><br>
 <input type="text" id="puolisosukunimi" name="puolisosukunimi" placeholder="Sukunimi"><br>
 
-<label for="htunnus">Henkilötunnus:</label><br>
-<input type="text" id="puolisohenkilotunnus" name="puolisohenkilotunnus" placeholder="Henkilotunnus"><br>
-
 <label for="ammatti">Ammatti/Tehtävä:</label><br>
 <input type="text" id="puolisoammatti" name="puolisoammatti" placeholder="Ammatti/Tehtävä"><br>
 
@@ -247,9 +231,6 @@ textarea {
 
 <label for="taika">Työaika esim(7:00-15:00):</label><br>
 <input type="text" id="puolisotyoaika" name="puolisotyoaika" placeholder="Työaika"><br>
-
-<label for="tosoite">Työpaikan osoite ja puhelin:</label><br>
-<input type="text" id="puolisotyoosoite" name="puolisotyoosoite" placeholder="Työpaikan osoite ja puhelin"><br>
 
 <label for="sposti">Sähköposti:</label><br>
 <input type="text" id="puolisosähköposti" name="puolisosähköposti" placeholder="Sähköposti"><br>
@@ -268,30 +249,19 @@ textarea {
 
 <hr class="style-two">
 
-        <h2> Päivähoidon tarve </h2>
+        <h2> Varhaiskasvatuksen tarve </h2>
         <select id="paivahoidontarve" name="paivahoidontarve">
           <option disabled="" selected value="valitse">Valitse</option>
-          <option value="kokopv">Pelkkä esiopetus, ei päivähoidon tarvetta</option>
-          <option value="15pv">Esiopetus ja enintään 5h/pv päivähoito</option>
-          <option value="10pv">Esiopetus ja enintään 5h/pv, 12pv/kk päivähoito</option>
+          <option value="kokopv">Pelkkä esiopetus, ei varhaiskasvatuksen tarvetta</option>
+          <option value="15pv">Esiopetus ja enintään 5h/pv varhaiskasvatus</option>
         </select><br>
 
 
         <hr class="style-two">
 
-        <h2> Toivottu hoitoaika </h2>
+        
 
-        <label for="alkpv">Hoidon tarpeen alkamispäivä:</label><br>
-        <input type="text" id="alkamispaiva" name="alkamispaiva" placeholder="Alkamispäivä"><br>
-
-        <label for="hoitopvlukum">Hoitopäivien lukumäärä/kk:</label><br>
-        <input type="text" id="hoitopvlukum" name="hoitopvlukum" placeholder="Hoitopäivät"><br>
-
-        <label for="hoitoaika">Päivittäinen hoitoaika:</label><br>
-        <input type="text" id="hoitoaika" name="hoitoaika" placeholder="Päivittäinen hoitoaika"><br>
-        <hr class="style-two">
-
-        <h2> Kuljetuksen tarve </h2>
+       <h2> Kuljetuksen tarve </h2>
         <select id="kuljetustarve" name="kuljetustarve">
           <option disabled="" selected value="valitse">Valitse</option>
           <option value="ei tarvitse">Lapsi ei tarvitse kuljetusta</option>
@@ -322,7 +292,7 @@ textarea {
         <label for="lisatiedot">Lisätiedot hakemuksen perusteeksi:</label><br>
         <textarea name="lisatiedot" rows="8" cols="100"></textarea><br>
 
-        <input type="submit" value="submit">
+        <input type="submit" value="Lähetä">
       </form>
 
 

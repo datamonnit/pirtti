@@ -17,12 +17,15 @@ $sql = "SELECT * FROM gallery";
 $results = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($results)){
+    
     while ($row = mysqli_fetch_array($results)){
+      // var_dump($row);
       $kuvat_html .= "<div id='kuva' style='margin:3px;'>";
-      $kuvat_html .= "<p style:'margin:3px'>".$row[1]."</p>";
+      $kuvat_html .= "<p style='margin:3px;'>".$row[1]."</p>";
       $kuvat_html .= "<a href='galleria/".$row[4]."'data-lightbox='roadtrip'  data-title='$row[3]'/> <img src='galleria/".$row[7]."'/></a >";
       $kuvat_html .= "<p id='desc'>".$row[3]."</p>";
       $kuvat_html .= "</div>";
+      
     }
 }
 
@@ -43,38 +46,10 @@ if (mysqli_num_rows($results)){
     <link rel="stylesheet" href="./assets/css/slider.css">
     <link rel="stylesheet" href="./assets/css/lightbox.css">
     <script src="./assets/js/lightbox.js"></script>
-    <script>
-      $(document).ready(function(){
-          $("#hide").click(function(){
-              $("nav").slideToggle("fast");
-          });
-      });
-          document.getElementById("hide").onclick = function() {myFunction()};
-    </script>
+    
   </head>
   <body>
-    <!-- <header>
-      <div class="container">
-          <div id="title"> <p>Puh. 0440 214 297<br>Telkänkatu 2 50190 Mikkeli<br>pkpirttiry@surffi.fi</p></div>
-          <h1> Päiväkoti Pirtti</h1>
-          <button id="hide">&#9776</button>
-        <nav>
-          <ul>
-            <li class="current tab1"><a href="index.html" class="fa fa-home">&nbsp;Etusivu </a></li>
-            <li  class="tab4"><a href="yhteystiedot.html" class="fa fa-info">&nbsp;Yhteystiedot</a></li>
-            <li  class="tab5 dropdown">
-             <a class="fa fa-file" href="javascript:void(0)" class="dropbtn" >&nbsp;Hakemukset</a>
-               <div class="dropdown-content">
-                 <a href="paivahoitohakemus.html">Päivähoitohakemus</a>
-                 <a href="esiopetushakemus.html">Esiopetushakemus</a>
-                 <a href="palvelusetelihakemus.html">Palvelusetelihakemus</a>
-               </div>
-            </li>
-              <li  class="current tab6"><a href="kuvia.php" class="fa fa-image">&nbsp;Kuvia</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header> -->
+    
     <?php include 'header.php';?>
 
     <center>
@@ -82,7 +57,7 @@ if (mysqli_num_rows($results)){
     <div class="juu">
     
       <div class="kuvat">
-      <p style="color:balck;"> Voit klikata kuvia suuremmiksi </p>
+      <p style="color:black;"> Voit klikata kuvia suuremmiksi </p>
         <?php echo $kuvat_html;
 
         ?>
@@ -94,34 +69,6 @@ if (mysqli_num_rows($results)){
 
   </footer>
     </center>
-    <script>
-  var slideIndex = 1;
-  showDivs(slideIndex);
-
-  function plusDivs(n) {
-    showDivs(slideIndex += n);
-  }
-
-  function currentDiv(n) {
-    showDivs(slideIndex = n);
-  }
-
-  function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("demo");
-    if (n > x.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = x.length}
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-       dots[i].className = dots[i].className.replace(" w3-white", "");
-    }
-    x[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " w3-white";
-  }
-  </script>
 
   </body>
 </html>
