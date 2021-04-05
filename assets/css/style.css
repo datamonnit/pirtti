@@ -146,7 +146,6 @@ svg {padding-top: 20px;}
 
 .container3{
   margin-top: 20px;
-  max-width: 960px;
   height: auto;
   overflow:hidden;
   color: black;
@@ -157,7 +156,6 @@ svg {padding-top: 20px;}
 
 .container4{
   margin-top: 20px;
-  max-width: 960px;
   height: auto;
   overflow:hidden;
   color: black;
@@ -726,7 +724,7 @@ display: none;
   color: black;
 }
   #showcase {
-    display: none;
+    
   }
   #juuj {
     display: none;
