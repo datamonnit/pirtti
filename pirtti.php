@@ -34,6 +34,7 @@
       </div>
     </div>
   </section>
+</section>
 
   <section id="boxes"> 
    
